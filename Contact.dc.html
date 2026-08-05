@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Contact — book a free infrastructure review</title>
+<meta name="description" content="Start with a free infrastructure review. We will tell you plainly what is solid and what is a risk." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin:0; background:#060810; color:rgba(233,238,246,.62); font-family:'Inter',system-ui,sans-serif; -webkit-font-smoothing:antialiased; text-wrap:pretty; }
+  ::selection { background:rgba(59,130,246,.35); color:#F2F5FA; }
+  a { color:#93B4FC; } a:hover { color:#6EE7B7; }
+  input, textarea { font-family:'Inter',sans-serif; }
+  input::placeholder, textarea::placeholder { color:rgba(233,238,246,.64); }
+  input:focus, textarea:focus { outline:none; border-color:rgba(59,130,246,.6); }
+  @keyframes softPulse { 0%,100% { opacity:1; } 50% { opacity:.3; } }
+  @keyframes travel { from { stroke-dashoffset:1500; } to { stroke-dashoffset:-260; } }
+  @keyframes drawin { from { stroke-dashoffset:1800; } to { stroke-dashoffset:0; } }
+  @media (max-width: 900px) { [data-stack] { grid-template-columns: 1fr !important; } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
+</helmet>
+
+<div style="position:relative;background:#060810;overflowX:clip">
+  <div style="position:sticky;top:0;zIndex:60">
+    <dc-import name="SiteNav" active="contact" hint-size="100%,72px"></dc-import>
+  </div>
+
+  <section style="position:relative;padding:104px clamp(20px,4vw,56px) 72px;backgroundImage:radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px);backgroundSize:24px 24px">
+    <div style="position:absolute;top:0;left:0;right:0;height:440px;pointerEvents:none;background:radial-gradient(110% 100% at 70% 6%, rgba(16,185,129,.16), rgba(6,8,16,0) 60%)"></div>
+    <svg viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;pointerEvents:none;opacity:.85" aria-hidden="true">
+      <defs>
+        <linearGradient id="ctHeroL" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#3B82F6" stopOpacity=".46" /><stop offset="1" stopColor="#3B82F6" stopOpacity="0" /></linearGradient>
+        <linearGradient id="ctHeroR" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stopColor="#34D399" stopOpacity=".4" /><stop offset="1" stopColor="#34D399" stopOpacity="0" /></linearGradient>
+      </defs>
+      <g fill="none" strokeWidth="1" strokeDasharray="1800" strokeDashoffset="1800" style="animation:drawin 1.9s cubic-bezier(.2,.8,.25,1) both">
+        <g stroke="url(#ctHeroL)"><line x1="-90" y1="320" x2="640" y2="-30" /><line x1="-90" y1="320" x2="620" y2="140" /><line x1="-90" y1="320" x2="620" y2="470" /><line x1="-90" y1="320" x2="680" y2="700" /></g>
+        <g stroke="url(#ctHeroR)"><line x1="1530" y1="320" x2="820" y2="-30" /><line x1="1530" y1="320" x2="840" y2="140" /><line x1="1530" y1="320" x2="840" y2="470" /><line x1="1530" y1="320" x2="790" y2="700" /></g>
+      </g>
+      <g strokeWidth="1.6" fill="none" strokeLinecap="round" strokeDasharray="90 1600">
+        <line x1="-90" y1="320" x2="620" y2="140" stroke="#3B82F6" style="animation:travel 8s linear infinite" />
+        <line x1="1530" y1="320" x2="840" y2="470" stroke="#34D399" style="animation:travel 10.5s linear infinite;animation-delay:-4s" />
+      </g>
+      <circle cx="-90" cy="320" r="3.2" fill="#3B82F6" style="animation:softPulse 3.2s ease-in-out infinite" />
+      <circle cx="1530" cy="320" r="3.2" fill="#34D399" style="animation:softPulse 3.2s ease-in-out infinite;animation-delay:-1.6s" />
+    </svg>
+    <div style="position:relative;maxWidth:1320px;margin:0 auto;display:grid;gridTemplateColumns:minmax(0,1.15fr) minmax(0,.85fr);gap:56px;alignItems:end" data-stack>
+      <div>
+        <span style="fontFamily:'JetBrains Mono',monospace;fontSize:10.5px;letterSpacing:0.2em;textTransform:uppercase;color:rgba(233,238,246,.68)">Contact</span>
+        <h1 style="margin:26px 0 0;fontFamily:'Space Grotesk',sans-serif;fontWeight:300;fontSize:clamp(38px,6vw,90px);lineHeight:0.99;letterSpacing:-0.035em;color:#F2F5FA">Let us see where your <span style="color:#34D399">backend stands.</span></h1>
+        <p style="margin:34px 0 0;maxWidth:560px;fontSize:17px;lineHeight:1.66">Start with a free infrastructure review. We will tell you plainly what is solid and what is a risk, with no obligation, no sales script and no jargon.</p>
+      </div>
+      <div>
+        <sc-for list="{{ expect }}" as="e" hint-placeholder-count="3">
+          <div style="display:grid;gridTemplateColumns:88px minmax(0,1fr);gap:18px;padding:20px 0;borderTop:1px solid rgba(255,255,255,.09);alignItems:baseline">
+            <span style="fontFamily:'JetBrains Mono',monospace;fontSize:10.5px;letterSpacing:0.16em;textTransform:uppercase;color:#3B82F6">{{ e.n }}</span>
+            <div>
+              <p style="margin:0 0 5px;fontSize:16.5px;color:#F2F5FA">{{ e.title }}</p>
+              <p style="margin:0;fontSize:15px;lineHeight:1.55;color:rgba(233,238,246,.66)">{{ e.body }}</p>
+            </div>
+          </div>
+        </sc-for>
+        <div style="borderTop:1px solid rgba(255,255,255,.09)"></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="position:relative;overflow:hidden;padding:56px clamp(20px,4vw,56px) 110px">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;pointerEvents:none;opacity:.7" aria-hidden="true">
+      <defs>
+        <linearGradient id="ctFormA" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#3B82F6" stopOpacity=".4" /><stop offset="1" stopColor="#3B82F6" stopOpacity="0" /></linearGradient>
+        <linearGradient id="ctFormB" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#34D399" stopOpacity=".34" /><stop offset="1" stopColor="#34D399" stopOpacity="0" /></linearGradient>
+      </defs>
+      <g fill="none" strokeWidth="1" strokeDasharray="1800" strokeDashoffset="1800" style="animation:drawin 2.2s cubic-bezier(.2,.8,.25,1) both;animation-timeline:view();animation-range:entry 0% cover 32%">
+        <g stroke="url(#ctFormA)"><line x1="-100" y1="430" x2="760" y2="20" /><line x1="-100" y1="430" x2="740" y2="220" /><line x1="-100" y1="430" x2="740" y2="420" /></g>
+        <g stroke="url(#ctFormB)"><line x1="-100" y1="430" x2="740" y2="660" /><line x1="-100" y1="430" x2="800" y2="900" /></g>
+      </g>
+      <g strokeWidth="1.5" fill="none" strokeLinecap="round" strokeDasharray="80 1600">
+        <line x1="-100" y1="430" x2="740" y2="220" stroke="#3B82F6" style="animation:travel 9.5s linear infinite" />
+        <line x1="-100" y1="430" x2="740" y2="660" stroke="#34D399" style="animation:travel 12s linear infinite;animation-delay:-5s" />
+      </g>
+      <circle cx="-100" cy="430" r="3" fill="#3B82F6" style="animation:softPulse 3.4s ease-in-out infinite" />
+    </svg>
+    <div style="position:relative;maxWidth:1320px;margin:0 auto;display:grid;gridTemplateColumns:minmax(0,1.2fr) minmax(0,.8fr);gap:20px;alignItems:start" data-stack>
+      <form onSubmit="{{ onSubmit }}" style="padding:34px;borderRadius:18px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012));display:grid;gap:22px">
+        <div style="display:grid;gridTemplateColumns:1fr 1fr;gap:22px" data-stack>
+          <label style="display:grid;gap:9px">
+            <span style="fontFamily:'JetBrains Mono',monospace;fontSize:10.5px;letterSpacing:0.16em;textTransform:uppercase;color:rgba(233,238,246,.68)">Name</span>
+            <input type="text" name="name" placeholder="Ada Nwosu" style="height:46px;padding:0 14px;borderRadius:10px;border:1px solid rgba(255,255,255,.12);background:rgba(6,8,16,.6);color:#F2F5FA;fontSize:15px;transition:border-color 200ms ease" />
+          </label>
+          <label style="display:grid;gap:9px">
+            <span style="fontFamily:'JetBrains Mono',monospace;fontSize:10.5px;letterSpacing:0.16em;textTransform:uppercase;color:rgba(233,238,246,.68)">Work email</span>
+            <input type="email" name="email" placeholder="ada@yourcompany.com" style="height:46px;padding:0 14px;borderRadius:10px;border:1px solid rgba(255,255,255,.12);background:rgba(6,8,16,.6);color:#F2F5FA;fontSize:15px;transition:border-color 200ms ease" />
+          </label>
+        </div>
+        <label style="display:grid;gap:9px">
+          <span style="fontFamily:'JetBrains Mono',monospace;fontSize:10.5px;letterSpacing:0.16em;textTransform:uppercase;color:rgba(233,238,246,.68)">Company</span>
+          <input type="text" name="company" placeholder="Company name" style="height:46px;padding:0 14px;borderRadius:10px;border:1px solid rgba(255,255,255,.12);background:rgba(6,8,16,.6);color:#F2F5FA;fontSize:15px;transition:border-color 200ms ease" />
+        </label>
+        <label style="display:grid;gap:9px">
+          <span style="fontFamily:'JetBrains Mono',monospace;fontSize:10.5px;letterSpacing:0.16em;textTransform:uppercase;color:rgba(233,238,246,.68)">What have you built, and what is worrying you?</span>
+          <textarea name="detail" rows="5" placeholder="A logistics app on a single EC2 box. Traffic is growing and we have no backups." style="padding:14px;borderRadius:10px;border:1px solid rgba(255,255,255,.12);background:rgba(6,8,16,.6);color:#F2F5FA;fontSize:15px;lineHeight:1.55;resize:vertical;transition:border-color 200ms ease"></textarea>
+        </label>
+        <div style="display:flex;alignItems:center;gap:18px;flexWrap:wrap">
+          <button type="submit" style="display:inline-flex;alignItems:center;gap:10px;padding:14px 24px;borderRadius:999px;border:none;background:#F2F5FA;color:#060810;fontFamily:'Inter',sans-serif;fontSize:15px;fontWeight:500;cursor:pointer;transition:all 220ms cubic-bezier(.2,.8,.25,1)" style-hover="background:#3B82F6;color:#fff">Book my free review<span style="fontFamily:'JetBrains Mono',monospace;fontSize:13px">&rsaquo;</span></button>
+          <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+            <span style="display:inline-flex;alignItems:center;gap:8px;fontFamily:'JetBrains Mono',monospace;fontSize:10.5px;letterSpacing:0.14em;textTransform:uppercase;color:#34D399"><span style="display:block;width:6px;height:6px;borderRadius:50%;background:#34D399"></span>Received · reply within one business day</span>
+          </sc-if>
+        </div>
+        <p style="margin:0;fontSize:14.5px;lineHeight:1.55;color:rgba(233,238,246,.68)">We reply within one business day. Your details stay between us.</p>
+      </form>
+
+      <aside style="display:grid;gap:16px;alignContent:start">
+        <div style="padding:26px;borderRadius:18px;border:1px solid rgba(52,211,153,.3);background:linear-gradient(180deg,rgba(37,99,235,.12),rgba(16,185,129,.05) 60%,rgba(255,255,255,.02));display:grid;gap:22px">
+          <div style="display:grid;gap:7px">
+            <span style="fontFamily:'JetBrains Mono',monospace;fontSize:10.5px;letterSpacing:0.16em;textTransform:uppercase;color:rgba(233,238,246,.68)">Email</span>
+            <a href="mailto:hello@stacklaunch.co.uk" style="fontSize:17px;color:#F2F5FA;textDecoration:none" style-hover="color:#6EE7B7">hello@stacklaunch.co.uk</a>
+          </div>
+          <div style="display:grid;gap:7px;paddingTop:20px;borderTop:1px solid rgba(255,255,255,.09)">
+            <span style="fontFamily:'JetBrains Mono',monospace;fontSize:10.5px;letterSpacing:0.16em;textTransform:uppercase;color:rgba(233,238,246,.68)">Location</span>
+            <p style="margin:0;fontSize:15.5px;lineHeight:1.6;color:#F2F5FA">Lagos, Nigeria. Working with teams across the region and beyond.</p>
+          </div>
+          <div style="display:grid;gap:7px;paddingTop:20px;borderTop:1px solid rgba(255,255,255,.09)">
+            <span style="fontFamily:'JetBrains Mono',monospace;fontSize:10.5px;letterSpacing:0.16em;textTransform:uppercase;color:rgba(233,238,246,.68)">Phone</span>
+            <p style="margin:0;fontFamily:'JetBrains Mono',monospace;fontSize:14px;color:rgba(233,238,246,.66)">+234 ··· ····</p>
+          </div>
+          <div style="paddingTop:20px;borderTop:1px solid rgba(255,255,255,.09);display:flex;alignItems:center;gap:9px">
+            <span style="display:block;width:6px;height:6px;borderRadius:50%;background:#34D399;animation:softPulse 2.6s ease-in-out infinite"></span>
+            <span style="fontFamily:'JetBrains Mono',monospace;fontSize:10.5px;letterSpacing:0.14em;textTransform:uppercase;color:rgba(233,238,246,.66)">Review slots open this week</span>
+          </div>
+        </div>
+        <div style="padding:22px;borderRadius:18px;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.02);display:grid;gap:10px">
+          <span style="fontFamily:'JetBrains Mono',monospace;fontSize:10.5px;letterSpacing:0.16em;textTransform:uppercase;color:rgba(233,238,246,.64)">Client to confirm</span>
+          <p style="margin:0;fontFamily:'JetBrains Mono',monospace;fontSize:13px;lineHeight:1.7;color:rgba(233,238,246,.7)">form to inbox or embedded booking link · final email · phone</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <dc-import name="SiteFooter" hint-size="100%,360px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { sent: false };
+  renderVals() {
+    return {
+      sent: this.state.sent,
+      onSubmit: (e) => { e.preventDefault(); this.setState({ sent: true }); },
+      expect: [
+        { n: 'step 01', title: 'You reach out', body: 'Tell us what you have built and what is worrying you. Two minutes, no more.' },
+        { n: 'step 02', title: 'We review', body: 'We look at your setup and come back with a plain read on where it stands.' },
+        { n: 'step 03', title: 'You decide', body: 'Clear next steps and costs. No pressure, no lock-in.' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

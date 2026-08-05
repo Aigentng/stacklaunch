@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>StackLaunch — You build the app. We make it production-ready.</title>
+<meta name="description" content="StackLaunch runs the secure, scalable cloud backend behind your app. AWS, Kubernetes, CI/CD, monitoring and backups, without a DevOps hire." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin:0; background:#060810; color:rgba(233,238,246,.62); font-family:'Inter',system-ui,sans-serif; -webkit-font-smoothing:antialiased; text-wrap:pretty; }
+  ::selection { background:rgba(59,130,246,.35); color:#F2F5FA; }
+  a { color:#93B4FC; } a:hover { color:#6EE7B7; }
+  @keyframes rise { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:none; } }
+  @keyframes marquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+  @keyframes travel { from { stroke-dashoffset:1500; } to { stroke-dashoffset:-260; } }
+  @keyframes drawin { from { stroke-dashoffset:1800; } to { stroke-dashoffset:0; } }
+  @keyframes dash600 { from { stroke-dashoffset:600; } to { stroke-dashoffset:0; } }
+  @keyframes runDash { from { stroke-dashoffset:640; } to { stroke-dashoffset:-120; } }
+  @keyframes blipIn { 0% { opacity:0; transform:scale(.4); } 60% { opacity:1; transform:scale(1.25); } 100% { opacity:1; transform:scale(1); } }
+  @keyframes relay { 0%,18% { opacity:.25; r:2; } 34% { opacity:1; } 60%,100% { opacity:.3; } }
+  @keyframes softPulse { 0%,100% { opacity:1; } 50% { opacity:.3; } }
+  @keyframes spinSlow { to { transform:rotate(360deg); } }
+  @media (max-width: 900px) {
+    [data-stack] { grid-template-columns: 1fr !important; }
+    [data-cols-2] { grid-template-columns: repeat(2,minmax(0,1fr)) !important; }
+    [data-hide-mobile] { display: none !important; }
+  }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
+</helmet>
+
+<div style="--acc-a:{{ accA }};--acc-b:{{ accB }};--sy:{{ sy }};--ds:{{ ds }};--tex:{{ tex }};--tex-size:{{ texSize }};--glow:{{ glow }};position:relative;background:#060810;overflowX:clip">
+  <div style="position:sticky;top:0;zIndex:60">
+    <dc-import name="SiteNav" active="home" hint-size="100%,72px"></dc-import>
+  </div>
+
+  <section style="position:relative;padding:calc(112px * var(--sy)) clamp(20px,4vw,56px) 0;backgroundImage:var(--tex);backgroundSize:var(--tex-size)">
+    <div style="position:absolute;top:0;right:0;bottom:0;width:min(72%,1180px);pointerEvents:none;backgroundImage:url('images/hero-datahall.png');backgroundSize:cover;backgroundPosition:right center;backgroundRepeat:no-repeat"></div>
+    <div style="position:absolute;inset:0;pointerEvents:none;background:linear-gradient(90deg,#060810 0%,#060810 30%,rgba(6,8,16,.85) 48%,rgba(6,8,16,.35) 68%,rgba(6,8,16,.15) 100%)"></div>
+    <div style="position:absolute;inset:0;pointerEvents:none;background:linear-gradient(180deg,rgba(6,8,16,.55) 0%,rgba(6,8,16,0) 26%,rgba(6,8,16,.55) 88%,#060810 100%)"></div>
+    <div style="position:absolute;top:0;left:0;right:0;height:520px;pointerEvents:none;background:radial-gradient(110% 100% at 12% 14%, var(--glow), rgba(6,8,16,0) 60%)"></div>
+    <svg viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice" style="position:absolute;top:0;left:0;width:100%;height:100%;pointerEvents:none;opacity:.9" aria-hidden="true">
+      <defs>
+        <linearGradient id="heroFan" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stopColor="var(--acc-a)" stopOpacity=".5" />
+          <stop offset="1" stopColor="var(--acc-a)" stopOpacity="0" />
+        </linearGradient>
+        <linearGradient id="heroFanB" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stopColor="var(--acc-b)" stopOpacity=".42" />
+          <stop offset="1" stopColor="var(--acc-b)" stopOpacity="0" />
+        </linearGradient>
+      </defs>
+      <g fill="none" strokeWidth="1" strokeDasharray="1800" strokeDashoffset="1800" style="animation:drawin 1.8s cubic-bezier(.2,.8,.25,1) both">
+        <g stroke="url(#heroFan)">
+          <line x1="-100" y1="300" x2="820" y2="-40" /><line x1="-100" y1="300" x2="820" y2="90" />
+          <line x1="-100" y1="300" x2="840" y2="230" /><line x1="-100" y1="300" x2="840" y2="380" />
+        </g>
+        <g stroke="url(#heroFanB)">
+          <line x1="-100" y1="300" x2="820" y2="520" /><line x1="-100" y1="300" x2="800" y2="660" />
+          <line x1="-100" y1="300" x2="740" y2="780" />
+        </g>
+      </g>
+      <g strokeWidth="1.6" fill="none" strokeLinecap="round" strokeDasharray="90 1600">
+        <line x1="-100" y1="300" x2="820" y2="90" stroke="var(--acc-a)" style="animation:travel 7s linear infinite" />
+        <line x1="-100" y1="300" x2="840" y2="380" stroke="var(--acc-a)" style="animation:travel 9.5s linear infinite;animation-delay:-3.4s" />
+        <line x1="-100" y1="300" x2="820" y2="520" stroke="var(--acc-b)" style="animation:travel 8.5s linear infinite;animation-delay:-1.6s" />
+        <line x1="-100" y1="300" x2="740" y2="780" stroke="var(--acc-b)" style="animation:travel 11s linear infinite;animation-delay:-6s" />
+      </g>
+      <circle cx="-100" cy="300" r="3.5" fill="var(--acc-a)" style="animation:softPulse 3.2s ease-in-out infinite" />
+    </svg>
+    <div style="position:relative;maxWidth:1320px;margin:0 auto">
+      <div style="display:grid;gridTemplateColumns:1fr auto;gap:40px;alignItems:end" data-stack>
+        <div>
+          <span style="display:inline-flex;alignItems:center;gap:9px;fontFamily:'JetBrains Mono',monospace;fontSize:10.5px;letterSpacing:0.2em;textTransform:uppercase;color:rgba(233,238,246,.68)">
+            <span style="display:block;width:6px;height:6px;borderRadius:50%;background:var(--acc-b);animation:softPulse 2.6s ease-in-out infinite"></span>
+            Mobile backend infrastructure
+          </span>
+          <h1 style="margin:26px 0 0;fontFamily:'Space Grotesk',sans-serif;fontWeight:300;fontSize:calc(clamp(44px,7.6vw,116px) * var(--ds));lineHeight:0.96;letterSpacing:-0.035em;color:#F2F5FA">You build the app.<br />We make it <span style="color:var(--acc-a)">production</span><span style="color:var(--acc-b)">-ready.</span></h1>
+        </div>
+        <div style="display:flex;flexDirection:column;alignItems:flex-end;gap:18px;paddingBottom:10px" data-hide-mobile>
+          <span style="fontFamily:'JetBrains Mono',monospace;fontSize:10.5px;letterSpacing:0.2em;textTransform:uppercase;color:rgba(233,238,246,.64);writingMode:vertical-rl">scroll</span>
+        </div>
+      </div>
+
+      <div style="marginTop:46px;display:grid;gridTemplateColumns:minmax(0,1fr) minmax(0,1.05fr);gap:56px;alignItems:end" data-stack>
+        <p style="margin:0;maxWidth:520px;fontSize:17px;lineHeight:1.66;color:rgba(233,238,246,.62)">StackLaunch runs the secure, scalable cloud backend behind your app. From AWS to Kubernetes to monitoring, we handle it, so you can focus on growing your product instead of firefighting your servers.</p>
+        <div style="display:flex;gap:10px;flexWrap:wrap">
+          <a href="Contact.dc.html" style="display:inline-flex;alignItems:center;gap:10px;padding:12px 20px;borderRadius:999px;background:#F2F5FA;color:#060810;fontSize:14px;fontWeight:500;textDecoration:none;transition:all 220ms cubic-bezier(.2,.8,.25,1)" style-hover="background:var(--acc-a);color:#fff">Book a free infrastructure review<span style="fontFamily:'JetBrains Mono',monospace;fontSize:13px">&rsaquo;</span></a>
+          <a href="#how-we-help" style="display:inline-flex;alignItems:center;gap:10px;padding:12px 20px;borderRadius:999px;border:1px solid rgba(255,255,255,.16);color:#F2F5FA;fontSize:14px;textDecoration:none;transition:all 220ms cubic-bezier(.2,.8,.25,1)" style-hover="border-color:rgba(52,211,153,.6);color:#F2F5FA">See what we handle<span style="fontFamily:'JetBrains Mono',monospace;fontSize:13px">&rsaquo;</span></a>
+        </div>
+      </div>
+
+      <div style="marginTop:64px;paddingTop:18px;borderTop:1px solid rgba(255,255,255,.09);display:grid;gridTemplateColumns:repeat(3,minmax(0,1fr));gap:24px;paddingBottom:26px" data-cols-2>
+        <span style="fontFamily:'JetBrains Mono',monospace;fontSize:10.5px;letterSpacing:0.18em;textTransform:uppercase;color:rgba(233,238,246,.66)">Runs on AWS · Kubernetes · Terraform</span>
+
+        <span style="fontFamily:'JetBrains Mono',monospace;fontSize:10.5px;letterSpacing:0.18em;textTransform:uppercase;color:rgba(233,238,246,.66);textAlign:right">All client platforms healthy</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="position:relative;overflow:hidden;padding:calc(104px * var(--sy)) clamp(20px,4vw,56px) calc(96px * var(--sy));borderTop:1px solid rgba(255,255,255,.09)">
+    <div style="position:absolute;left:0;bottom:0;width:min(78%,1120px);height:min(82%,700px);pointerEvents:none;backgroundImage:url('images/problem-desk.png');backgroundSize:cover;backgroundPosition:right bottom;backgroundRepeat:no-repeat;transform:scaleX(-1);WebkitMaskImage:radial-gradient(135% 118% at 6% 100%, #000 34%, rgba(0,0,0,.45) 66%, transparent 88%);maskImage:radial-gradient(135% 118% at 6% 100%, #000 34%, rgba(0,0,0,.45) 66%, transparent 88%)"></div>
+    <div style="position:absolute;inset:0;pointerEvents:none;background:linear-gradient(180deg,#060810 0%,rgba(6,8,16,.9) 22%,rgba(6,8,16,.55) 52%,rgba(6,8,16,.35) 100%)"></div>
+    <div style="position:absolute;inset:0;pointerEvents:none;background:linear-gradient(270deg,#060810 0%,rgba(6,8,16,.6) 34%,rgba(6,8,16,0) 72%)"></div>
+    <svg viewBox="0 0 1440 620" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;pointerEvents:none;opacity:.75" aria-hidden="true">
+      <defs>
+        <linearGradient id="clPa" x1="1" y1="0" x2="0" y2="0">
+          <stop offset="0" stopColor="var(--acc-a)" stopOpacity=".42" /><stop offset="1" stopColor="var(--acc-a)" stopOpacity="0" />
+        </linearGradient>
+        <linearGradient id="clPb" x1="1" y1="0" x2="0" y2="0">
+          <stop offset="0" stopColor="var(--acc-b)" stopOpacity=".36" /><stop offset="1" stopColor="var(--acc-b)" stopOpacity="0" />
+        </linearGradient>
+      </defs>
+      <g fill="none" strokeWidth="1" strokeDasharray="1800" strokeDashoffset="1800" style="animation:drawin 2s cubic-bezier(.2,.8,.25,1) both;animation-timeline:view();animation-range:entry 0% cover 34%">
+        <g stroke="url(#clPa)"><line x1="1530" y1="300" x2="740" y2="-20" /><line x1="1530" y1="300" x2="740" y2="130" /><line x1="1530" y1="300" x2="760" y2="280" /></g>
+        <g stroke="url(#clPb)"><line x1="1530" y1="300" x2="760" y2="450" /><line x1="1530" y1="300" x2="800" y2="620" /></g>
+      </g>
+      <g strokeWidth="1.5" fill="none" strokeLinecap="round" strokeDasharray="80 1600">
+        <line x1="1530" y1="300" x2="740" y2="130" stroke="var(--acc-a)" style="animation:travel 9s linear infinite" />
+        <line x1="1530" y1="300" x2="760" y2="450" stroke="var(--acc-b)" style="animation:travel 11s linear infinite;animation-delay:-4.5s" />
+      </g>
+      <circle cx="1530" cy="300" r="3" fill="var(--acc-a)" style="animation:softPulse 3.4s ease-in-out infinite" />
+    </svg>
+    <div style="position:relative;maxWidth:1320px;margin:0 auto;display:grid;gridTemplateColumns:minmax(0,1fr) minmax(0,1.15fr);gap:64px;alignItems:start" data-stack>
+      <div style="animation:rise .8s cubic-bezier(.2,.8,.25,1) both;animation-timeline:view();animation-range:entry 4% cover 24%">
+        <span style="fontFamily:'JetBrains Mono',monospace;fontSize:10.5px;letterSpacing:0.2em;textTransform:uppercase;color:rgba(233,238,246,.66)">01 · The problem</span>
+        <h2 style="margin:24px 0 0;fontFamily:'Space Grotesk',sans-serif;fontWeight:300;fontSize:calc(clamp(32px,4.2vw,60px) * var(--ds));lineHeight:1.02;letterSpacing:-0.03em;color:#F2F5FA">The gap between <span style="color:var(--acc-a)">it works</span> and <span style="color:var(--acc-b)">it goes live</span></h2>
+        <p style="margin:26px 0 0;maxWidth:420px;fontSize:16.5px;lineHeight:1.66">You built the app and it runs well in the demo. Then real users come on board, and the hard questions begin.</p>
+      </div>
+      <div>
+        <sc-for list="{{ problems }}" as="p" hint-placeholder-count="4">
+          <div style="display:grid;gridTemplateColumns:44px minmax(0,1fr) minmax(0,1fr);gap:20px;padding:26px 0;borderTop:1px solid rgba(255,255,255,.09);alignItems:baseline;transition:background 240ms ease" style-hover="background:rgba(255,255,255,.02)">
+            <span style="fontFamily:'JetBrains Mono',monospace;fontSize:11px;color:rgba(233,238,246,.64)">{{ p.n }}</span>
+            <span style="fontSize:19px;lineHeight:1.35;color:#F2F5FA;fontWeight:400">{{ p.a }}</span>
+            <span style="fontSize:15.5px;lineHeight:1.55;color:rgba(233,238,246,.66)">{{ p.b }}</span>
+          </div>
+        </sc-for>
+        <p style="margin:34px 0 0;maxWidth:560px;fontSize:16.5px;lineHeight:1.66;paddingTop:26px;borderTop:1px solid rgba(255,255,255,.09)">Hiring a full platform team costs months you do not have and a salary most startups are not ready for. Closing that gap is exactly what we do for you.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="how-we-help" style="position:relative;overflow:hidden;padding:calc(88px * var(--sy)) clamp(20px,4vw,56px) calc(92px * var(--sy));background:#0A0D16;borderTop:1px solid rgba(255,255,255,.09)">
+    <svg viewBox="0 0 1440 620" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;pointerEvents:none;opacity:.75" aria-hidden="true">
+      <defs>
+        <linearGradient id="clHa" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stopColor="var(--acc-a)" stopOpacity=".42" /><stop offset="1" stopColor="var(--acc-a)" stopOpacity="0" />
+        </linearGradient>
+        <linearGradient id="clHb" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stopColor="var(--acc-b)" stopOpacity=".36" /><stop offset="1" stopColor="var(--acc-b)" stopOpacity="0" />
+        </linearGradient>
+      </defs>
+      <g fill="none" strokeWidth="1" strokeDasharray="1800" strokeDashoffset="1800" style="animation:drawin 2s cubic-bezier(.2,.8,.25,1) both;animation-timeline:view();animation-range:entry 0% cover 34%">
+        <g stroke="url(#clHa)"><line x1="-90" y1="310" x2="700" y2="-20" /><line x1="-90" y1="310" x2="700" y2="120" /><line x1="-90" y1="310" x2="680" y2="270" /></g>
+        <g stroke="url(#clHb)"><line x1="-90" y1="310" x2="680" y2="450" /><line x1="-90" y1="310" x2="720" y2="620" /></g>
+      </g>
+      <g strokeWidth="1.5" fill="none" strokeLinecap="round" strokeDasharray="80 1600">
+        <line x1="-90" y1="310" x2="700" y2="120" stroke="var(--acc-a)" style="animation:travel 9s linear infinite" />
+        <line x1="-90" y1="310" x2="680" y2="450" stroke="var(--acc-b)" style="animation:travel 11s linear infinite;animation-delay:-4.5s" />
+      </g>
+      <circle cx="-90" cy="310" r="3" fill="var(--acc-a)" style="animation:softPulse 3.4s ease-in-out infinite" />
+    </svg>
+    <div style="position:relative;maxWidth:1320px;margin:0 auto">
+      <div style="display:flex;justifyContent:space-between;alignItems:flex-end;gap:32px;flexWrap:wrap;marginBottom:40px">
+        <div>
+          <span style="fontFamily:'JetBrains Mono',monospace;fontSize:10.5px;letterSpacing:0.2em;textTransform:uppercase;color:rgba(233,238,246,.66)">02 · How we help</span>
+          <h2 style="margin:24px 0 0;maxWidth:760px;fontFamily:'Space Grotesk',sans-serif;fontWeight:300;fontSize:calc(clamp(30px,3.8vw,54px) * var(--ds));lineHeight:1.04;letterSpacing:-0.03em;color:#F2F5FA">The layer between your app <span style="color:var(--acc-a)">and a bad week</span></h2>
+        </div>
+        <span style="fontFamily:'JetBrains Mono',monospace;fontSize:10.5px;letterSpacing:0.18em;textTransform:uppercase;color:rgba(233,238,246,.64)">003 panels · live</span>
+      </div>
+      <div style="display:grid;gridTemplateColumns:repeat(3,minmax(0,1fr));gap:20px;alignItems:stretch" data-stack>
+
+        <article style="position:relative;padding:26px;borderRadius:18px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012));display:flex;flexDirection:column;gap:18px;transition:border-color 240ms ease" style-hover="border-color:rgba(255,255,255,.2)">
+          <div style="display:flex;justifyContent:space-between;alignItems:center">
+            <span style="fontFamily:'JetBrains Mono',monospace;fontSize:10.5px;letterSpacing:0.16em;color:rgba(233,238,246,.64)">001 / reliability</span>
+            <span style="display:inline-flex;alignItems:center;gap:7px;fontFamily:'JetBrains Mono',monospace;fontSize:10px;letterSpacing:0.16em;textTransform:uppercase;color:var(--acc-b)"><span style="display:block;width:6px;height:6px;borderRadius:50%;background:var(--acc-b);animation:softPulse 2.4s ease-in-out infinite"></span>healthy</span>
+          </div>
+          <h3 style="margin:0;fontFamily:'Space Grotesk',sans-serif;fontWeight:400;fontSize:24px;lineHeight:1.15;letterSpacing:-0.02em;color:#F2F5FA">We hear about it before your users do</h3>
+          <svg viewBox="0 0 320 92" preserveAspectRatio="none" style="width:100%;flex:1;minHeight:120px;height:auto;display:block" aria-hidden="true">
+            <path d="M0 74 L26 66 L52 78 L78 50 L104 62 L130 40 L156 54 L182 30 L208 42 L234 22 L260 34 L286 14 L320 24" fill="none" stroke="var(--acc-a)" strokeWidth="1.6" strokeDasharray="600" strokeDashoffset="600" style="animation:dash600 1.6s cubic-bezier(.2,.8,.25,1) both;animation-timeline:view();animation-range:entry 6% cover 30%" />
+            <path d="M0 84 L26 86 L52 80 L78 84 L104 76 L130 82 L156 72 L182 78 L208 68 L234 76 L260 66 L286 72 L320 62" fill="none" stroke="rgba(52,211,153,.75)" strokeWidth="1.4" strokeDasharray="600" strokeDashoffset="600" style="animation:dash600 2s cubic-bezier(.2,.8,.25,1) both;animation-timeline:view();animation-range:entry 6% cover 34%" />
+            <path d="M0 74 L26 66 L52 78 L78 50 L104 62 L130 40 L156 54 L182 30 L208 42 L234 22 L260 34 L286 14 L320 24" fill="none" stroke="#DCE9FF" strokeWidth="2" strokeLinecap="round" strokeDasharray="26 660" style="animation:runDash 4.6s linear infinite" />
+            <circle cx="286" cy="14" r="3" fill="var(--acc-a)" style="transform-box:fill-box;transform-origin:center;animation:blipIn 1.4s cubic-bezier(.2,.8,.25,1) both;animation-timeline:view();animation-range:entry 12% cover 34%" />
+          </svg>
+                    <p style="margin:auto 0 0;paddingTop:18px;borderTop:1px solid rgba(255,255,255,.09);fontSize:15px;lineHeight:1.6;color:rgba(233,238,246,.66)">Metrics, logs and alerts are wired to a rotation that answers. Backups run nightly and get restored on purpose, not in a panic.</p>
+        </article>
+
+        <article style="position:relative;padding:26px;borderRadius:18px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012));display:flex;flexDirection:column;gap:18px;transition:border-color 240ms ease" style-hover="border-color:rgba(255,255,255,.2)">
+          <div style="display:flex;justifyContent:space-between;alignItems:center">
+            <span style="fontFamily:'JetBrains Mono',monospace;fontSize:10.5px;letterSpacing:0.16em;color:rgba(233,238,246,.64)">002 / reach</span>
+            <span style="fontFamily:'JetBrains Mono',monospace;fontSize:10px;letterSpacing:0.16em;textTransform:uppercase;color:rgba(233,238,246,.64)">3 regions</span>
+          </div>
+          <h3 style="margin:0;fontFamily:'Space Grotesk',sans-serif;fontWeight:400;fontSize:24px;lineHeight:1.15;letterSpacing:-0.02em;color:#F2F5FA">Close to your users, with somewhere to fail over to</h3>
+          <svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid meet" style="width:100%;flex:1;minHeight:120px;height:auto;display:block" aria-hidden="true">
+            <g fill="none" stroke="rgba(255,255,255,.14)" strokeWidth="1" strokeDasharray="600" strokeDashoffset="600" style="animation:dash600 1.8s cubic-bezier(.2,.8,.25,1) both;animation-timeline:view();animation-range:entry 6% cover 32%">
+              <path d="M150 140 A 110 110 0 0 1 40 30" /><path d="M150 140 A 84 84 0 0 1 66 56" /><path d="M150 140 A 58 58 0 0 1 92 82" /><path d="M150 140 A 32 32 0 0 1 118 108" />
+            </g>
+            <path d="M150 140 A 84 84 0 0 1 66 56" fill="none" stroke="var(--acc-b)" strokeWidth="1.8" strokeLinecap="round" strokeDasharray="22 600" style="animation:runDash 5.2s linear infinite" />
+            <path d="M150 140 A 110 110 0 0 1 40 30" fill="none" stroke="var(--acc-a)" strokeWidth="1.6" strokeLinecap="round" strokeDasharray="18 600" style="animation:runDash 7s linear infinite;animation-delay:-2.4s" />
+            <circle cx="150" cy="140" r="4" fill="var(--acc-a)" style="animation:softPulse 2.6s ease-in-out infinite" />
+            <circle cx="118" cy="108" r="2.4" fill="#93B4FC" style="animation:relay 5.2s ease-in-out infinite" />
+            <circle cx="92" cy="82" r="2.6" fill="#93B4FC" style="animation:relay 5.2s ease-in-out infinite;animation-delay:.5s" />
+            <circle cx="66" cy="56" r="3" fill="var(--acc-b)" style="animation:relay 5.2s ease-in-out infinite;animation-delay:1s" />
+            <circle cx="40" cy="30" r="2.6" fill="var(--acc-b)" style="animation:relay 5.2s ease-in-out infinite;animation-delay:1.5s" />
+          </svg>
+                    <p style="margin:auto 0 0;paddingTop:18px;borderTop:1px solid rgba(255,255,255,.09);fontSize:15px;lineHeight:1.6;color:rgba(233,238,246,.66)">Traffic is served from the region nearest each user, and the failover region is tested every month, not assumed.</p>
+        </article>
+
+        <article style="position:relative;padding:26px;borderRadius:18px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012));display:flex;flexDirection:column;gap:18px;transition:border-color 240ms ease" style-hover="border-color:rgba(255,255,255,.2)">
+          <div style="display:flex;justifyContent:space-between;alignItems:center">
+            <span style="fontFamily:'JetBrains Mono',monospace;fontSize:10.5px;letterSpacing:0.16em;color:rgba(233,238,246,.64)">003 / automation</span>
+            <span style="fontFamily:'JetBrains Mono',monospace;fontSize:10px;letterSpacing:0.16em;textTransform:uppercase;color:var(--acc-b)">passing</span>
+          </div>
+          <h3 style="margin:0;fontFamily:'Space Grotesk',sans-serif;fontWeight:400;fontSize:24px;lineHeight:1.15;letterSpacing:-0.02em;color:#F2F5FA">Any release can be put back in one command</h3>
+          <svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid meet" style="width:100%;flex:1;minHeight:120px;height:auto;display:block" aria-hidden="true">
+            <g transform="translate(150,75)">
+              <g style="animation:spinSlow 48s linear infinite">
+                <g fill="none" stroke="rgba(255,255,255,.13)" strokeWidth="1" transform="rotate(-16)">
+                  <ellipse rx="120" ry="42" /><ellipse rx="86" ry="30" /><ellipse rx="52" ry="18" />
+                </g>
+                <g transform="rotate(-16)">
+                  <circle cx="120" cy="0" r="3" fill="var(--acc-a)" /><circle cx="-86" cy="0" r="2.6" fill="var(--acc-b)" /><circle cx="38" cy="12" r="2.2" fill="#93B4FC" />
+                </g>
+              </g>
+              <circle r="2.6" fill="#F2F5FA" />
+            </g>
+          </svg>
+                    <p style="margin:auto 0 0;paddingTop:18px;borderTop:1px solid rgba(255,255,255,.09);fontSize:15px;lineHeight:1.6;color:rgba(233,238,246,.66)">Build, migrate and roll out run as one pipeline. When a release misbehaves, the last good version goes back in minutes.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div style="position:relative;overflow:hidden;padding:34px 0;borderTop:1px solid rgba(255,255,255,.09);borderBottom:1px solid rgba(255,255,255,.09)">
+    <div style="display:flex;width:max-content;animation:marquee 34s linear infinite">
+      <span style="display:inline-block;paddingRight:48px;fontFamily:'Space Grotesk',sans-serif;fontWeight:300;fontSize:calc(clamp(46px,9vw,132px) * var(--ds));lineHeight:1;letterSpacing:-0.04em;color:rgba(242,245,250,.09);whiteSpace:nowrap">Secure · Scalable · Monitored · <span style="color:rgba(59,130,246,.5)">Production-ready</span> · Secure · Scalable · Monitored · <span style="color:rgba(52,211,153,.45)">Production-ready</span> · </span>
+      <span style="display:inline-block;paddingRight:48px;fontFamily:'Space Grotesk',sans-serif;fontWeight:300;fontSize:calc(clamp(46px,9vw,132px) * var(--ds));lineHeight:1;letterSpacing:-0.04em;color:rgba(242,245,250,.09);whiteSpace:nowrap">Secure · Scalable · Monitored · <span style="color:rgba(59,130,246,.5)">Production-ready</span> · Secure · Scalable · Monitored · <span style="color:rgba(52,211,153,.45)">Production-ready</span> · </span>
+    </div>
+  </div>
+
+  <section style="position:relative;overflow:hidden;padding:calc(100px * var(--sy)) clamp(20px,4vw,56px)">
+    <div style="position:absolute;top:0;right:0;bottom:0;width:min(74%,1180px);pointerEvents:none;backgroundImage:url('images/steps-cabling.png');backgroundSize:cover;backgroundPosition:right center;backgroundRepeat:no-repeat;WebkitMaskImage:linear-gradient(to left,#000 22%,rgba(0,0,0,.5) 60%,transparent 94%);maskImage:linear-gradient(to left,#000 22%,rgba(0,0,0,.5) 60%,transparent 94%)"></div>
+    <div style="position:absolute;inset:0;pointerEvents:none;background:linear-gradient(90deg,#060810 0%,rgba(6,8,16,.88) 34%,rgba(6,8,16,.6) 66%,rgba(6,8,16,.4) 100%)"></div>
+    <svg viewBox="0 0 1440 620" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;pointerEvents:none;opacity:.75" aria-hidden="true">
+      <defs>
+        <linearGradient id="clWa" x1="1" y1="0" x2="0" y2="0">
+          <stop offset="0" stopColor="var(--acc-a)" stopOpacity=".42" /><stop offset="1" stopColor="var(--acc-a)" stopOpacity="0" />
+        </linearGradient>
+        <linearGradient id="clWb" x1="1" y1="0" x2="0" y2="0">
+          <stop offset="0" stopColor="var(--acc-b)" stopOpacity=".36" /><stop offset="1" stopColor="var(--acc-b)" stopOpacity="0" />
+        </linearGradient>
+      </defs>
+      <g fill="none" strokeWidth="1" strokeDasharray="1800" strokeDashoffset="1800" style="animation:drawin 2s cubic-bezier(.2,.8,.25,1) both;animation-timeline:view();animation-range:entry 0% cover 34%">
+        <g stroke="url(#clWa)"><line x1="1530" y1="300" x2="740" y2="-20" /><line x1="1530" y1="300" x2="740" y2="130" /><line x1="1530" y1="300" x2="760" y2="280" /></g>
+        <g stroke="url(#clWb)"><line x1="1530" y1="300" x2="760" y2="450" /><line x1="1530" y1="300" x2="800" y2="620" /></g>
+      </g>
+      <g strokeWidth="1.5" fill="none" strokeLinecap="round" strokeDasharray="80 1600">
+        <line x1="1530" y1="300" x2="740" y2="130" stroke="var(--acc-a)" style="animation:travel 9s linear infinite" />
+        <line x1="1530" y1="300" x2="760" y2="450" stroke="var(--acc-b)" style="animation:travel 11s linear infinite;animation-delay:-4.5s" />
+      </g>
+      <circle cx="1530" cy="300" r="3" fill="var(--acc-a)" style="animation:softPulse 3.4s ease-in-out infinite" />
+    </svg>
+    <div style="position:relative;maxWidth:1320px;margin:0 auto">
+      <span style="fontFamily:'JetBrains Mono',monospace;fontSize:10.5px;letterSpacing:0.2em;textTransform:uppercase;color:rgba(233,238,246,.66)">03 · How it works</span>
+      <h2 style="margin:24px 0 52px;fontFamily:'Space Grotesk',sans-serif;fontWeight:300;fontSize:calc(clamp(30px,3.8vw,54px) * var(--ds));lineHeight:1.04;letterSpacing:-0.03em;color:#F2F5FA">Three steps, <span style="color:var(--acc-b)">no mystery</span></h2>
+      <div>
+        <sc-for list="{{ steps }}" as="s" hint-placeholder-count="3">
+          <div style="display:grid;gridTemplateColumns:100px minmax(0,1fr) minmax(0,1fr) 40px;gap:24px;padding:30px 0;borderTop:1px solid rgba(255,255,255,.09);alignItems:baseline;transition:background 240ms ease" style-hover="background:rgba(255,255,255,.02)">
+            <span style="fontFamily:'JetBrains Mono',monospace;fontSize:11px;letterSpacing:0.16em;textTransform:uppercase;color:var(--acc-a)">{{ s.n }}</span>
+            <h3 style="margin:0;fontFamily:'Space Grotesk',sans-serif;fontWeight:400;fontSize:calc(clamp(22px,2.2vw,30px) * var(--ds));lineHeight:1.2;letterSpacing:-0.02em;color:#F2F5FA">{{ s.title }}</h3>
+            <p style="margin:0;fontSize:15.5px;lineHeight:1.6;color:rgba(233,238,246,.66)">{{ s.body }}</p>
+            <span style="fontFamily:'JetBrains Mono',monospace;fontSize:14px;color:rgba(233,238,246,.28);textAlign:right">+</span>
+          </div>
+        </sc-for>
+        <div style="borderTop:1px solid rgba(255,255,255,.09)"></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="position:relative;overflow:hidden;padding:calc(100px * var(--sy)) clamp(20px,4vw,56px);borderTop:1px solid rgba(255,255,255,.09)">
+    <svg viewBox="0 0 1440 620" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;pointerEvents:none;opacity:.75" aria-hidden="true">
+      <defs>
+        <linearGradient id="clAa" x1="1" y1="0" x2="0" y2="0">
+          <stop offset="0" stopColor="var(--acc-a)" stopOpacity=".42" /><stop offset="1" stopColor="var(--acc-a)" stopOpacity="0" />
+        </linearGradient>
+        <linearGradient id="clAb" x1="1" y1="0" x2="0" y2="0">
+          <stop offset="0" stopColor="var(--acc-b)" stopOpacity=".36" /><stop offset="1" stopColor="var(--acc-b)" stopOpacity="0" />
+        </linearGradient>
+      </defs>
+      <g fill="none" strokeWidth="1" strokeDasharray="1800" strokeDashoffset="1800" style="animation:drawin 2s cubic-bezier(.2,.8,.25,1) both;animation-timeline:view();animation-range:entry 0% cover 34%">
+        <g stroke="url(#clAa)"><line x1="1530" y1="300" x2="740" y2="-20" /><line x1="1530" y1="300" x2="740" y2="130" /><line x1="1530" y1="300" x2="760" y2="280" /></g>
+        <g stroke="url(#clAb)"><line x1="1530" y1="300" x2="760" y2="450" /><line x1="1530" y1="300" x2="800" y2="620" /></g>
+      </g>
+      <g strokeWidth="1.5" fill="none" strokeLinecap="round" strokeDasharray="80 1600">
+        <line x1="1530" y1="300" x2="740" y2="130" stroke="var(--acc-a)" style="animation:travel 9s linear infinite" />
+        <line x1="1530" y1="300" x2="760" y2="450" stroke="var(--acc-b)" style="animation:travel 11s linear infinite;animation-delay:-4.5s" />
+      </g>
+      <circle cx="1530" cy="300" r="3" fill="var(--acc-a)" style="animation:softPulse 3.4s ease-in-out infinite" />
+    </svg>
+    <div style="position:relative;maxWidth:1320px;margin:0 auto">
+      <span style="fontFamily:'JetBrains Mono',monospace;fontSize:10.5px;letterSpacing:0.2em;textTransform:uppercase;color:rgba(233,238,246,.66)">04 · Architecture</span>
+      <h2 style="margin:24px 0 48px;fontFamily:'Space Grotesk',sans-serif;fontWeight:300;fontSize:calc(clamp(30px,3.8vw,54px) * var(--ds));lineHeight:1.04;letterSpacing:-0.03em;color:#F2F5FA">Building expertise <span style="color:var(--acc-b)">across the full stack</span></h2>
+      <div style="maxWidth:720px">
+        <div style="display:grid;gap:24px;fontFamily:'JetBrains Mono',monospace;fontSize:15px;lineHeight:1.8;color:rgba(233,238,246,.72);padding:32px;borderRadius:18px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012))">
+          <div style="display:flex;alignItems:center;gap:16px">
+            <span style="color:var(--acc-a)">▶</span>
+            <span>Mobile Apps</span>
+          </div>
+          <div style="display:flex;alignItems:center;gap:16px;color:rgba(233,238,246,.54)">
+            <span>↓</span>
+          </div>
+          <div style="display:flex;alignItems:center;gap:16px">
+            <span style="color:var(--acc-b)">▶</span>
+            <span>CloudFront</span>
+          </div>
+          <div style="display:flex;alignItems:center;gap:16px;color:rgba(233,238,246,.54)">
+            <span>↓</span>
+          </div>
+          <div style="display:flex;alignItems:center;gap:16px">
+            <span style="color:var(--acc-a)">▶</span>
+            <span>Load Balancer</span>
+          </div>
+          <div style="display:flex;alignItems:center;gap:16px;color:rgba(233,238,246,.54)">
+            <span>↓</span>
+          </div>
+          <div style="display:flex;alignItems:center;gap:16px">
+            <span style="color:var(--acc-b)">▶</span>
+            <span>Kubernetes</span>
+          </div>
+          <div style="display:flex;alignItems:center;gap:16px;color:rgba(233,238,246,.54)">
+            <span>↓</span>
+          </div>
+          <div style="display:flex;alignItems:center;gap:16px">
+            <span style="color:var(--acc-a)">▶</span>
+            <span>Go APIs</span>
+          </div>
+          <div style="display:flex;alignItems:center;gap:16px;color:rgba(233,238,246,.54)">
+            <span>↓</span>
+          </div>
+          <div style="display:flex;alignItems:center;gap:16px">
+            <span style="color:var(--acc-b)">▶</span>
+            <span>Redis</span>
+          </div>
+          <div style="display:flex;alignItems:center;gap:16px;color:rgba(233,238,246,.54)">
+            <span>↓</span>
+          </div>
+          <div style="display:flex;alignItems:center;gap:16px">
+            <span style="color:var(--acc-a)">▶</span>
+            <span>PostgreSQL</span>
+          </div>
+          <div style="display:flex;alignItems:center;gap:16px;color:rgba(233,238,246,.54)">
+            <span>↓</span>
+          </div>
+          <div style="display:flex;alignItems:center;gap:16px">
+            <span style="color:var(--acc-b)">▶</span>
+            <span>S3</span>
+          </div>
+          <div style="display:flex;alignItems:center;gap:16px;color:rgba(233,238,246,.54)">
+            <span>↓</span>
+          </div>
+          <div style="display:flex;alignItems:center;gap:16px">
+            <span style="color:var(--acc-a)">▶</span>
+            <span>Monitoring</span>
+          </div>
+        </div>
+        <p style="margin:32px 0 0;fontSize:15.5px;lineHeight:1.6;color:rgba(233,238,246,.66)">We own the full path from your users' devices all the way to your data. Every layer is monitored, scaled and kept secure.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="position:relative;overflow:hidden;padding:calc(100px * var(--sy)) clamp(20px,4vw,56px);borderTop:1px solid rgba(255,255,255,.09)">
+    <svg viewBox="0 0 1440 620" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;pointerEvents:none;opacity:.75" aria-hidden="true">
+      <defs>
+        <linearGradient id="clIa" x1="1" y1="0" x2="0" y2="0">
+          <stop offset="0" stopColor="var(--acc-a)" stopOpacity=".42" /><stop offset="1" stopColor="var(--acc-a)" stopOpacity="0" />
+        </linearGradient>
+        <linearGradient id="clIb" x1="1" y1="0" x2="0" y2="0">
+          <stop offset="0" stopColor="var(--acc-b)" stopOpacity=".36" /><stop offset="1" stopColor="var(--acc-b)" stopOpacity="0" />
+        </linearGradient>
+      </defs>
+      <g fill="none" strokeWidth="1" strokeDasharray="1800" strokeDashoffset="1800" style="animation:drawin 2s cubic-bezier(.2,.8,.25,1) both;animation-timeline:view();animation-range:entry 0% cover 34%">
+        <g stroke="url(#clIa)"><line x1="1530" y1="300" x2="740" y2="-20" /><line x1="1530" y1="300" x2="740" y2="130" /><line x1="1530" y1="300" x2="760" y2="280" /></g>
+        <g stroke="url(#clIb)"><line x1="1530" y1="300" x2="760" y2="450" /><line x1="1530" y1="300" x2="800" y2="620" /></g>
+      </g>
+      <g strokeWidth="1.5" fill="none" strokeLinecap="round" strokeDasharray="80 1600">
+        <line x1="1530" y1="300" x2="740" y2="130" stroke="var(--acc-a)" style="animation:travel 9s linear infinite" />
+        <line x1="1530" y1="300" x2="760" y2="450" stroke="var(--acc-b)" style="animation:travel 11s linear infinite;animation-delay:-4.5s" />
+      </g>
+      <circle cx="1530" cy="300" r="3" fill="var(--acc-a)" style="animation:softPulse 3.4s ease-in-out infinite" />
+    </svg>
+    <div style="position:relative;maxWidth:1320px;margin:0 auto">
+      <span style="fontFamily:'JetBrains Mono',monospace;fontSize:10.5px;letterSpacing:0.2em;textTransform:uppercase;color:rgba(233,238,246,.66)">05 · Industries</span>
+      <h2 style="margin:24px 0 48px;maxWidth:700px;fontFamily:'Space Grotesk',sans-serif;fontWeight:300;fontSize:calc(clamp(30px,3.6vw,50px) * var(--ds));lineHeight:1.04;letterSpacing:-0.03em;color:#F2F5FA">Built for teams that <span style="color:var(--acc-b)">cannot afford to go down</span></h2>
+      <div style="display:grid;gridTemplateColumns:repeat(4,minmax(0,1fr));gap:14px" data-cols-2>
+        <sc-for list="{{ industries }}" as="ind" hint-placeholder-count="8">
+          <div style="position:relative;padding:18px 16px 16px;borderRadius:14px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.012));boxShadow:0 14px 30px -24px rgba(0,0,0,.9);display:flex;flexDirection:column;alignItems:center;gap:16px;minHeight:132px;textAlign:center;transition:all 260ms cubic-bezier(.2,.8,.25,1)" style-hover="border-color:rgba(59,130,246,.55);background:linear-gradient(180deg,rgba(59,130,246,.16),rgba(52,211,153,.06));transform:translateY(-3px);box-shadow:0 24px 46px -22px rgba(37,99,235,.75),inset 0 1px 0 rgba(255,255,255,.16)">
+            <span style="position:absolute;top:12px;right:12px;fontFamily:'JetBrains Mono',monospace;fontSize:10px;letterSpacing:0.16em;color:rgba(233,238,246,.64)">{{ ind.n }}</span>
+            <span style="display:flex;alignItems:center;justifyContent:center;width:52px;height:52px;marginTop:6px;borderRadius:14px;border:1px solid rgba(255,255,255,.14);background:linear-gradient(160deg,rgba(59,130,246,.24),rgba(52,211,153,.08));boxShadow:0 10px 22px -14px rgba(37,99,235,.9),inset 0 1px 0 rgba(255,255,255,.16)">
+              <span style="width:28px;height:28px;background:#EAF2FF;WebkitMaskImage:{{ ind.mask }};maskImage:{{ ind.mask }};WebkitMaskRepeat:no-repeat;maskRepeat:no-repeat;WebkitMaskPosition:center;maskPosition:center;WebkitMaskSize:contain;maskSize:contain"></span>
+            </span>
+            <span style="marginTop:auto;fontSize:15px;lineHeight:1.35;color:#F2F5FA">{{ ind.label }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="position:relative;padding:calc(120px * var(--sy)) clamp(20px,4vw,56px) calc(130px * var(--sy));borderTop:1px solid rgba(255,255,255,.09);overflow:hidden;backgroundImage:var(--tex);backgroundSize:var(--tex-size)">
+    <div style="position:absolute;inset:0;pointerEvents:none;background:radial-gradient(90% 120% at 50% 110%, var(--glow), rgba(6,8,16,0) 60%)"></div>
+    <svg viewBox="0 0 1440 620" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;pointerEvents:none" aria-hidden="true">
+      <defs>
+        <linearGradient id="ctaL" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="var(--acc-a)" stopOpacity=".45" /><stop offset="1" stopColor="var(--acc-a)" stopOpacity="0" /></linearGradient>
+        <linearGradient id="ctaR" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stopColor="var(--acc-b)" stopOpacity=".4" /><stop offset="1" stopColor="var(--acc-b)" stopOpacity="0" /></linearGradient>
+      </defs>
+      <g fill="none" strokeWidth="1" strokeDasharray="1800" strokeDashoffset="1800" style="animation:drawin 2.2s cubic-bezier(.2,.8,.25,1) both;animation-timeline:view();animation-range:entry 0% cover 32%">
+        <g stroke="url(#ctaL)"><line x1="-80" y1="310" x2="620" y2="30" /><line x1="-80" y1="310" x2="600" y2="180" /><line x1="-80" y1="310" x2="600" y2="440" /><line x1="-80" y1="310" x2="640" y2="600" /></g>
+        <g stroke="url(#ctaR)"><line x1="1520" y1="310" x2="820" y2="30" /><line x1="1520" y1="310" x2="840" y2="180" /><line x1="1520" y1="310" x2="840" y2="440" /><line x1="1520" y1="310" x2="800" y2="600" /></g>
+      </g>
+      <g strokeWidth="1.6" fill="none" strokeLinecap="round" strokeDasharray="90 1600">
+        <line x1="-80" y1="310" x2="600" y2="180" stroke="var(--acc-a)" style="animation:travel 8s linear infinite" />
+        <line x1="1520" y1="310" x2="840" y2="440" stroke="var(--acc-b)" style="animation:travel 10s linear infinite;animation-delay:-4s" />
+      </g>
+      <circle cx="-80" cy="310" r="3" fill="var(--acc-a)" style="animation:softPulse 3.2s ease-in-out infinite" />
+      <circle cx="1520" cy="310" r="3" fill="var(--acc-b)" style="animation:softPulse 3.2s ease-in-out infinite;animation-delay:-1.6s" />
+    </svg>
+    <div style="position:relative;maxWidth:1000px;margin:0 auto;textAlign:center">
+      <h2 style="margin:0;fontFamily:'Space Grotesk',sans-serif;fontWeight:300;fontSize:calc(clamp(34px,5.2vw,76px) * var(--ds));lineHeight:1.0;letterSpacing:-0.035em;color:#F2F5FA">Ready to make your backend <span style="color:var(--acc-b)">production-ready?</span></h2>
+      <p style="margin:26px auto 0;maxWidth:560px;fontSize:16.5px;lineHeight:1.66">Start with a free infrastructure review. We will show you exactly where you stand, with no obligation and no jargon.</p>
+      <a href="Contact.dc.html" style="display:inline-flex;alignItems:center;gap:10px;marginTop:36px;padding:14px 24px;borderRadius:999px;background:#F2F5FA;color:#060810;fontSize:15px;fontWeight:500;textDecoration:none;transition:all 220ms cubic-bezier(.2,.8,.25,1)" style-hover="background:var(--acc-a);color:#fff">Book your free review<span style="fontFamily:'JetBrains Mono',monospace;fontSize:13px">&rsaquo;</span></a>
+    </div>
+  </section>
+
+  <dc-import name="SiteFooter" hint-size="100%,360px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Azure and emerald&quot;,&quot;Azure only&quot;,&quot;Emerald only&quot;,&quot;Warm signal&quot;],&quot;default&quot;:&quot;Azure and emerald&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Feel&quot;},&quot;density&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Airy&quot;,&quot;Standard&quot;,&quot;Compact&quot;],&quot;default&quot;:&quot;Standard&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Feel&quot;},&quot;surface&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Dot grid&quot;,&quot;Hairline grid&quot;,&quot;Flat ink&quot;],&quot;default&quot;:&quot;Dot grid&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Feel&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const accents = {
+      'Azure and emerald': ['#3B82F6', '#34D399'],
+      'Azure only': ['#3B82F6', '#93B4FC'],
+      'Emerald only': ['#34D399', '#6EE7B7'],
+      'Warm signal': ['#3B82F6', '#FBBF24'],
+    };
+    const [accA, accB] = accents[this.props.accent] || accents['Azure and emerald'];
+    const density = { Airy: [1.35, 1.06], Standard: [1, 1], Compact: [0.68, 0.86] };
+    const [sy, ds] = density[this.props.density] || density.Standard;
+    const surfaces = {
+      'Dot grid': ['radial-gradient(rgba(255,255,255,.055) 1px, transparent 1px)', '24px 24px'],
+      'Hairline grid': ['linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px)', '64px 64px'],
+      'Flat ink': ['none', 'auto'],
+    };
+    const [tex, texSize] = surfaces[this.props.surface] || surfaces['Dot grid'];
+    const glowStrength = this.props.surface === 'Flat ink' ? '.12' : '.22';
+    return {
+      accA, accB, sy, ds, tex, texSize,
+      glow: `rgba(37,99,235,${glowStrength})`,
+      problems: [
+        { n: '01', a: 'Traffic triples overnight.', b: 'Will it scale, or fall over?' },
+        { n: '02', a: 'The database locks at 3am.', b: 'Who gets the alert? Anyone?' },
+        { n: '03', a: 'Something important gets deleted.', b: 'Is there a backup to restore?' },
+        { n: '04', a: 'A breach makes the news.', b: 'Is your setup actually safe?' },
+      ],
+      steps: [
+        { n: 'step 01', title: 'Free review', body: 'We look at what you have and tell you plainly where it stands and what is at risk.' },
+        { n: 'step 02', title: 'The plan', body: 'A clear scope. What we will fix, what it costs, and what changes for you.' },
+        { n: 'step 03', title: 'We handle it', body: 'You ship features. We handle the backend—secure, scaled and optimised.' },
+      ],
+      industries: [
+        ['01', 'Startups', 'rocket'],
+        ['02', 'Mobile app companies', 'smartphone'],
+        ['03', 'SaaS', 'cloud'],
+        ['04', 'Fintech', 'credit-card'],
+        ['05', 'HealthTech', 'heart-pulse'],
+        ['06', 'Logistics', 'truck'],
+        ['07', 'E-commerce', 'shopping-bag'],
+        ['08', 'Digital agencies', 'monitor'],
+      ].map(([n, label, icon]) => ({ n, label, mask: `url('https://unpkg.com/lucide-static@0.400.0/icons/${icon}.svg')` })),
+    };
+  }
+}
+</script>
+</body>
+</html>

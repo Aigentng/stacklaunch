@@ -1,0 +1,14 @@
+/* Elevation is restrained: hairline border first, shadow second. Never both loud. */
+:root{
+  --shadow-none:none;
+  --shadow-xs:0 1px 2px rgba(15,23,42,.06);
+  --shadow-sm:0 1px 3px rgba(15,23,42,.07),0 1px 2px rgba(15,23,42,.04);
+  --shadow-md:0 4px 12px rgba(15,23,42,.07),0 1px 3px rgba(15,23,42,.05);
+  --shadow-lg:0 12px 32px rgba(15,23,42,.10),0 2px 6px rgba(15,23,42,.05);
+  --shadow-overlay:0 24px 64px rgba(15,23,42,.22);
+  --shadow-inset-hairline:inset 0 0 0 1px var(--border-hairline);
+
+  --blur-veil:blur(10px); /* @kind other */   /* sticky headers over content */
+  --veil-light:rgba(255,255,255,.78);
+  --veil-dark:rgba(15,23,42,.72);
+}
