@@ -308,70 +308,37 @@
     <div style="position:relative;maxWidth:1320px;margin:0 auto">
       <span style="fontFamily:'JetBrains Mono',monospace;fontSize:10.5px;letterSpacing:0.2em;textTransform:uppercase;color:rgba(233,238,246,.66)">04 · Architecture</span>
       <h2 style="margin:24px 0 48px;fontFamily:'Space Grotesk',sans-serif;fontWeight:300;fontSize:calc(clamp(30px,3.8vw,54px) * var(--ds));lineHeight:1.04;letterSpacing:-0.03em;color:#F2F5FA">Building expertise <span style="color:var(--acc-b)">across the full stack</span></h2>
-      <div style="maxWidth:720px">
-        <div style="display:grid;gap:24px;fontFamily:'JetBrains Mono',monospace;fontSize:15px;lineHeight:1.8;color:rgba(233,238,246,.72);padding:32px;borderRadius:18px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012))">
-          <div style="display:flex;alignItems:center;gap:16px">
-            <span style="color:var(--acc-a)">▶</span>
-            <span>Mobile Apps</span>
-          </div>
-          <div style="display:flex;alignItems:center;gap:16px;color:rgba(233,238,246,.54)">
-            <span>↓</span>
-          </div>
-          <div style="display:flex;alignItems:center;gap:16px">
-            <span style="color:var(--acc-b)">▶</span>
-            <span>CloudFront</span>
-          </div>
-          <div style="display:flex;alignItems:center;gap:16px;color:rgba(233,238,246,.54)">
-            <span>↓</span>
-          </div>
-          <div style="display:flex;alignItems:center;gap:16px">
-            <span style="color:var(--acc-a)">▶</span>
-            <span>Load Balancer</span>
-          </div>
-          <div style="display:flex;alignItems:center;gap:16px;color:rgba(233,238,246,.54)">
-            <span>↓</span>
-          </div>
-          <div style="display:flex;alignItems:center;gap:16px">
-            <span style="color:var(--acc-b)">▶</span>
-            <span>Kubernetes</span>
-          </div>
-          <div style="display:flex;alignItems:center;gap:16px;color:rgba(233,238,246,.54)">
-            <span>↓</span>
-          </div>
-          <div style="display:flex;alignItems:center;gap:16px">
-            <span style="color:var(--acc-a)">▶</span>
-            <span>Go APIs</span>
-          </div>
-          <div style="display:flex;alignItems:center;gap:16px;color:rgba(233,238,246,.54)">
-            <span>↓</span>
-          </div>
-          <div style="display:flex;alignItems:center;gap:16px">
-            <span style="color:var(--acc-b)">▶</span>
-            <span>Redis</span>
-          </div>
-          <div style="display:flex;alignItems:center;gap:16px;color:rgba(233,238,246,.54)">
-            <span>↓</span>
-          </div>
-          <div style="display:flex;alignItems:center;gap:16px">
-            <span style="color:var(--acc-a)">▶</span>
-            <span>PostgreSQL</span>
-          </div>
-          <div style="display:flex;alignItems:center;gap:16px;color:rgba(233,238,246,.54)">
-            <span>↓</span>
-          </div>
-          <div style="display:flex;alignItems:center;gap:16px">
-            <span style="color:var(--acc-b)">▶</span>
-            <span>S3</span>
-          </div>
-          <div style="display:flex;alignItems:center;gap:16px;color:rgba(233,238,246,.54)">
-            <span>↓</span>
-          </div>
-          <div style="display:flex;alignItems:center;gap:16px">
-            <span style="color:var(--acc-a)">▶</span>
-            <span>Monitoring</span>
-          </div>
-        </div>
-        <p style="margin:32px 0 0;fontSize:15.5px;lineHeight:1.6;color:rgba(233,238,246,.66)">We own the full path from your users' devices all the way to your data. Every layer is monitored, scaled and kept secure.</p>
+      <div style="display:grid;gridTemplateColumns:repeat(auto-fit,minmax(280px,1fr));gap:20px;maxWidth:1100px">
+        <article style="padding:28px;borderRadius:14px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(52,211,153,.04));backdrop-filter:blur(6px);transition:all 240ms ease" style-hover="border-color:rgba(59,130,246,.4);background:linear-gradient(135deg,rgba(59,130,246,.12),rgba(52,211,153,.06))">
+          <div style="fontSize:10px;fontFamily:'JetBrains Mono',monospace;letterSpacing:0.12em;color:rgba(59,130,246,.8);marginBottom:12px;textTransform:uppercase;fontWeight:500">01 · Clients</div>
+          <h4 style="margin:0 0 14px;fontSize:16px;fontWeight:500;color:#F2F5FA;fontFamily:'Space Grotesk',sans-serif">Web & Mobile</h4>
+          <p style="margin:0;fontSize:13.5px;color:rgba(233,238,246,.65);lineHeight:1.6">Browser, mobile apps, and desktop clients</p>
+        </article>
+        <article style="padding:28px;borderRadius:14px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(52,211,153,.04));backdrop-filter:blur(6px);transition:all 240ms ease" style-hover="border-color:rgba(59,130,246,.4);background:linear-gradient(135deg,rgba(59,130,246,.12),rgba(52,211,153,.06))">
+          <div style="fontSize:10px;fontFamily:'JetBrains Mono',monospace;letterSpacing:0.12em;color:rgba(59,130,246,.8);marginBottom:12px;textTransform:uppercase;fontWeight:500">02 · Edge</div>
+          <h4 style="margin:0 0 14px;fontSize:16px;fontWeight:500;color:#F2F5FA;fontFamily:'Space Grotesk',sans-serif">CloudFront CDN</h4>
+          <p style="margin:0;fontSize:13.5px;color:rgba(233,238,246,.65);lineHeight:1.6">Global cache layer, DDoS protection, SSL</p>
+        </article>
+        <article style="padding:28px;borderRadius:14px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(135deg,rgba(52,211,153,.08),rgba(59,130,246,.04));backdrop-filter:blur(6px);transition:all 240ms ease" style-hover="border-color:rgba(52,211,153,.4);background:linear-gradient(135deg,rgba(52,211,153,.12),rgba(59,130,246,.06))">
+          <div style="fontSize:10px;fontFamily:'JetBrains Mono',monospace;letterSpacing:0.12em;color:rgba(52,211,153,.8);marginBottom:12px;textTransform:uppercase;fontWeight:500">03 · Gateway</div>
+          <h4 style="margin:0 0 14px;fontSize:16px;fontWeight:500;color:#F2F5FA;fontFamily:'Space Grotesk',sans-serif">Load Balancer</h4>
+          <p style="margin:0;fontSize:13.5px;color:rgba(233,238,246,.65);lineHeight:1.6">Routes requests, rate limiting, auth checks</p>
+        </article>
+        <article style="padding:28px;borderRadius:14px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(135deg,rgba(52,211,153,.08),rgba(59,130,246,.04));backdrop-filter:blur(6px);transition:all 240ms ease" style-hover="border-color:rgba(52,211,153,.4);background:linear-gradient(135deg,rgba(52,211,153,.12),rgba(59,130,246,.06))">
+          <div style="fontSize:10px;fontFamily:'JetBrains Mono',monospace;letterSpacing:0.12em;color:rgba(52,211,153,.8);marginBottom:12px;textTransform:uppercase;fontWeight:500">04 · Orchestration</div>
+          <h4 style="margin:0 0 14px;fontSize:16px;fontWeight:500;color:#F2F5FA;fontFamily:'Space Grotesk',sans-serif">Kubernetes</h4>
+          <p style="margin:0;fontSize:13.5px;color:rgba(233,238,246,.65);lineHeight:1.6">Container orchestration, autoscaling, zero downtime</p>
+        </article>
+        <article style="padding:28px;borderRadius:14px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(52,211,153,.04));backdrop-filter:blur(6px);transition:all 240ms ease" style-hover="border-color:rgba(59,130,246,.4);background:linear-gradient(135deg,rgba(59,130,246,.12),rgba(52,211,153,.06))">
+          <div style="fontSize:10px;fontFamily:'JetBrains Mono',monospace;letterSpacing:0.12em;color:rgba(59,130,246,.8);marginBottom:12px;textTransform:uppercase;fontWeight:500">05 · Services</div>
+          <h4 style="margin:0 0 14px;fontSize:16px;fontWeight:500;color:#F2F5FA;fontFamily:'Space Grotesk',sans-serif">Go APIs, Python, Java</h4>
+          <p style="margin:0;fontSize:13.5px;color:rgba(233,238,246,.65);lineHeight:1.6">Microservices, business logic, integrations</p>
+        </article>
+        <article style="padding:28px;borderRadius:14px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(135deg,rgba(52,211,153,.08),rgba(59,130,246,.04));backdrop-filter:blur(6px);transition:all 240ms ease" style-hover="border-color:rgba(52,211,153,.4);background:linear-gradient(135deg,rgba(52,211,153,.12),rgba(59,130,246,.06))">
+          <div style="fontSize:10px;fontFamily:'JetBrains Mono',monospace;letterSpacing:0.12em;color:rgba(52,211,153,.8);marginBottom:12px;textTransform:uppercase;fontWeight:500">06 · Data</div>
+          <h4 style="margin:0 0 14px;fontSize:16px;fontWeight:500;color:#F2F5FA;fontFamily:'Space Grotesk',sans-serif">Databases & Cache</h4>
+          <p style="margin:0;fontSize:13.5px;color:rgba(233,238,246,.65);lineHeight:1.6">PostgreSQL, Redis, backup and replication</p>
+        </article>
       </div>
     </div>
   </section>
