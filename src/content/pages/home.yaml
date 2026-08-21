@@ -62,24 +62,24 @@ architecture:
   heading: Everything behind your app
   accentPhrase: across the full stack
   cards:
-    - n: 01 · Clients
-      title: Web & Mobile
-      body: Browser, mobile apps, and desktop clients
-    - n: 02 · Edge
-      title: CloudFront CDN
-      body: Global cache layer, DDoS protection, SSL
-    - n: 03 · Gateway
-      title: Load Balancer
-      body: Routes requests, rate limiting, auth checks
-    - n: 04 · Orchestration
-      title: Kubernetes
-      body: Container orchestration, autoscaling, zero downtime
-    - n: 05 · Services
-      title: Go APIs, Python, Java
-      body: Microservices, business logic, integrations
-    - n: 06 · Data
-      title: Databases & Cache
-      body: PostgreSQL, Redis, backup and replication
+    - n: 01 · Infrastructure
+      title: Cloud Infrastructure
+      body: AWS, Firebase & GCP infrastructure built for production
+    - n: 02 · Backend
+      title: APIs & Workers
+      body: Deploy, scale and operate APIs, background jobs and services
+    - n: 03 · Security
+      title: Authentication & API Security
+      body: Identity, permissions, secrets and protection for your backend
+    - n: 04 · Data
+      title: Databases & Storage
+      body: PostgreSQL, Firestore, Redis, file storage, backups and recovery
+    - n: 05 · Messaging
+      title: Push Notifications
+      body: Reliable notification pipelines using FCM and cloud messaging
+    - n: 06 · Reliabiity
+      title: Monitoring & Scaling
+      body: Logs, alerts, autoscaling and incident visibility
 industries:
   eyebrow: 05 · Industries
   heading: Built for teams that cannot afford to go down
