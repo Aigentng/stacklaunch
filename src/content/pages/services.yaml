@@ -30,18 +30,14 @@ services:
     icon: activity
     title: Monitoring & Reliability
     promise: Know before your users do.
-    body: |-
-      API health, worker failures, queue backlogs,
-      database performance, dashboards and alerts.
-    span: span 3
+    body: API health, worker failures, queue backlogs, database performance, dashboards and alert.
+    span: span 2
   - n: '005'
     icon: shield-check
     title: Database Operations
     promise: Your production data, looked after.
-    body: |-
-      PostgreSQL monitoring, backups, connections,
-      performance, security and recovery.
-    span: span 3
+    body: PostgreSQL monitoring, backups, connections, performance, security and recovery.
+    span: span 2
   - n: '006'
     icon: archive-restore
     title: Security & API Protection
