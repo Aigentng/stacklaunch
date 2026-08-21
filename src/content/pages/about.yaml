@@ -2,39 +2,35 @@ hero:
   eyebrow: About
   heading: We keep the backend up, so you can keep building.
   accentPhrase: so you can keep building.
-  statusLabel: Operating since 2023
+  statusLabel: Operational
   teamsLabel: Teams across the region and beyond
-
 story:
   lead: Great apps rarely fail because the idea was wrong. They fail because the part underneath, the infrastructure nobody sees, was not ready when it mattered.
-  quotePlain: "StackLaunch exists so that "
+  quotePlain: StackLaunch exists so that
   quoteAccent: never becomes your story.
   paragraphs:
-    - "We are a mobile backend infrastructure and platform engineering consultancy working with startups and growing businesses across the globe. We take the app you have already built and give it the production backend it needs: secure, scalable, monitored and cost-controlled, without you hiring a full-time DevOps team."
+    - 'We are a mobile backend infrastructure and platform engineering consultancy working with startups and growing product teams. We take the app you have already built and give it the production backend it needs: secure, scalable, monitored and cost-controlled, without you hiring a full-time DevOps team.'
     - Our job is to stay in the background. When we have done it well, you rarely think about your infrastructure at all. It simply works, through the traffic spike, the late-night deploy and the growth you have been working towards.
-
 marquee:
-  plainWords: "Boring is good · "
+  plainWords: Boring is good ·
   accentWord: Calm by design
-
 howWeThink:
   eyebrow: How we think
   heading: Four positions we hold
   accentPhrase: we hold
   principles:
-    - n: "01"
+    - n: '01'
       title: Production-ready is the baseline, not a luxury.
       body: Security, backups and monitoring are the floor, not a premium tier.
-    - n: "02"
+    - n: '02'
       title: Boring is good.
       body: In infrastructure, exciting usually means something is on fire. We aim for calm.
-    - n: "03"
+    - n: '03'
       title: Prevent the incident, do not just respond to it.
       body: We would rather stop the 3am alert than be praised for answering it.
-    - n: "04"
+    - n: '04'
       title: Your cloud bill is our concern too.
       body: Keeping spend sensible is part of the work, never an upsell.
-
 founderNote:
   eyebrow: Founder note
   heading: A note from the person behind it
@@ -42,14 +38,13 @@ founderNote:
   paragraphs:
     - I'm Michael Chukwunyere, Founder and Mobile Infrastructure Engineer at StackLaunch, a UK-based mobile infrastructure consultancy.
     - I bring over 15 years of technology experience across multiple industries, spanning data engineering, cloud infrastructure, DevOps and production platforms.
-    - "I founded StackLaunch to help mobile teams solve the infrastructure challenges that come with taking an application into production: deployment, scaling, security, monitoring, databases, background processing and reliability."
+    - 'I founded StackLaunch to help mobile teams solve the infrastructure challenges that come with taking an application into production: deployment, scaling, security, monitoring, databases, background processing and reliability.'
     - "My approach is practical: understand what you've built, identify the risks that matter, and put the right infrastructure and operational practices around it without unnecessary complexity."
     - Your developers focus on building the product. StackLaunch helps keep the infrastructure behind it secure, reliable and ready to grow.
   name: Michael Chukwunyere
   title: Founder & Mobile Infrastructure Engineer, StackLaunch
   linkedinUrl: https://www.linkedin.com/in/mchukwunyere/
   photo: /images/founder-michael.jpg
-
 closingCta:
   heading: Want us to take a look at your setup?
   accentPhrase: at your setup?
