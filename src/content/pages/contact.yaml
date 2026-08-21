@@ -1,0 +1,42 @@
+hero:
+  eyebrow: Contact
+  heading: Let us see where your backend stands.
+  accentPhrase: backend stands.
+  body: "Start with a free infrastructure review. We will tell you plainly what is solid and what is a risk, with no obligation, no sales script and no jargon."
+
+expect:
+  - n: step 01
+    title: You reach out
+    body: Tell us what you have built and what is worrying you. Two minutes, no more.
+  - n: step 02
+    title: We review
+    body: We look at your setup and come back with a plain read on where it stands.
+  - n: step 03
+    title: You decide
+    body: Clear next steps and costs. No pressure, no lock-in.
+
+form:
+  namePlaceholder: John Smith
+  emailPlaceholder: john@yourcompany.com
+  companyPlaceholder: Company name
+  detailPlaceholder: A logistics app on a single EC2 box. Traffic is growing and we have no backups.
+  submitLabel: Book my free review
+  confirmationLabel: Received · reply within one business day
+  footnote: We reply within one business day. Your details stay between us.
+
+info:
+  email: hello@stacklunch.africa
+  offices:
+    - label: Lagos Office
+      addressLines:
+        - StackLaunch
+        - 4, Abagbon Close, off Ologun Agbaje Street, VI
+      phone: +234 708 342 0253
+      phoneHref: "tel:+2347083420253"
+    - label: London Office
+      addressLines:
+        - Bournville Road
+        - SE6 4RN, London, United Kingdom
+      phone: +44 7769 667581
+      phoneHref: "tel:+447769667581"
+  availabilityLabel: Review slots open this week

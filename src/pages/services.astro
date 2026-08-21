@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { getEntry } from 'astro:content';
+import { splitAccent, lucideIcon } from '../lib/text';
+
+const services = (await getEntry('servicesPage', 'services'))!.data;
+
+const heroHeading = splitAccent(services.hero.heading, services.hero.accentPhrase);
+const stackHeading = splitAccent(services.stack.heading, services.stack.accentPhrase);
+const ctaHeading = splitAccent(services.closingCta.heading, services.closingCta.accentPhrase);
+
+const CALENDLY_URL = 'https://calendly.com/michuk-dev/30min';
+---
+
+<BaseLayout title="Services — StackLaunch" description="Nine services that take your mobile backend from it works on my machine to secure, scalable and running without you.">
+  <div style="position:relative;background:#060810;overflow-x:clip">
+    <div style="position:sticky;top:0;z-index:60">
+      <SiteNav active="services" />
+    </div>
+
+    <section style="position:relative;padding:104px clamp(20px,4vw,56px) 84px;background-image:radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px);background-size:24px 24px">
+      <div style="position:absolute;top:0;left:0;right:0;height:460px;pointer-events:none;background:radial-gradient(110% 100% at 20% 6%, rgba(37,99,235,.2), rgba(6,8,16,0) 60%)"></div>
+      <svg viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.9" aria-hidden="true">
+        <defs>
+          <linearGradient id="svFanA" x1="1" y1="0" x2="0" y2="0">
+            <stop offset="0" stop-color="#3B82F6" stop-opacity=".5" /><stop offset="1" stop-color="#3B82F6" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="svFanB" x1="1" y1="0" x2="0" y2="0">
+            <stop offset="0" stop-color="#34D399" stop-opacity=".42" /><stop offset="1" stop-color="#34D399" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+        <g fill="none" stroke-width="1" stroke-dasharray="1800" stroke-dashoffset="1800" style="animation:drawin 1.8s cubic-bezier(.2,.8,.25,1) both">
+          <g stroke="url(#svFanA)">
+            <line x1="1540" y1="280" x2="700" y2="-40" /><line x1="1540" y1="280" x2="700" y2="90" /><line x1="1540" y1="280" x2="680" y2="240" />
+          </g>
+          <g stroke="url(#svFanB)">
+            <line x1="1540" y1="280" x2="680" y2="420" /><line x1="1540" y1="280" x2="720" y2="580" /><line x1="1540" y1="280" x2="780" y2="720" />
+          </g>
+        </g>
+        <g stroke-width="1.6" fill="none" stroke-linecap="round" stroke-dasharray="90 1600">
+          <line x1="1540" y1="280" x2="700" y2="90" stroke="#3B82F6" style="animation:travel 7.5s linear infinite" />
+          <line x1="1540" y1="280" x2="680" y2="420" stroke="#34D399" style="animation:travel 9.5s linear infinite;animation-delay:-3.6s" />
+          <line x1="1540" y1="280" x2="780" y2="720" stroke="#34D399" style="animation:travel 12s linear infinite;animation-delay:-6.5s" />
+        </g>
+        <circle cx="1540" cy="280" r="3.5" fill="#3B82F6" style="animation:softPulse 3.2s ease-in-out infinite" />
+      </svg>
+      <div style="position:relative;max-width:1320px;margin:0 auto">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(233,238,246,.68)">{services.hero.eyebrow}</span>
+        <h1 style="margin:26px 0 0;max-width:1100px;font-family:'Space Grotesk',sans-serif;font-weight:300;font-size:clamp(42px,7vw,104px);line-height:0.98;letter-spacing:-0.035em;color:#F2F5FA">{heroHeading.before}<span style="color:#34D399">{heroHeading.accent}</span>{heroHeading.after}</h1>
+        <div style="margin-top:44px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:end" data-stack>
+          <p style="margin:0;max-width:520px;font-size:17px;line-height:1.66">{services.hero.body}</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn-primary" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:999px;background:#F2F5FA;color:#060810;font-size:14px;font-weight:500;text-decoration:none;transition:all 220ms cubic-bezier(.2,.8,.25,1)">{services.hero.primaryCtaLabel}<span style="font-family:'JetBrains Mono',monospace;font-size:13px">&rsaquo;</span></a>
+            <a class="btn-secondary" href="#stack" style="display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:999px;border:1px solid rgba(255,255,255,.16);color:#F2F5FA;font-size:14px;text-decoration:none;transition:all 220ms cubic-bezier(.2,.8,.25,1)">{services.hero.secondaryCtaLabel}<span style="font-family:'JetBrains Mono',monospace;font-size:13px">&rsaquo;</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="position:relative;overflow:hidden;padding:40px clamp(20px,4vw,56px) 96px;border-top:1px solid rgba(255,255,255,.09)">
+      <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.7" aria-hidden="true">
+        <defs>
+          <linearGradient id="svClA" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#3B82F6" stop-opacity=".4" /><stop offset="1" stop-color="#3B82F6" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="svClB" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#34D399" stop-opacity=".34" /><stop offset="1" stop-color="#34D399" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+        <g fill="none" stroke-width="1" stroke-dasharray="1800" stroke-dashoffset="1800" style="animation:drawin 2.2s cubic-bezier(.2,.8,.25,1) both;animation-timeline:view();animation-range:entry 0% cover 30%">
+          <g stroke="url(#svClA)"><line x1="-100" y1="440" x2="760" y2="60" /><line x1="-100" y1="440" x2="740" y2="240" /><line x1="-100" y1="440" x2="740" y2="430" /></g>
+          <g stroke="url(#svClB)"><line x1="-100" y1="440" x2="740" y2="640" /><line x1="-100" y1="440" x2="780" y2="880" /></g>
+        </g>
+        <g stroke-width="1.5" fill="none" stroke-linecap="round" stroke-dasharray="80 1600">
+          <line x1="-100" y1="440" x2="740" y2="240" stroke="#3B82F6" style="animation:travel 10s linear infinite" />
+          <line x1="-100" y1="440" x2="740" y2="640" stroke="#34D399" style="animation:travel 12.5s linear infinite;animation-delay:-5s" />
+        </g>
+        <circle cx="-100" cy="440" r="3" fill="#3B82F6" style="animation:softPulse 3.4s ease-in-out infinite" />
+      </svg>
+      <div style="position:relative;max-width:1320px;margin:0 auto">
+        <div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px;align-items:stretch" data-blocks>
+          {services.services.map((s) => (
+            <article class="service-card" style={`grid-column:${s.span};position:relative;padding:26px;border-radius:18px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(180deg,rgba(255,255,255,.038),rgba(255,255,255,.012));box-shadow:0 16px 34px -26px rgba(0,0,0,.9);display:flex;flex-direction:column;gap:16px;transition:all 260ms cubic-bezier(.2,.8,.25,1)`}>
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px">
+                <span style="display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:linear-gradient(160deg,rgba(59,130,246,.24),rgba(52,211,153,.08));box-shadow:0 10px 22px -14px rgba(37,99,235,.9),inset 0 1px 0 rgba(255,255,255,.16)">
+                  <span style={`width:24px;height:24px;background:#EAF2FF;-webkit-mask-image:${lucideIcon(s.icon)};mask-image:${lucideIcon(s.icon)};-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain`}></span>
+                </span>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;color:rgba(233,238,246,.64)">{s.n}</span>
+              </div>
+              <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:400;font-size:23px;line-height:1.16;letter-spacing:-0.025em;color:#F2F5FA">{s.title}</h2>
+              <p style="margin:0;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.5;color:#34D399">{s.promise}</p>
+              <p style="margin:0;padding-top:16px;border-top:1px solid rgba(255,255,255,.09);font-size:15px;line-height:1.62;color:rgba(233,238,246,.66)">{s.body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <div style="position:relative;overflow:hidden;padding:30px 0;border-top:1px solid rgba(255,255,255,.09);border-bottom:1px solid rgba(255,255,255,.09)">
+      <div style="display:flex;width:max-content;animation:marquee 36s linear infinite">
+        <span style="display:inline-block;padding-right:48px;font-family:'Space Grotesk',sans-serif;font-weight:300;font-size:clamp(40px,8vw,116px);line-height:1;letter-spacing:-0.04em;color:rgba(242,245,250,.08);white-space:nowrap">{services.marquee.beforeAccent}<span style="color:rgba(59,130,246,.45)">{services.marquee.accentWord}</span>{services.marquee.afterAccent}{services.marquee.beforeAccent}<span style="color:rgba(52,211,153,.4)">{services.marquee.accentWord}</span>{services.marquee.afterAccent}</span>
+        <span style="display:inline-block;padding-right:48px;font-family:'Space Grotesk',sans-serif;font-weight:300;font-size:clamp(40px,8vw,116px);line-height:1;letter-spacing:-0.04em;color:rgba(242,245,250,.08);white-space:nowrap">{services.marquee.beforeAccent}<span style="color:rgba(59,130,246,.45)">{services.marquee.accentWord}</span>{services.marquee.afterAccent}{services.marquee.beforeAccent}<span style="color:rgba(52,211,153,.4)">{services.marquee.accentWord}</span>{services.marquee.afterAccent}</span>
+      </div>
+    </div>
+
+    <section id="stack" style="position:relative;overflow:hidden;padding:96px clamp(20px,4vw,56px);background:#0A0D16">
+      <div style="position:absolute;left:0;bottom:0;width:min(78%,1180px);height:min(84%,720px);pointer-events:none;background-image:url('/images/stack-desk-racks.png');background-size:cover;background-position:right bottom;background-repeat:no-repeat;transform:scaleX(-1);-webkit-mask-image:radial-gradient(132% 118% at 6% 100%, #000 32%, rgba(0,0,0,.45) 64%, transparent 88%);mask-image:radial-gradient(132% 118% at 6% 100%, #000 32%, rgba(0,0,0,.45) 64%, transparent 88%)"></div>
+      <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,#0A0D16 0%,rgba(10,13,22,.88) 26%,rgba(10,13,22,.5) 62%,rgba(10,13,22,.32) 100%)"></div>
+      <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(270deg,#0A0D16 0%,rgba(10,13,22,.55) 36%,rgba(10,13,22,0) 74%)"></div>
+      <svg viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.7" aria-hidden="true">
+        <defs>
+          <linearGradient id="svStA" x1="1" y1="0" x2="0" y2="0">
+            <stop offset="0" stop-color="#3B82F6" stop-opacity=".4" /><stop offset="1" stop-color="#3B82F6" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="svStB" x1="1" y1="0" x2="0" y2="0">
+            <stop offset="0" stop-color="#34D399" stop-opacity=".34" /><stop offset="1" stop-color="#34D399" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+        <g fill="none" stroke-width="1" stroke-dasharray="1800" stroke-dashoffset="1800" style="animation:drawin 2.2s cubic-bezier(.2,.8,.25,1) both;animation-timeline:view();animation-range:entry 0% cover 32%">
+          <g stroke="url(#svStA)"><line x1="1540" y1="340" x2="760" y2="20" /><line x1="1540" y1="340" x2="740" y2="180" /><line x1="1540" y1="340" x2="740" y2="330" /></g>
+          <g stroke="url(#svStB)"><line x1="1540" y1="340" x2="740" y2="500" /><line x1="1540" y1="340" x2="800" y2="690" /></g>
+        </g>
+        <g stroke-width="1.5" fill="none" stroke-linecap="round" stroke-dasharray="80 1600">
+          <line x1="1540" y1="340" x2="740" y2="180" stroke="#3B82F6" style="animation:travel 9s linear infinite" />
+          <line x1="1540" y1="340" x2="740" y2="500" stroke="#34D399" style="animation:travel 11.5s linear infinite;animation-delay:-4.5s" />
+        </g>
+        <circle cx="1540" cy="340" r="3" fill="#34D399" style="animation:softPulse 3.4s ease-in-out infinite" />
+      </svg>
+      <div style="position:relative;max-width:1320px;margin:0 auto;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:start" data-stack>
+        <div>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(233,238,246,.66)">{services.stack.eyebrow}</span>
+          <h2 style="margin:24px 0 0;font-family:'Space Grotesk',sans-serif;font-weight:300;font-size:clamp(30px,3.6vw,50px);line-height:1.04;letter-spacing:-0.03em;color:#F2F5FA">{stackHeading.before}<span style="color:#3B82F6">{stackHeading.accent}</span>{stackHeading.after}</h2>
+          <p style="margin:24px 0 0;max-width:380px;font-size:16.5px;line-height:1.66">{services.stack.body}</p>
+        </div>
+        <div>
+          {services.stack.groups.map((g) => (
+            <div style="display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;padding:24px 0;border-top:1px solid rgba(255,255,255,.09);align-items:start" data-stack>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(233,238,246,.66);padding-top:5px">{g.label}</span>
+              <div style="display:flex;flex-wrap:wrap;gap:8px">
+                {g.items.map((t) => (
+                  <span class="tool-pill" style="display:inline-flex;align-items:center;padding:7px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.02);font-family:'JetBrains Mono',monospace;font-size:12px;color:rgba(233,238,246,.72);cursor:default;transition:all 220ms cubic-bezier(.2,.8,.25,1)">{t}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+          <div style="border-top:1px solid rgba(255,255,255,.09)"></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="position:relative;padding:110px clamp(20px,4vw,56px) 120px;border-top:1px solid rgba(255,255,255,.09);overflow:hidden">
+      <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(90% 120% at 50% 110%, rgba(37,99,235,.2), rgba(6,8,16,0) 60%)"></div>
+      <svg viewBox="0 0 1440 620" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none" aria-hidden="true">
+        <defs>
+          <linearGradient id="svCtaL" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3B82F6" stop-opacity=".45" /><stop offset="1" stop-color="#3B82F6" stop-opacity="0" /></linearGradient>
+          <linearGradient id="svCtaR" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#34D399" stop-opacity=".4" /><stop offset="1" stop-color="#34D399" stop-opacity="0" /></linearGradient>
+        </defs>
+        <g fill="none" stroke-width="1" stroke-dasharray="1800" stroke-dashoffset="1800" style="animation:drawin 2.2s cubic-bezier(.2,.8,.25,1) both;animation-timeline:view();animation-range:entry 0% cover 32%">
+          <g stroke="url(#svCtaL)"><line x1="-80" y1="310" x2="620" y2="30" /><line x1="-80" y1="310" x2="600" y2="180" /><line x1="-80" y1="310" x2="600" y2="440" /><line x1="-80" y1="310" x2="640" y2="600" /></g>
+          <g stroke="url(#svCtaR)"><line x1="1520" y1="310" x2="820" y2="30" /><line x1="1520" y1="310" x2="840" y2="180" /><line x1="1520" y1="310" x2="840" y2="440" /><line x1="1520" y1="310" x2="800" y2="600" /></g>
+        </g>
+        <g stroke-width="1.6" fill="none" stroke-linecap="round" stroke-dasharray="90 1600">
+          <line x1="-80" y1="310" x2="600" y2="180" stroke="#3B82F6" style="animation:travel 8s linear infinite" />
+          <line x1="1520" y1="310" x2="840" y2="440" stroke="#34D399" style="animation:travel 10s linear infinite;animation-delay:-4s" />
+        </g>
+        <circle cx="-80" cy="310" r="3" fill="#3B82F6" style="animation:softPulse 3.2s ease-in-out infinite" />
+        <circle cx="1520" cy="310" r="3" fill="#34D399" style="animation:softPulse 3.2s ease-in-out infinite;animation-delay:-1.6s" />
+      </svg>
+      <div style="position:relative;max-width:900px;margin:0 auto;text-align:center">
+        <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:300;font-size:clamp(32px,4.6vw,66px);line-height:1.02;letter-spacing:-0.035em;color:#F2F5FA">{ctaHeading.before}<span style="color:#34D399">{ctaHeading.accent}</span>{ctaHeading.after}</h2>
+        <p style="margin:24px auto 0;max-width:540px;font-size:16.5px;line-height:1.66">{services.closingCta.body}</p>
+        <a class="btn-primary" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:10px;margin-top:34px;padding:14px 24px;border-radius:999px;background:#F2F5FA;color:#060810;font-size:15px;font-weight:500;text-decoration:none;transition:all 220ms cubic-bezier(.2,.8,.25,1)">{services.closingCta.ctaLabel}<span style="font-family:'JetBrains Mono',monospace;font-size:13px">&rsaquo;</span></a>
+      </div>
+    </section>
+
+    <SiteFooter />
+  </div>
+</BaseLayout>
+
+<style>
+  .btn-primary:hover { background: #3B82F6; color: #fff; }
+  .btn-secondary:hover { border-color: rgba(52, 211, 153, .6); color: #F2F5FA; }
+  .service-card:hover { border-color: rgba(59, 130, 246, .5); transform: translateY(-3px); box-shadow: 0 26px 50px -24px rgba(37, 99, 235, .6), inset 0 1px 0 rgba(255, 255, 255, .14); }
+  .tool-pill:hover { border-color: rgba(59, 130, 246, .55); background: rgba(59, 130, 246, .14); color: #F2F5FA; box-shadow: 0 12px 26px -18px rgba(37, 99, 235, .9); }
+</style>

@@ -1,0 +1,204 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { getEntry } from 'astro:content';
+import { splitAccent } from '../lib/text';
+
+const about = (await getEntry('aboutPage', 'about'))!.data;
+
+const heroHeading = splitAccent(about.hero.heading, about.hero.accentPhrase);
+const thinkHeading = splitAccent(about.howWeThink.heading, about.howWeThink.accentPhrase);
+const noteHeading = splitAccent(about.founderNote.heading, about.founderNote.accentPhrase);
+const ctaHeading = splitAccent(about.closingCta.heading, about.closingCta.accentPhrase);
+
+const CALENDLY_URL = 'https://calendly.com/michuk-dev/30min';
+---
+
+<BaseLayout title="About — StackLaunch" description="A mobile backend infrastructure and platform engineering consultancy working with startups and growing businesses across the globe.">
+  <div style="position:relative;background:#060810;overflow-x:clip">
+    <div style="position:sticky;top:0;z-index:60">
+      <SiteNav active="about" />
+    </div>
+
+    <section style="position:relative;padding:104px clamp(20px,4vw,56px) 80px;background-image:radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px);background-size:24px 24px">
+      <div style="position:absolute;top:0;left:0;right:0;height:440px;pointer-events:none;background:radial-gradient(110% 100% at 80% 6%, rgba(16,185,129,.16), rgba(6,8,16,0) 60%)"></div>
+      <svg viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.85" aria-hidden="true">
+        <defs>
+          <linearGradient id="abHeroa" x1="1" y1="0" x2="0" y2="0">
+            <stop offset="0" stop-color="#3B82F6" stop-opacity=".44" /><stop offset="1" stop-color="#3B82F6" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="abHerob" x1="1" y1="0" x2="0" y2="0">
+            <stop offset="0" stop-color="#34D399" stop-opacity=".38" /><stop offset="1" stop-color="#34D399" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+        <g fill="none" stroke-width="1" stroke-dasharray="1800" stroke-dashoffset="1800" style="animation:drawin 2.1s cubic-bezier(.2,.8,.25,1) both">
+          <g stroke="url(#abHeroa)"><line x1="1540" y1="315" x2="700" y2="-40" /><line x1="1540" y1="315" x2="700" y2="112" /><line x1="1540" y1="315" x2="680" y2="280" /></g>
+          <g stroke="url(#abHerob)"><line x1="1540" y1="315" x2="680" y2="504" /><line x1="1540" y1="315" x2="740" y2="760" /></g>
+        </g>
+        <g stroke-width="1.6" fill="none" stroke-linecap="round" stroke-dasharray="90 1600">
+          <line x1="1540" y1="315" x2="700" y2="112" stroke="#3B82F6" style="animation:travel 9s linear infinite" />
+          <line x1="1540" y1="315" x2="680" y2="504" stroke="#34D399" style="animation:travel 11.5s linear infinite;animation-delay:-4.5s" />
+        </g>
+        <circle cx="1540" cy="315" r="3.2" fill="#3B82F6" style="animation:softPulse 3.3s ease-in-out infinite" />
+      </svg>
+      <div style="position:relative;max-width:1320px;margin:0 auto">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(233,238,246,.68)">{about.hero.eyebrow}</span>
+        <h1 style="margin:26px 0 0;max-width:1100px;font-family:'Space Grotesk',sans-serif;font-weight:300;font-size:clamp(40px,6.4vw,96px);line-height:0.99;letter-spacing:-0.035em;color:#F2F5FA">{heroHeading.before}<span style="color:#3B82F6">{heroHeading.accent}</span>{heroHeading.after}</h1>
+        <div style="margin-top:52px;padding-top:18px;border-top:1px solid rgba(255,255,255,.09);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap">
+          <span style="display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(233,238,246,.66)"><span style="display:block;width:6px;height:6px;border-radius:50%;background:#34D399;animation:softPulse 2.6s ease-in-out infinite"></span>{about.hero.statusLabel}</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(233,238,246,.66)">{about.hero.teamsLabel}</span>
+        </div>
+      </div>
+    </section>
+
+    <section style="position:relative;overflow:hidden;padding:88px clamp(20px,4vw,56px)">
+      <svg viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.75" aria-hidden="true">
+        <defs>
+          <linearGradient id="abStorya" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#3B82F6" stop-opacity=".44" /><stop offset="1" stop-color="#3B82F6" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="abStoryb" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#34D399" stop-opacity=".38" /><stop offset="1" stop-color="#34D399" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+        <g fill="none" stroke-width="1" stroke-dasharray="1800" stroke-dashoffset="1800" style="animation:drawin 2.1s cubic-bezier(.2,.8,.25,1) both;animation-timeline:view();animation-range:entry 0% cover 32%">
+          <g stroke="url(#abStorya)"><line x1="-100" y1="380" x2="760" y2="-30" /><line x1="-100" y1="380" x2="740" y2="167" /><line x1="-100" y1="380" x2="740" y2="350" /></g>
+          <g stroke="url(#abStoryb)"><line x1="-100" y1="380" x2="740" y2="578" /><line x1="-100" y1="380" x2="800" y2="830" /></g>
+        </g>
+        <g stroke-width="1.6" fill="none" stroke-linecap="round" stroke-dasharray="90 1600">
+          <line x1="-100" y1="380" x2="740" y2="167" stroke="#3B82F6" style="animation:travel 9s linear infinite" />
+          <line x1="-100" y1="380" x2="740" y2="578" stroke="#34D399" style="animation:travel 11.5s linear infinite;animation-delay:-4.5s" />
+        </g>
+        <circle cx="-100" cy="380" r="3.2" fill="#3B82F6" style="animation:softPulse 3.3s ease-in-out infinite" />
+      </svg>
+      <div style="position:relative;max-width:760px;margin-left:auto;margin-right:auto;display:grid;gap:32px">
+        <p style="margin:0;font-size:19px;line-height:1.66;color:rgba(233,238,246,.72)">{about.story.lead}</p>
+        <blockquote style="margin:0;padding:34px 0;border-top:1px solid rgba(255,255,255,.09);border-bottom:1px solid rgba(255,255,255,.09)">
+          <p style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:300;font-size:clamp(26px,3.4vw,42px);line-height:1.12;letter-spacing:-0.03em;color:#F2F5FA">{about.story.quotePlain}<span style="color:#34D399">{about.story.quoteAccent}</span></p>
+        </blockquote>
+        {about.story.paragraphs.map((p) => (
+          <p style="margin:0;font-size:16.5px;line-height:1.72">{p}</p>
+        ))}
+      </div>
+    </section>
+
+    <div style="position:relative;overflow:hidden;padding:30px 0;border-top:1px solid rgba(255,255,255,.09);border-bottom:1px solid rgba(255,255,255,.09)">
+      <div style="display:flex;width:max-content;animation:marquee 38s linear infinite">
+        <span style="display:inline-block;padding-right:48px;font-family:'Space Grotesk',sans-serif;font-weight:300;font-size:clamp(40px,8vw,116px);line-height:1;letter-spacing:-0.04em;color:rgba(242,245,250,.08);white-space:nowrap">{about.marquee.plainWords}<span style="color:rgba(52,211,153,.42)">{about.marquee.accentWord}</span> · {about.marquee.plainWords}<span style="color:rgba(59,130,246,.45)">{about.marquee.accentWord}</span> · </span>
+        <span style="display:inline-block;padding-right:48px;font-family:'Space Grotesk',sans-serif;font-weight:300;font-size:clamp(40px,8vw,116px);line-height:1;letter-spacing:-0.04em;color:rgba(242,245,250,.08);white-space:nowrap">{about.marquee.plainWords}<span style="color:rgba(52,211,153,.42)">{about.marquee.accentWord}</span> · {about.marquee.plainWords}<span style="color:rgba(59,130,246,.45)">{about.marquee.accentWord}</span> · </span>
+      </div>
+    </div>
+
+    <section style="position:relative;overflow:hidden;padding:96px clamp(20px,4vw,56px);background:#0A0D16">
+      <div style="position:absolute;left:0;bottom:0;width:min(78%,1180px);height:min(84%,760px);pointer-events:none;background-image:url('/images/about-desk-racks.png');background-size:cover;background-position:right bottom;background-repeat:no-repeat;transform:scaleX(-1);-webkit-mask-image:radial-gradient(132% 118% at 6% 100%, #000 32%, rgba(0,0,0,.45) 64%, transparent 88%);mask-image:radial-gradient(132% 118% at 6% 100%, #000 32%, rgba(0,0,0,.45) 64%, transparent 88%)"></div>
+      <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,#0A0D16 0%,rgba(10,13,22,.9) 24%,rgba(10,13,22,.55) 60%,rgba(10,13,22,.34) 100%)"></div>
+      <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(270deg,#0A0D16 0%,rgba(10,13,22,.5) 38%,rgba(10,13,22,0) 76%)"></div>
+      <svg viewBox="0 0 1440 820" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.85" aria-hidden="true">
+        <defs>
+          <linearGradient id="abThinka" x1="1" y1="0" x2="0" y2="0">
+            <stop offset="0" stop-color="#3B82F6" stop-opacity=".44" /><stop offset="1" stop-color="#3B82F6" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="abThinkb" x1="1" y1="0" x2="0" y2="0">
+            <stop offset="0" stop-color="#34D399" stop-opacity=".38" /><stop offset="1" stop-color="#34D399" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+        <g fill="none" stroke-width="1" stroke-dasharray="1800" stroke-dashoffset="1800" style="animation:drawin 2.1s cubic-bezier(.2,.8,.25,1) both;animation-timeline:view();animation-range:entry 0% cover 32%">
+          <g stroke="url(#abThinka)"><line x1="1540" y1="369" x2="700" y2="-40" /><line x1="1540" y1="369" x2="700" y2="131" /><line x1="1540" y1="369" x2="680" y2="328" /></g>
+          <g stroke="url(#abThinkb)"><line x1="1540" y1="369" x2="680" y2="590" /><line x1="1540" y1="369" x2="740" y2="880" /></g>
+        </g>
+        <g stroke-width="1.6" fill="none" stroke-linecap="round" stroke-dasharray="90 1600">
+          <line x1="1540" y1="369" x2="700" y2="131" stroke="#3B82F6" style="animation:travel 9s linear infinite" />
+          <line x1="1540" y1="369" x2="680" y2="590" stroke="#34D399" style="animation:travel 11.5s linear infinite;animation-delay:-4.5s" />
+        </g>
+        <circle cx="1540" cy="369" r="3.2" fill="#3B82F6" style="animation:softPulse 3.3s ease-in-out infinite" />
+      </svg>
+      <div style="position:relative;max-width:1320px;margin:0 auto">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(233,238,246,.66)">{about.howWeThink.eyebrow}</span>
+        <h2 style="margin:24px 0 46px;font-family:'Space Grotesk',sans-serif;font-weight:300;font-size:clamp(30px,3.8vw,54px);line-height:1.04;letter-spacing:-0.03em;color:#F2F5FA">{thinkHeading.before}<span style="color:#3B82F6">{thinkHeading.accent}</span>{thinkHeading.after}</h2>
+        <div>
+          {about.howWeThink.principles.map((p) => (
+            <div class="principle-row" style="display:grid;grid-template-columns:70px minmax(0,1.1fr) minmax(0,1fr);gap:28px;padding:32px 0;border-top:1px solid rgba(255,255,255,.09);align-items:baseline;transition:background 240ms ease" data-stack>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;color:#3B82F6">{p.n}</span>
+              <h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:400;font-size:clamp(21px,2.1vw,28px);line-height:1.2;letter-spacing:-0.02em;color:#F2F5FA">{p.title}</h3>
+              <p style="margin:0;font-size:15.5px;line-height:1.62;color:rgba(233,238,246,.66)">{p.body}</p>
+            </div>
+          ))}
+          <div style="border-top:1px solid rgba(255,255,255,.09)"></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="position:relative;overflow:hidden;padding:96px clamp(20px,4vw,56px);border-top:1px solid rgba(255,255,255,.09)">
+      <svg viewBox="0 0 1440 640" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.75" aria-hidden="true">
+        <defs>
+          <linearGradient id="abNotea" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#3B82F6" stop-opacity=".44" /><stop offset="1" stop-color="#3B82F6" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="abNoteb" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#34D399" stop-opacity=".38" /><stop offset="1" stop-color="#34D399" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+        <g fill="none" stroke-width="1" stroke-dasharray="1800" stroke-dashoffset="1800" style="animation:drawin 2.1s cubic-bezier(.2,.8,.25,1) both;animation-timeline:view();animation-range:entry 0% cover 32%">
+          <g stroke="url(#abNotea)"><line x1="-100" y1="320" x2="760" y2="-30" /><line x1="-100" y1="320" x2="740" y2="141" /><line x1="-100" y1="320" x2="740" y2="294" /></g>
+          <g stroke="url(#abNoteb)"><line x1="-100" y1="320" x2="740" y2="486" /><line x1="-100" y1="320" x2="800" y2="710" /></g>
+        </g>
+        <g stroke-width="1.6" fill="none" stroke-linecap="round" stroke-dasharray="90 1600">
+          <line x1="-100" y1="320" x2="740" y2="141" stroke="#3B82F6" style="animation:travel 9s linear infinite" />
+          <line x1="-100" y1="320" x2="740" y2="486" stroke="#34D399" style="animation:travel 11.5s linear infinite;animation-delay:-4.5s" />
+        </g>
+        <circle cx="-100" cy="320" r="3.2" fill="#3B82F6" style="animation:softPulse 3.3s ease-in-out infinite" />
+      </svg>
+      <div style="position:relative;max-width:1320px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.75fr);gap:56px;align-items:center" data-stack>
+        <div>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(233,238,246,.66)">{about.founderNote.eyebrow}</span>
+          <h2 style="margin:24px 0 0;font-family:'Space Grotesk',sans-serif;font-weight:300;font-size:clamp(28px,3.4vw,46px);line-height:1.06;letter-spacing:-0.03em;color:#F2F5FA">{noteHeading.before}<span style="color:#34D399">{noteHeading.accent}</span>{noteHeading.after}</h2>
+          <div style="margin:22px 0 0;max-width:500px;display:grid;gap:16px;font-size:16.5px;line-height:1.66;color:rgba(233,238,246,.78)">
+            {about.founderNote.paragraphs.map((p) => (
+              <p style="margin:0">{p}</p>
+            ))}
+          </div>
+          <p style="margin:26px 0 0;font-family:'Space Grotesk',sans-serif;font-size:16px;color:#F2F5FA">{about.founderNote.name}</p>
+          <p style="margin:2px 0 0;font-size:13.5px;color:rgba(233,238,246,.6)">{about.founderNote.title}</p>
+          <a class="btn-secondary" href={about.founderNote.linkedinUrl} target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:10px;margin-top:20px;padding:12px 20px;border-radius:999px;border:1px solid rgba(255,255,255,.16);color:#F2F5FA;font-size:14px;text-decoration:none;transition:all 220ms cubic-bezier(.2,.8,.25,1)">LinkedIn<span style="font-family:'JetBrains Mono',monospace;font-size:13px">&rsaquo;</span></a>
+        </div>
+        <div style="position:relative;aspect-ratio:4/5;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.09)">
+          <img src={about.founderNote.photo} alt={`${about.founderNote.name}, Founder of StackLaunch`} style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block" />
+        </div>
+      </div>
+    </section>
+
+    <section style="position:relative;padding:110px clamp(20px,4vw,56px) 120px;border-top:1px solid rgba(255,255,255,.09);overflow:hidden">
+      <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(90% 120% at 50% 110%, rgba(37,99,235,.2), rgba(6,8,16,0) 60%)"></div>
+      <svg viewBox="0 0 1440 620" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none" aria-hidden="true">
+        <defs>
+          <linearGradient id="abCtaL" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3B82F6" stop-opacity=".45" /><stop offset="1" stop-color="#3B82F6" stop-opacity="0" /></linearGradient>
+          <linearGradient id="abCtaR" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#34D399" stop-opacity=".4" /><stop offset="1" stop-color="#34D399" stop-opacity="0" /></linearGradient>
+        </defs>
+        <g fill="none" stroke-width="1" stroke-dasharray="1800" stroke-dashoffset="1800" style="animation:drawin 2.2s cubic-bezier(.2,.8,.25,1) both;animation-timeline:view();animation-range:entry 0% cover 32%">
+          <g stroke="url(#abCtaL)"><line x1="-80" y1="310" x2="620" y2="30" /><line x1="-80" y1="310" x2="600" y2="180" /><line x1="-80" y1="310" x2="600" y2="440" /><line x1="-80" y1="310" x2="640" y2="600" /></g>
+          <g stroke="url(#abCtaR)"><line x1="1520" y1="310" x2="820" y2="30" /><line x1="1520" y1="310" x2="840" y2="180" /><line x1="1520" y1="310" x2="840" y2="440" /><line x1="1520" y1="310" x2="800" y2="600" /></g>
+        </g>
+        <g stroke-width="1.6" fill="none" stroke-linecap="round" stroke-dasharray="90 1600">
+          <line x1="-80" y1="310" x2="600" y2="180" stroke="#3B82F6" style="animation:travel 8s linear infinite" />
+          <line x1="1520" y1="310" x2="840" y2="440" stroke="#34D399" style="animation:travel 10s linear infinite;animation-delay:-4s" />
+        </g>
+        <circle cx="-80" cy="310" r="3" fill="#3B82F6" style="animation:softPulse 3.2s ease-in-out infinite" />
+        <circle cx="1520" cy="310" r="3" fill="#34D399" style="animation:softPulse 3.2s ease-in-out infinite;animation-delay:-1.6s" />
+      </svg>
+      <div style="position:relative;max-width:900px;margin:0 auto;text-align:center">
+        <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:300;font-size:clamp(32px,4.6vw,66px);line-height:1.02;letter-spacing:-0.035em;color:#F2F5FA">{ctaHeading.before}<span style="color:#34D399">{ctaHeading.accent}</span>{ctaHeading.after}</h2>
+        <p style="margin:24px auto 0;max-width:520px;font-size:16.5px;line-height:1.66">{about.closingCta.body}</p>
+        <a class="btn-primary" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:10px;margin-top:34px;padding:14px 24px;border-radius:999px;background:#F2F5FA;color:#060810;font-size:15px;font-weight:500;text-decoration:none;transition:all 220ms cubic-bezier(.2,.8,.25,1)">{about.closingCta.ctaLabel}<span style="font-family:'JetBrains Mono',monospace;font-size:13px">&rsaquo;</span></a>
+      </div>
+    </section>
+
+    <SiteFooter />
+  </div>
+</BaseLayout>
+
+<style>
+  .btn-primary:hover { background: #3B82F6; color: #fff; }
+  .btn-secondary:hover { border-color: rgba(52, 211, 153, .6); color: #F2F5FA; }
+  .principle-row:hover { background: rgba(255, 255, 255, .02); }
+</style>

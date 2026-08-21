@@ -1,5 +1,0 @@
-/* StackLaunch webfonts.
-   Brand typefaces: Inter (body/UI), Space Grotesk (display/headings), JetBrains Mono (data, system labels).
-   No vendor font binaries were supplied, so these load from Google Fonts.
-   Swap these @import lines for self-hosted @font-face rules when licensed files arrive. */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");

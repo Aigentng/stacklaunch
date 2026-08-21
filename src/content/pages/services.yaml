@@ -1,0 +1,89 @@
+hero:
+  eyebrow: Services
+  heading: Everything behind your app, handled.
+  accentPhrase: handled.
+  body: Nine services that take your mobile backend from it works on my machine to secure, scalable and running without you.
+  primaryCtaLabel: Book a free infrastructure review
+  secondaryCtaLabel: See the stack
+
+services:
+  - n: "001"
+    icon: cloud
+    title: Cloud infrastructure
+    promise: Ready for real users.
+    body: Production-grade infrastructure on AWS using modern best practices, built for scale, security and uptime from the first day.
+    span: span 2
+  - n: "002"
+    icon: server
+    title: Kubernetes and platform engineering
+    promise: A platform to grow into.
+    body: Secure, highly available Kubernetes clusters that scale with demand. The same foundation big apps run on, sized for where you are now.
+    span: span 2
+  - n: "003"
+    icon: git-branch
+    title: CI/CD automation
+    promise: Ship faster, break less.
+    body: Automated deployments so new code goes live reliably in minutes, with no more anxious midnight releases.
+    span: span 2
+  - n: "004"
+    icon: activity
+    title: Monitoring and observability
+    promise: Know before your users do.
+    body: Monitoring, logging and alerting so problems show up early, on a dashboard rather than in an angry review.
+    span: span 3
+  - n: "005"
+    icon: shield-check
+    title: Security and compliance
+    promise: Secure by design.
+    body: Identity, secrets, least-privilege access and hardening. The quiet work that keeps a breach from ending your business.
+    span: span 3
+  - n: "006"
+    icon: archive-restore
+    title: Disaster recovery and backups
+    promise: A bad day, not a fatal one.
+    body: Backups, recovery plans and high-availability architecture, so when something fails you are back in minutes.
+    span: span 2
+  - n: "007"
+    icon: database
+    title: Database operations
+    promise: Your data, looked after.
+    body: "PostgreSQL managed end to end: monitoring, backups, tuning and recovery. The layer everything depends on, kept safe."
+    span: span 2
+  - n: "008"
+    icon: dollar-sign
+    title: Cloud cost optimisation
+    promise: Stop paying for cloud you do not use.
+    body: We rightsize what is oversized and cut the resources quietly draining your budget, often paying for the work in savings.
+    span: span 2
+  - n: "009"
+    icon: terminal
+    title: Managed platform operations
+    promise: Hand us the backend. Go build.
+    body: Ongoing management of infrastructure, clusters, deployments and maintenance. A platform team without the headcount.
+    span: span 6
+
+marquee:
+  beforeAccent: "AWS · Kubernetes · Terraform · "
+  accentWord: PostgreSQL
+  afterAccent: " · Prometheus · Go · "
+
+stack:
+  eyebrow: The stack
+  heading: The tools we build on
+  accentPhrase: we build on
+  body: Proven, dependable infrastructure. Nothing experimental holding up your production.
+  groups:
+    - label: Cloud and containers
+      items: [AWS, Kubernetes, Docker, Helm, Terraform]
+    - label: CI/CD
+      items: [GitHub Actions, Azure DevOps]
+    - label: Observability
+      items: [Prometheus, Grafana, Loki, OpenTelemetry, CloudWatch]
+    - label: Data and languages
+      items: [PostgreSQL, Go (Golang), Python, Java]
+
+closingCta:
+  heading: Not sure which of these you need?
+  accentPhrase: you need?
+  body: That is what the free review is for. We will tell you what is solid, what is a risk, and what to fix first.
+  ctaLabel: Book a free infrastructure review
