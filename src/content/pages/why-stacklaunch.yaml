@@ -1,0 +1,97 @@
+hero:
+  eyebrow: Why StackLaunch
+  heading: Three ways to run your backend. Here is the honest version.
+  accentPhrase: Here is the honest version.
+  body: Most founders weigh the same three options. We will not pretend we are right for every one, but here is where we fit.
+
+comparison:
+  options:
+    - n: option 01
+      title: Do it yourself
+      summary: You keep control, and you keep the pager.
+      highlighted: false
+      rows:
+        - k: Time to production
+          v: Slow. You learn as you go.
+        - k: Real cost
+          v: Your time, plus costly mistakes.
+        - k: Who is on call
+          v: You, at 3am.
+        - k: Depth of expertise
+          v: Whatever you have picked up.
+        - k: Your focus
+          v: Split between product and ops.
+    - n: option 02
+      title: Hire a platform team
+      summary: The right answer eventually, at a price and a timeline.
+      highlighted: false
+      rows:
+        - k: Time to production
+          v: Months to hire and settle in.
+        - k: Real cost
+          v: Several senior salaries.
+        - k: Who is on call
+          v: Your team, once you have one.
+        - k: Depth of expertise
+          v: Strong, if you hire well.
+        - k: Your focus
+          v: Stays on product.
+    - n: option 03
+      title: StackLaunch
+      summary: Specialists on your platform from day one, without the headcount.
+      highlighted: true
+      badgeLabel: Where we fit
+      rows:
+        - k: Time to production
+          v: Weeks. We have done this before.
+        - k: Real cost
+          v: One predictable engagement.
+        - k: Who is on call
+          v: Us, and we respond fast.
+        - k: Depth of expertise
+          v: Specialists from day one.
+        - k: Your focus
+          v: Stays on product.
+
+reasons:
+  eyebrow: Ten reasons
+  heading: What you get, put plainly
+  accentPhrase: put plainly
+  countLabel: 10 of 10 · in every engagement
+  items:
+    - n: "01"
+      title: Production-ready infrastructure
+      body: Built for real users from the first day.
+    - n: "02"
+      title: Secure by design
+      body: Access, secrets and hardening done right.
+    - n: "03"
+      title: Scalable architecture
+      body: Grows with your traffic, not against it.
+    - n: "04"
+      title: Automated deployments
+      body: Releases that are fast and calm.
+    - n: "05"
+      title: Reliable monitoring and alerting
+      body: You hear about problems early.
+    - n: "06"
+      title: Disaster recovery planning
+      body: A real plan for the day something breaks.
+    - n: "07"
+      title: Cloud cost optimisation
+      body: You pay for what you use, nothing more.
+    - n: "08"
+      title: Ongoing operational support
+      body: A team that stays after go-live.
+    - n: "09"
+      title: Fast response times
+      body: A real person, quickly, when it matters.
+    - n: "10"
+      title: Trusted technical expertise
+      body: The deep end of the stack, owned.
+
+closingCta:
+  heading: Still deciding? Start with the review.
+  accentPhrase: Start with the review.
+  body: It is free, there is no obligation, and you will walk away knowing exactly where your backend stands.
+  ctaLabel: Book a free infrastructure review

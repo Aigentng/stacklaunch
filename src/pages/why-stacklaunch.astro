@@ -1,0 +1,178 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { getEntry } from 'astro:content';
+import { splitAccent } from '../lib/text';
+
+const why = (await getEntry('whyStackLaunchPage', 'why-stacklaunch'))!.data;
+
+const heroHeading = splitAccent(why.hero.heading, why.hero.accentPhrase);
+const reasonsHeading = splitAccent(why.reasons.heading, why.reasons.accentPhrase);
+const ctaHeading = splitAccent(why.closingCta.heading, why.closingCta.accentPhrase);
+
+const CALENDLY_URL = 'https://calendly.com/michuk-dev/30min';
+---
+
+<BaseLayout title="Why StackLaunch — the honest comparison" description="Three ways to run your backend, compared plainly: do it yourself, hire a platform team, or hand it to StackLaunch.">
+  <div style="position:relative;background:#060810;overflow-x:clip">
+    <div style="position:sticky;top:0;z-index:60">
+      <SiteNav active="why" />
+    </div>
+
+    <section style="position:relative;padding:104px clamp(20px,4vw,56px) 76px;background-image:radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px);background-size:24px 24px">
+      <div style="position:absolute;top:0;left:0;right:0;height:440px;pointer-events:none;background:radial-gradient(110% 100% at 24% 6%, rgba(37,99,235,.2), rgba(6,8,16,0) 60%)"></div>
+      <svg viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.8" aria-hidden="true">
+        <defs>
+          <linearGradient id="whyHeroa" x1="1" y1="0" x2="0" y2="0">
+            <stop offset="0" stop-color="#3B82F6" stop-opacity=".44" /><stop offset="1" stop-color="#3B82F6" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="whyHerob" x1="1" y1="0" x2="0" y2="0">
+            <stop offset="0" stop-color="#34D399" stop-opacity=".38" /><stop offset="1" stop-color="#34D399" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+        <g fill="none" stroke-width="1" stroke-dasharray="1800" stroke-dashoffset="1800" style="animation:drawin 2.1s cubic-bezier(.2,.8,.25,1) both">
+          <g stroke="url(#whyHeroa)">
+            <line x1="1540" y1="322" x2="700" y2="-40" /><line x1="1540" y1="322" x2="700" y2="126" /><line x1="1540" y1="322" x2="680" y2="294" />
+          </g>
+          <g stroke="url(#whyHerob)">
+            <line x1="1540" y1="322" x2="680" y2="518" /><line x1="1540" y1="322" x2="740" y2="760" />
+          </g>
+        </g>
+        <g stroke-width="1.6" fill="none" stroke-linecap="round" stroke-dasharray="90 1600">
+          <line x1="1540" y1="322" x2="700" y2="126" stroke="#3B82F6" style="animation:travel 9s linear infinite" />
+          <line x1="1540" y1="322" x2="680" y2="518" stroke="#34D399" style="animation:travel 11.5s linear infinite;animation-delay:-4.5s" />
+        </g>
+        <circle cx="1540" cy="322" r="3.2" fill="#34D399" style="animation:softPulse 3.3s ease-in-out infinite" />
+      </svg>
+      <div style="position:relative;max-width:1320px;margin:0 auto">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(233,238,246,.68)">{why.hero.eyebrow}</span>
+        <h1 style="margin:26px 0 0;max-width:1120px;font-family:'Space Grotesk',sans-serif;font-weight:300;font-size:clamp(38px,6vw,90px);line-height:0.99;letter-spacing:-0.035em;color:#F2F5FA">{heroHeading.before}<span style="color:#34D399">{heroHeading.accent}</span>{heroHeading.after}</h1>
+        <p style="margin:40px 0 0;max-width:560px;font-size:17px;line-height:1.66">{why.hero.body}</p>
+      </div>
+    </section>
+
+    <section style="position:relative;overflow:hidden;padding:40px clamp(20px,4vw,56px) 96px">
+      <svg viewBox="0 0 1440 860" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.8" aria-hidden="true">
+        <defs>
+          <linearGradient id="whyCmpa" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#3B82F6" stop-opacity=".44" /><stop offset="1" stop-color="#3B82F6" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="whyCmpb" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#34D399" stop-opacity=".38" /><stop offset="1" stop-color="#34D399" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+        <g fill="none" stroke-width="1" stroke-dasharray="1800" stroke-dashoffset="1800" style="animation:drawin 2.1s cubic-bezier(.2,.8,.25,1) both;animation-timeline:view();animation-range:entry 0% cover 32%">
+          <g stroke="url(#whyCmpa)">
+            <line x1="-100" y1="396" x2="760" y2="-40" /><line x1="-100" y1="396" x2="740" y2="155" /><line x1="-100" y1="396" x2="740" y2="361" />
+          </g>
+          <g stroke="url(#whyCmpb)">
+            <line x1="-100" y1="396" x2="740" y2="636" /><line x1="-100" y1="396" x2="800" y2="920" />
+          </g>
+        </g>
+        <g stroke-width="1.6" fill="none" stroke-linecap="round" stroke-dasharray="90 1600">
+          <line x1="-100" y1="396" x2="740" y2="155" stroke="#3B82F6" style="animation:travel 9s linear infinite" />
+          <line x1="-100" y1="396" x2="740" y2="636" stroke="#34D399" style="animation:travel 11.5s linear infinite;animation-delay:-4.5s" />
+        </g>
+        <circle cx="-100" cy="396" r="3.2" fill="#3B82F6" style="animation:softPulse 3.3s ease-in-out infinite" />
+      </svg>
+      <div style="position:relative;max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(8,auto);gap:16px;align-items:start" data-stack data-cmp>
+        {why.comparison.options.map((o) => (
+          <article data-mobile-first={o.highlighted} style={`grid-row:span 8;display:grid;grid-template-rows:subgrid;align-content:start;padding:28px;border-radius:18px;border:1px solid ${o.highlighted ? 'rgba(52,211,153,.4)' : 'rgba(255,255,255,.09)'};background:${o.highlighted ? 'linear-gradient(180deg,rgba(37,99,235,.14),rgba(16,185,129,.05) 60%,rgba(255,255,255,.02))' : 'rgba(255,255,255,.02)'}`}>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:26px;margin-bottom:22px">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(233,238,246,.64)">{o.n}</span>
+              {o.highlighted && (
+                <span style="display:inline-flex;align-items:center;gap:7px;padding:5px 11px;border-radius:999px;border:1px solid rgba(52,211,153,.4);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#34D399"><span style="display:block;width:5px;height:5px;border-radius:50%;background:#34D399;animation:softPulse 2.6s ease-in-out infinite"></span>{o.badgeLabel}</span>
+              )}
+            </div>
+            <h2 style="margin:0 0 12px;align-self:start;font-family:'Space Grotesk',sans-serif;font-weight:400;font-size:clamp(24px,2.4vw,32px);line-height:1.12;letter-spacing:-0.025em;color:#F2F5FA">{o.title}</h2>
+            <p style="margin:0 0 22px;align-self:start;font-size:15px;line-height:1.6;color:rgba(233,238,246,.66)">{o.summary}</p>
+            {o.rows.map((r) => (
+              <div style="display:grid;gap:6px;align-content:start;padding:16px 0;border-top:1px solid rgba(255,255,255,.09)">
+                <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(233,238,246,.64)">{r.k}</span>
+                <span style="font-size:15.5px;line-height:1.5;color:#F2F5FA">{r.v}</span>
+              </div>
+            ))}
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section style="position:relative;overflow:hidden;padding:96px clamp(20px,4vw,56px);background:#0A0D16;border-top:1px solid rgba(255,255,255,.09)">
+      <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.8" aria-hidden="true">
+        <defs>
+          <linearGradient id="whyTena" x1="1" y1="0" x2="0" y2="0">
+            <stop offset="0" stop-color="#3B82F6" stop-opacity=".44" /><stop offset="1" stop-color="#3B82F6" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="whyTenb" x1="1" y1="0" x2="0" y2="0">
+            <stop offset="0" stop-color="#34D399" stop-opacity=".38" /><stop offset="1" stop-color="#34D399" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+        <g fill="none" stroke-width="1" stroke-dasharray="1800" stroke-dashoffset="1800" style="animation:drawin 2.1s cubic-bezier(.2,.8,.25,1) both;animation-timeline:view();animation-range:entry 0% cover 32%">
+          <g stroke="url(#whyTena)">
+            <line x1="1540" y1="414" x2="700" y2="-40" /><line x1="1540" y1="414" x2="700" y2="162" /><line x1="1540" y1="414" x2="680" y2="378" />
+          </g>
+          <g stroke="url(#whyTenb)">
+            <line x1="1540" y1="414" x2="680" y2="666" /><line x1="1540" y1="414" x2="740" y2="960" />
+          </g>
+        </g>
+        <g stroke-width="1.6" fill="none" stroke-linecap="round" stroke-dasharray="90 1600">
+          <line x1="1540" y1="414" x2="700" y2="162" stroke="#3B82F6" style="animation:travel 9s linear infinite" />
+          <line x1="1540" y1="414" x2="680" y2="666" stroke="#34D399" style="animation:travel 11.5s linear infinite;animation-delay:-4.5s" />
+        </g>
+        <circle cx="1540" cy="414" r="3.2" fill="#34D399" style="animation:softPulse 3.3s ease-in-out infinite" />
+      </svg>
+      <div style="position:relative;max-width:1320px;margin:0 auto">
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:44px">
+          <div>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(233,238,246,.66)">{why.reasons.eyebrow}</span>
+            <h2 style="margin:24px 0 0;font-family:'Space Grotesk',sans-serif;font-weight:300;font-size:clamp(30px,3.8vw,54px);line-height:1.04;letter-spacing:-0.03em;color:#F2F5FA">{reasonsHeading.before}<span style="color:#3B82F6">{reasonsHeading.accent}</span>{reasonsHeading.after}</h2>
+          </div>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(233,238,246,.64)">{why.reasons.countLabel}</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:56px" data-stack>
+          {why.reasons.items.map((r) => (
+            <div style="display:grid;grid-template-columns:40px minmax(0,1fr);gap:14px;padding:20px 0;border-top:1px solid rgba(255,255,255,.09);align-items:baseline">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(233,238,246,.64)">{r.n}</span>
+              <div>
+                <p style="margin:0 0 5px;font-size:17px;line-height:1.35;color:#F2F5FA">{r.title}</p>
+                <p style="margin:0;font-size:15px;line-height:1.55;color:rgba(233,238,246,.66)">{r.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section style="position:relative;padding:110px clamp(20px,4vw,56px) 120px;border-top:1px solid rgba(255,255,255,.09);overflow:hidden">
+      <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(90% 120% at 50% 110%, rgba(37,99,235,.2), rgba(6,8,16,0) 60%)"></div>
+      <svg viewBox="0 0 1440 620" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none" aria-hidden="true">
+        <defs>
+          <linearGradient id="whyCtaL" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3B82F6" stop-opacity=".45" /><stop offset="1" stop-color="#3B82F6" stop-opacity="0" /></linearGradient>
+          <linearGradient id="whyCtaR" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#34D399" stop-opacity=".4" /><stop offset="1" stop-color="#34D399" stop-opacity="0" /></linearGradient>
+        </defs>
+        <g fill="none" stroke-width="1" stroke-dasharray="1800" stroke-dashoffset="1800" style="animation:drawin 2.2s cubic-bezier(.2,.8,.25,1) both;animation-timeline:view();animation-range:entry 0% cover 32%">
+          <g stroke="url(#whyCtaL)"><line x1="-80" y1="310" x2="620" y2="30" /><line x1="-80" y1="310" x2="600" y2="180" /><line x1="-80" y1="310" x2="600" y2="440" /><line x1="-80" y1="310" x2="640" y2="600" /></g>
+          <g stroke="url(#whyCtaR)"><line x1="1520" y1="310" x2="820" y2="30" /><line x1="1520" y1="310" x2="840" y2="180" /><line x1="1520" y1="310" x2="840" y2="440" /><line x1="1520" y1="310" x2="800" y2="600" /></g>
+        </g>
+        <g stroke-width="1.6" fill="none" stroke-linecap="round" stroke-dasharray="90 1600">
+          <line x1="-80" y1="310" x2="600" y2="180" stroke="#3B82F6" style="animation:travel 8s linear infinite" />
+          <line x1="1520" y1="310" x2="840" y2="440" stroke="#34D399" style="animation:travel 10s linear infinite;animation-delay:-4s" />
+        </g>
+        <circle cx="-80" cy="310" r="3" fill="#3B82F6" style="animation:softPulse 3.2s ease-in-out infinite" />
+        <circle cx="1520" cy="310" r="3" fill="#34D399" style="animation:softPulse 3.2s ease-in-out infinite;animation-delay:-1.6s" />
+      </svg>
+      <div style="position:relative;max-width:900px;margin:0 auto;text-align:center">
+        <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:300;font-size:clamp(32px,4.6vw,66px);line-height:1.02;letter-spacing:-0.035em;color:#F2F5FA">{ctaHeading.before}<span style="color:#34D399">{ctaHeading.accent}</span>{ctaHeading.after}</h2>
+        <p style="margin:24px auto 0;max-width:540px;font-size:16.5px;line-height:1.66">{why.closingCta.body}</p>
+        <a class="btn-primary" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:10px;margin-top:34px;padding:14px 24px;border-radius:999px;background:#F2F5FA;color:#060810;font-size:15px;font-weight:500;text-decoration:none;transition:all 220ms cubic-bezier(.2,.8,.25,1)">{why.closingCta.ctaLabel}<span style="font-family:'JetBrains Mono',monospace;font-size:13px">&rsaquo;</span></a>
+      </div>
+    </section>
+
+    <SiteFooter />
+  </div>
+</BaseLayout>
+
+<style>
+  .btn-primary:hover { background: #3B82F6; color: #fff; }
+</style>
