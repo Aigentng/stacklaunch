@@ -1,14 +1,10 @@
-# Sveltia CMS configuration — https://github.com/sveltia/sveltia-cms
-#
-# IMPORTANT: base_url below is a placeholder. It must be replaced with the
-# real Cloudflare Worker URL from deploying sveltia-cms-auth (see worker/
-# and CLIENT-EDITING-GUIDE.md / the human setup steps) before login will work.
+# Sveltia CMS configuration: https://github.com/sveltia/sveltia-cms
 
 backend:
   name: github
   repo: Aigentng/stacklaunch
   branch: main
-  base_url: https://REPLACE-WITH-YOUR-WORKER-URL.workers.dev
+  base_url: https://sveltia-cms-auth.fiyinfoluwade.workers.dev
 
 media_folder: public/uploads
 public_folder: /uploads
@@ -18,7 +14,7 @@ display_url: https://stacklunch.africa
 
 collections:
   # ---------------------------------------------------------------------
-  # PAGES — one file per page. Layout, animations and SVG art are fixed in
+  # PAGES: one file per page. Layout, animations and SVG art are fixed in
   # code; only the text fields below are editable.
   # ---------------------------------------------------------------------
   - name: pages
@@ -33,15 +29,15 @@ collections:
             widget: object
             fields:
               - { label: Eyebrow label, name: eyebrow, widget: string }
-              - { label: "Headline — line 1", name: headlineLine1, widget: string }
-              - { label: "Headline — lead-in to line 2", name: headlineLead, widget: string, hint: 'e.g. "We make it "' }
-              - { label: "Headline — accent word (colour A)", name: headlineAccentA, widget: string }
-              - { label: "Headline — accent word (colour B)", name: headlineAccentB, widget: string }
+              - { label: "Headline (line 1)", name: headlineLine1, widget: string }
+              - { label: "Headline (lead-in to line 2)", name: headlineLead, widget: string, hint: 'e.g. "We make it "' }
+              - { label: "Headline accent word (colour A)", name: headlineAccentA, widget: string }
+              - { label: "Headline accent word (colour B)", name: headlineAccentB, widget: string }
               - { label: Body copy, name: body, widget: text }
               - { label: Primary button label, name: primaryCtaLabel, widget: string }
               - { label: Secondary button label, name: secondaryCtaLabel, widget: string }
-              - { label: "Trust strip — left", name: trustLeft, widget: string }
-              - { label: "Trust strip — right", name: trustRight, widget: string }
+              - { label: "Trust strip (left)", name: trustLeft, widget: string }
+              - { label: "Trust strip (right)", name: trustRight, widget: string }
           - name: problem
             label: Problem section
             widget: object
@@ -67,12 +63,12 @@ collections:
               - { label: Heading, name: heading, widget: string }
               - { label: "Accent phrase (must match exact words in heading)", name: accentPhrase, widget: string }
               - { label: Panels status label, name: panelsLabel, widget: string }
-              - { label: "Panel 1 (Reliability) — title", name: reliabilityTitle, widget: string }
-              - { label: "Panel 1 (Reliability) — body", name: reliabilityBody, widget: text }
-              - { label: "Panel 2 (Reach) — title", name: reachTitle, widget: string }
-              - { label: "Panel 2 (Reach) — body", name: reachBody, widget: text }
-              - { label: "Panel 3 (Automation) — title", name: automationTitle, widget: string }
-              - { label: "Panel 3 (Automation) — body", name: automationBody, widget: text }
+              - { label: "Panel 1 (Reliability) title", name: reliabilityTitle, widget: string }
+              - { label: "Panel 1 (Reliability) body", name: reliabilityBody, widget: text }
+              - { label: "Panel 2 (Reach) title", name: reachTitle, widget: string }
+              - { label: "Panel 2 (Reach) body", name: reachBody, widget: text }
+              - { label: "Panel 3 (Automation) title", name: automationTitle, widget: string }
+              - { label: "Panel 3 (Automation) body", name: automationBody, widget: text }
           - name: marquee
             label: Marquee band
             widget: object
@@ -101,7 +97,7 @@ collections:
               - { label: Heading, name: heading, widget: string }
               - { label: "Accent phrase (must match exact words in heading)", name: accentPhrase, widget: string }
               - name: cards
-                label: "Cards (exactly 6 — colours alternate by position in the layout)"
+                label: "Cards (exactly 6; colours alternate by position in the layout)"
                 widget: list
                 fields:
                   - { label: "Label (e.g. 01 · Clients)", name: n, widget: string }
@@ -123,7 +119,7 @@ collections:
                   - label: Icon
                     name: icon
                     widget: select
-                    hint: "Lucide icon name — ask a developer to add more options if you need one not listed"
+                    hint: "Lucide icon name; ask a developer to add more options if you need one not listed"
                     options: [rocket, smartphone, cloud, credit-card, heart-pulse, truck, shopping-bag, monitor, database, server, globe, shield, activity, briefcase]
           - name: closingCta
             label: Closing CTA
@@ -149,7 +145,7 @@ collections:
               - { label: Primary button label, name: primaryCtaLabel, widget: string }
               - { label: Secondary button label, name: secondaryCtaLabel, widget: string }
           - name: services
-            label: "Services (exactly 9 — card widths follow the 3-2-3-1 layout by position)"
+            label: "Services (exactly 9; card widths follow the 3-2-3-1 layout by position)"
             widget: list
             fields:
               - { label: Number, name: n, widget: string }
@@ -160,7 +156,7 @@ collections:
               - label: Card width
                 name: span
                 widget: select
-                hint: "Controls how wide the card is in the grid — leave as-is unless a developer asks you to change the layout"
+                hint: "Controls how wide the card is in the grid; leave as-is unless a developer asks you to change the layout"
                 options: ["span 2", "span 3", "span 6"]
           - name: marquee
             label: Marquee band
@@ -213,8 +209,8 @@ collections:
             widget: object
             fields:
               - { label: Lead paragraph, name: lead, widget: text }
-              - { label: "Quote — plain lead-in", name: quotePlain, widget: string }
-              - { label: "Quote — accent-coloured ending", name: quoteAccent, widget: string }
+              - { label: "Quote (plain lead-in)", name: quotePlain, widget: string }
+              - { label: "Quote (accent-coloured ending)", name: quoteAccent, widget: string }
               - name: paragraphs
                 label: Body paragraphs
                 widget: list
@@ -367,7 +363,7 @@ collections:
               - { label: Availability label, name: availabilityLabel, widget: string }
 
   # ---------------------------------------------------------------------
-  # TESTIMONIALS — hidden from the homepage automatically until at least
+  # TESTIMONIALS: hidden from the homepage automatically until at least
   # one entry exists.
   # ---------------------------------------------------------------------
   - name: testimonials
@@ -385,7 +381,7 @@ collections:
       - { label: "Company logo (optional)", name: logo, widget: image, required: false }
 
   # ---------------------------------------------------------------------
-  # POSTS — blog articles and case studies, shown together on /insights.
+  # POSTS: blog articles and case studies, shown together on /insights.
   # ---------------------------------------------------------------------
   - name: posts
     label: Blog & Case Studies
@@ -410,7 +406,7 @@ collections:
         widget: list
         field: { label: Tag, name: tag, widget: string }
         required: false
-      - { label: "SEO title (optional — falls back to Title)", name: seoTitle, widget: string, required: false }
-      - { label: "SEO description (optional — falls back to Excerpt)", name: seoDescription, widget: text, required: false }
+      - { label: "SEO title (optional, falls back to Title)", name: seoTitle, widget: string, required: false }
+      - { label: "SEO description (optional, falls back to Excerpt)", name: seoDescription, widget: text, required: false }
       - { label: "Draft (hide from the live site)", name: draft, widget: boolean, default: false }
       - { label: Body, name: body, widget: markdown }
