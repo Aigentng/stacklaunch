@@ -1,27 +1,48 @@
 # StackLaunch Website
 
-A modern, production-ready website built with Design Components (HTML/CSS/JS).
+The StackLaunch marketing site, built with [Astro](https://astro.build) as a
+static site, with [Sveltia CMS](https://github.com/sveltia/sveltia-cms) at
+`/admin` for editing content.
 
-## Files
+## Structure
 
-- `Home.dc.html` — Landing page
-- `About.dc.html` — About page
-- `Contact.dc.html` — Contact form
-- `Services.dc.html` — Services overview
-- `Why-StackLaunch.dc.html` — Why choose us
-- `SiteNav.dc.html` — Navigation component
-- `SiteFooter.dc.html` — Footer component
-- `support.js` — Runtime for Design Components
-- `ds/` — Design system assets
-- `images/` — Hero and background images
+- `src/pages/` — routes: `/`, `/services`, `/about`, `/why-stacklaunch`,
+  `/contact`, `/insights` (blog/case-study listing), `/insights/[slug]`
+- `src/components/` — shared `SiteNav`, `SiteFooter`
+- `src/layouts/` — `BaseLayout` (head, meta, fonts)
+- `src/content/` — editable content: `pages/*.yaml` (one file per page),
+  `testimonials/*.yaml`, `posts/*.mdx`
+- `src/content.config.ts` — the schema every content file is validated
+  against
+- `src/styles/` — self-hosted fonts and global CSS (keyframes, responsive
+  rules)
+- `public/admin/` — the Sveltia CMS editor (`config.yml`, `index.html`)
+- `worker/` — a Cloudflare Worker (`sveltia-cms-auth`) that handles GitHub
+  sign-in for the CMS; deployed separately from the site, see
+  `worker/README.md`
+
+## Editing content
+
+Non-developers should use the CMS at `/admin` rather than editing files
+directly. See `CLIENT-EDITING-GUIDE.md`.
+
+## Local development
+
+```
+npm install
+npm run dev
+```
+
+## Build
+
+```
+npm run build
+```
+
+Outputs static files to `dist/`.
 
 ## Deployment
 
-1. Push to GitHub
-2. Connect repo to Cloudflare Pages
-3. Cloudflare auto-deploys on every push
-4. Set your domain nameservers to Cloudflare
-
-## Local Development
-
-Open `Home.dc.html` in a browser — no build step needed.
+Cloudflare Pages, connected to this GitHub repo. Build command
+`npm run build`, output directory `dist`. Deploys automatically on every
+push to `main`.
