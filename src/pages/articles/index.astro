@@ -14,10 +14,10 @@ function formatDate(d: Date) {
 }
 ---
 
-<BaseLayout title="Insights — StackLaunch" description="Notes on infrastructure, reliability and shipping mobile backends, plus case studies from teams we have worked with.">
+<BaseLayout title="Articles: StackLaunch" description="Notes on infrastructure, reliability and shipping mobile backends, plus case studies from teams we have worked with.">
   <div style="position:relative;background:#060810;overflow-x:clip">
     <div style="position:sticky;top:0;z-index:60">
-      <SiteNav active="insights" />
+      <SiteNav active="articles" />
     </div>
 
     <section style="position:relative;padding:104px clamp(20px,4vw,56px) 84px;background-image:radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px);background-size:24px 24px">
@@ -46,7 +46,7 @@ function formatDate(d: Date) {
         <circle cx="1540" cy="280" r="3.5" fill="#3B82F6" style="animation:softPulse 3.2s ease-in-out infinite" />
       </svg>
       <div style="position:relative;max-width:1320px;margin:0 auto">
-        <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(233,238,246,.68)">Insights</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(233,238,246,.68)">Articles</span>
         <h1 style="margin:26px 0 0;max-width:900px;font-family:'Space Grotesk',sans-serif;font-weight:300;font-size:clamp(38px,6vw,90px);line-height:0.99;letter-spacing:-0.035em;color:#F2F5FA">Notes from <span style="color:#34D399">running production.</span></h1>
         <p style="margin:34px 0 0;max-width:560px;font-size:17px;line-height:1.66">Infrastructure, reliability and shipping mobile backends, plus case studies from teams we have worked with.</p>
       </div>
@@ -62,7 +62,7 @@ function formatDate(d: Date) {
         ) : (
           <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px" data-stack>
             {posts.map((post) => (
-              <a href={`/insights/${post.id}`} class="post-card" style="display:flex;flex-direction:column;border-radius:18px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012));overflow:hidden;text-decoration:none;transition:border-color 240ms ease">
+              <a href={`/articles/${post.id}`} class="post-card" style="display:flex;flex-direction:column;border-radius:18px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012));overflow:hidden;text-decoration:none;transition:border-color 240ms ease">
                 <img src={post.data.coverImage} alt="" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block" />
                 <div style="padding:22px;display:flex;flex-direction:column;gap:12px;flex:1">
                   <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#34D399">{CATEGORY_LABEL[post.data.category]} · {formatDate(post.data.date)}</span>

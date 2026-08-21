@@ -1,5 +1,5 @@
 ---
-export type ActivePage = 'home' | 'services' | 'about' | 'why' | 'insights' | 'contact';
+export type ActivePage = 'home' | 'services' | 'about' | 'why' | 'articles' | 'contact';
 
 interface Props {
   active: ActivePage;
@@ -12,7 +12,7 @@ const links: { label: string; href: string; key: ActivePage }[] = [
   { label: 'Services', href: '/services', key: 'services' },
   { label: 'About', href: '/about', key: 'about' },
   { label: 'Why StackLaunch', href: '/why-stacklaunch', key: 'why' },
-  { label: 'Insights', href: '/insights', key: 'insights' },
+  { label: 'Articles', href: '/articles', key: 'articles' },
   { label: 'Contact', href: '/contact', key: 'contact' },
 ];
 

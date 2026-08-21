@@ -81,7 +81,7 @@ Landscape (wider than tall) images work best for blog cover images.
    work without it appearing on the live site yet.
 5. Click **Publish**.
 
-Your new post will appear on `/insights`, newest first, and at its own web
+Your new post will appear on `/articles`, newest first, and at its own web
 address automatically generated from the title.
 
 ## What happens after you click Publish

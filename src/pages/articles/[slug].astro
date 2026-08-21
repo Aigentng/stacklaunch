@@ -23,14 +23,14 @@ function formatDate(d: Date) {
 ---
 
 <BaseLayout
-  title={`${post.data.seoTitle || post.data.title} — StackLaunch`}
+  title={`${post.data.seoTitle || post.data.title}: StackLaunch`}
   description={post.data.seoDescription || post.data.excerpt}
   ogImage={post.data.coverImage}
   ogType="article"
 >
   <div style="position:relative;background:#060810;overflow-x:clip">
     <div style="position:sticky;top:0;z-index:60">
-      <SiteNav active="insights" />
+      <SiteNav active="articles" />
     </div>
 
     <section style="position:relative;padding:104px clamp(20px,4vw,56px) 0;background-image:radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px);background-size:24px 24px">
@@ -59,7 +59,7 @@ function formatDate(d: Date) {
         <circle cx="1540" cy="322" r="3.2" fill="#34D399" style="animation:softPulse 3.3s ease-in-out infinite" />
       </svg>
       <div style="position:relative;max-width:840px;margin:0 auto">
-        <a href="/insights" style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(233,238,246,.64);text-decoration:none">&lsaquo; Back to insights</a>
+        <a href="/articles" style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(233,238,246,.64);text-decoration:none">&lsaquo; Back to articles</a>
         <div style="margin-top:22px;display:flex;align-items:center;gap:10px">
           <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;color:#34D399">{CATEGORY_LABEL[post.data.category]}</span>
           <span style="color:rgba(233,238,246,.3)">·</span>
@@ -87,7 +87,7 @@ function formatDate(d: Date) {
         <Content />
       </div>
       <div style="max-width:720px;margin:56px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.09)">
-        <a href="/insights" style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:#93B4FC;text-decoration:none">&lsaquo; Back to insights</a>
+        <a href="/articles" style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:#93B4FC;text-decoration:none">&lsaquo; Back to articles</a>
       </div>
     </section>
 

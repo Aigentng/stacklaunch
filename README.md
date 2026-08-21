@@ -7,7 +7,7 @@ static site, with [Sveltia CMS](https://github.com/sveltia/sveltia-cms) at
 ## Structure
 
 - `src/pages/`: routes: `/`, `/services`, `/about`, `/why-stacklaunch`,
-  `/contact`, `/insights` (blog/case-study listing), `/insights/[slug]`
+  `/contact`, `/articles` (blog/case-study listing), `/articles/[slug]`
 - `src/components/`: shared `SiteNav`, `SiteFooter`
 - `src/layouts/`: `BaseLayout` (head, meta, fonts)
 - `src/content/`: editable content: `pages/*.yaml` (one file per page),

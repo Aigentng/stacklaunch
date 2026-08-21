@@ -381,7 +381,7 @@ collections:
       - { label: "Company logo (optional)", name: logo, widget: image, required: false }
 
   # ---------------------------------------------------------------------
-  # POSTS: blog articles and case studies, shown together on /insights.
+  # POSTS: blog articles and case studies, shown together on /articles.
   # ---------------------------------------------------------------------
   - name: posts
     label: Blog & Case Studies
