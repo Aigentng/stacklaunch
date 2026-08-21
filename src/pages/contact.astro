@@ -1,0 +1,145 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { getEntry } from 'astro:content';
+import { splitAccent } from '../lib/text';
+
+const contact = (await getEntry('contactPage', 'contact'))!.data;
+
+const heroHeading = splitAccent(contact.hero.heading, contact.hero.accentPhrase);
+---
+
+<BaseLayout title="Contact — book a free infrastructure review" description="Start with a free infrastructure review. We will tell you plainly what is solid and what is a risk.">
+  <div style="position:relative;background:#060810;overflow-x:clip">
+    <div style="position:sticky;top:0;z-index:60">
+      <SiteNav active="contact" />
+    </div>
+
+    <section style="position:relative;padding:104px clamp(20px,4vw,56px) 72px;background-image:radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px);background-size:24px 24px">
+      <div style="position:absolute;top:0;left:0;right:0;height:440px;pointer-events:none;background:radial-gradient(110% 100% at 70% 6%, rgba(16,185,129,.16), rgba(6,8,16,0) 60%)"></div>
+      <svg viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.85" aria-hidden="true">
+        <defs>
+          <linearGradient id="ctHeroL" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3B82F6" stop-opacity=".46" /><stop offset="1" stop-color="#3B82F6" stop-opacity="0" /></linearGradient>
+          <linearGradient id="ctHeroR" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#34D399" stop-opacity=".4" /><stop offset="1" stop-color="#34D399" stop-opacity="0" /></linearGradient>
+        </defs>
+        <g fill="none" stroke-width="1" stroke-dasharray="1800" stroke-dashoffset="1800" style="animation:drawin 1.9s cubic-bezier(.2,.8,.25,1) both">
+          <g stroke="url(#ctHeroL)"><line x1="-90" y1="320" x2="640" y2="-30" /><line x1="-90" y1="320" x2="620" y2="140" /><line x1="-90" y1="320" x2="620" y2="470" /><line x1="-90" y1="320" x2="680" y2="700" /></g>
+          <g stroke="url(#ctHeroR)"><line x1="1530" y1="320" x2="820" y2="-30" /><line x1="1530" y1="320" x2="840" y2="140" /><line x1="1530" y1="320" x2="840" y2="470" /><line x1="1530" y1="320" x2="790" y2="700" /></g>
+        </g>
+        <g stroke-width="1.6" fill="none" stroke-linecap="round" stroke-dasharray="90 1600">
+          <line x1="-90" y1="320" x2="620" y2="140" stroke="#3B82F6" style="animation:travel 8s linear infinite" />
+          <line x1="1530" y1="320" x2="840" y2="470" stroke="#34D399" style="animation:travel 10.5s linear infinite;animation-delay:-4s" />
+        </g>
+        <circle cx="-90" cy="320" r="3.2" fill="#3B82F6" style="animation:softPulse 3.2s ease-in-out infinite" />
+        <circle cx="1530" cy="320" r="3.2" fill="#34D399" style="animation:softPulse 3.2s ease-in-out infinite;animation-delay:-1.6s" />
+      </svg>
+      <div style="position:relative;max-width:1320px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:56px;align-items:end" data-stack>
+        <div>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(233,238,246,.68)">{contact.hero.eyebrow}</span>
+          <h1 style="margin:26px 0 0;font-family:'Space Grotesk',sans-serif;font-weight:300;font-size:clamp(38px,6vw,90px);line-height:0.99;letter-spacing:-0.035em;color:#F2F5FA">{heroHeading.before}<span style="color:#34D399">{heroHeading.accent}</span>{heroHeading.after}</h1>
+          <p style="margin:34px 0 0;max-width:560px;font-size:17px;line-height:1.66">{contact.hero.body}</p>
+        </div>
+        <div>
+          {contact.expect.map((e) => (
+            <div style="display:grid;grid-template-columns:88px minmax(0,1fr);gap:18px;padding:20px 0;border-top:1px solid rgba(255,255,255,.09);align-items:baseline">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:#3B82F6">{e.n}</span>
+              <div>
+                <p style="margin:0 0 5px;font-size:16.5px;color:#F2F5FA">{e.title}</p>
+                <p style="margin:0;font-size:15px;line-height:1.55;color:rgba(233,238,246,.66)">{e.body}</p>
+              </div>
+            </div>
+          ))}
+          <div style="border-top:1px solid rgba(255,255,255,.09)"></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="position:relative;overflow:hidden;padding:56px clamp(20px,4vw,56px) 110px">
+      <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.7" aria-hidden="true">
+        <defs>
+          <linearGradient id="ctFormA" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3B82F6" stop-opacity=".4" /><stop offset="1" stop-color="#3B82F6" stop-opacity="0" /></linearGradient>
+          <linearGradient id="ctFormB" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#34D399" stop-opacity=".34" /><stop offset="1" stop-color="#34D399" stop-opacity="0" /></linearGradient>
+        </defs>
+        <g fill="none" stroke-width="1" stroke-dasharray="1800" stroke-dashoffset="1800" style="animation:drawin 2.2s cubic-bezier(.2,.8,.25,1) both;animation-timeline:view();animation-range:entry 0% cover 32%">
+          <g stroke="url(#ctFormA)"><line x1="-100" y1="430" x2="760" y2="20" /><line x1="-100" y1="430" x2="740" y2="220" /><line x1="-100" y1="430" x2="740" y2="420" /></g>
+          <g stroke="url(#ctFormB)"><line x1="-100" y1="430" x2="740" y2="660" /><line x1="-100" y1="430" x2="800" y2="900" /></g>
+        </g>
+        <g stroke-width="1.5" fill="none" stroke-linecap="round" stroke-dasharray="80 1600">
+          <line x1="-100" y1="430" x2="740" y2="220" stroke="#3B82F6" style="animation:travel 9.5s linear infinite" />
+          <line x1="-100" y1="430" x2="740" y2="660" stroke="#34D399" style="animation:travel 12s linear infinite;animation-delay:-5s" />
+        </g>
+        <circle cx="-100" cy="430" r="3" fill="#3B82F6" style="animation:softPulse 3.4s ease-in-out infinite" />
+      </svg>
+      <div style="position:relative;max-width:1320px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:20px;align-items:start" data-stack>
+        <form id="contact-form" style="padding:34px;border-radius:18px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012));display:grid;gap:22px">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px" data-stack>
+            <label style="display:grid;gap:9px">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(233,238,246,.68)">Name</span>
+              <input type="text" name="name" placeholder={contact.form.namePlaceholder} style="height:46px;padding:0 14px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:rgba(6,8,16,.6);color:#F2F5FA;font-size:15px;transition:border-color 200ms ease" />
+            </label>
+            <label style="display:grid;gap:9px">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(233,238,246,.68)">Work email</span>
+              <input type="email" name="email" placeholder={contact.form.emailPlaceholder} style="height:46px;padding:0 14px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:rgba(6,8,16,.6);color:#F2F5FA;font-size:15px;transition:border-color 200ms ease" />
+            </label>
+          </div>
+          <label style="display:grid;gap:9px">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(233,238,246,.68)">Company</span>
+            <input type="text" name="company" placeholder={contact.form.companyPlaceholder} style="height:46px;padding:0 14px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:rgba(6,8,16,.6);color:#F2F5FA;font-size:15px;transition:border-color 200ms ease" />
+          </label>
+          <label style="display:grid;gap:9px">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(233,238,246,.68)">What have you built, and what is worrying you?</span>
+            <textarea name="detail" rows="5" placeholder={contact.form.detailPlaceholder} style="padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:rgba(6,8,16,.6);color:#F2F5FA;font-size:15px;line-height:1.55;resize:vertical;transition:border-color 200ms ease"></textarea>
+          </label>
+          <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+            <button type="submit" class="btn-primary" style="display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;border:none;background:#F2F5FA;color:#060810;font-family:'Inter',sans-serif;font-size:15px;font-weight:500;cursor:pointer;transition:all 220ms cubic-bezier(.2,.8,.25,1)">{contact.form.submitLabel}<span style="font-family:'JetBrains Mono',monospace;font-size:13px">&rsaquo;</span></button>
+            <span id="contact-confirmation" style="display:none;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:#34D399"><span style="display:block;width:6px;height:6px;border-radius:50%;background:#34D399"></span>{contact.form.confirmationLabel}</span>
+          </div>
+          <p style="margin:0;font-size:14.5px;line-height:1.55;color:rgba(233,238,246,.68)">{contact.form.footnote}</p>
+        </form>
+
+        <aside style="display:grid;gap:16px;align-content:start">
+          <div style="padding:26px;border-radius:18px;border:1px solid rgba(52,211,153,.3);background:linear-gradient(180deg,rgba(37,99,235,.12),rgba(16,185,129,.05) 60%,rgba(255,255,255,.02));display:grid;gap:22px">
+            <div style="display:grid;gap:7px">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(233,238,246,.68)">Email</span>
+              <a class="link-underline" href={`mailto:${contact.info.email}`} style="font-size:17px;color:#F2F5FA;text-decoration:none">{contact.info.email}</a>
+            </div>
+            {contact.info.offices.map((office) => (
+              <div style="display:grid;gap:7px;padding-top:20px;border-top:1px solid rgba(255,255,255,.09)">
+                <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(233,238,246,.68)">{office.label}</span>
+                <p style="margin:0;font-size:15.5px;line-height:1.6;color:#F2F5FA">{office.addressLines.map((line, i) => (<>{i > 0 && <br />}{line}</>))}</p>
+                <a class="link-underline" href={office.phoneHref} style="font-family:'JetBrains Mono',monospace;font-size:14px;color:rgba(233,238,246,.78);text-decoration:none">{office.phone}</a>
+              </div>
+            ))}
+            <div style="padding-top:20px;border-top:1px solid rgba(255,255,255,.09);display:flex;align-items:center;gap:9px">
+              <span style="display:block;width:6px;height:6px;border-radius:50%;background:#34D399;animation:softPulse 2.6s ease-in-out infinite"></span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(233,238,246,.66)">{contact.info.availabilityLabel}</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <SiteFooter />
+  </div>
+</BaseLayout>
+
+<style>
+  .btn-primary:hover { background: #3B82F6; color: #fff; }
+  .link-underline:hover { color: #6EE7B7; }
+</style>
+
+<style is:global>
+  input, textarea { font-family: 'Inter', sans-serif; }
+  input::placeholder, textarea::placeholder { color: rgba(233, 238, 246, .64); }
+  input:focus, textarea:focus { outline: none; border-color: rgba(59, 130, 246, .6); }
+</style>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const confirmation = document.getElementById('contact-confirmation');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (confirmation) confirmation.style.display = 'inline-flex';
+  });
+</script>
