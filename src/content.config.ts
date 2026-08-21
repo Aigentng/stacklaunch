@@ -95,8 +95,9 @@ const servicesPage = defineCollection({
       }),
     ),
     marquee: z.object({
-      plainWords: z.string(),
-      accentWords: z.array(z.string()),
+      beforeAccent: z.string(),
+      accentWord: z.string(),
+      afterAccent: z.string(),
     }),
     stack: z.object({
       eyebrow: z.string(),
@@ -132,7 +133,7 @@ const aboutPage = defineCollection({
     }),
     marquee: z.object({
       plainWords: z.string(),
-      accentWords: z.array(z.string()),
+      accentWord: z.string(),
     }),
     howWeThink: z.object({
       eyebrow: z.string(),
