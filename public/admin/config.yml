@@ -9,8 +9,8 @@ backend:
 media_folder: public/uploads
 public_folder: /uploads
 
-site_url: https://stacklunch.africa
-display_url: https://stacklunch.africa
+site_url: https://stacklaunch.africa
+display_url: https://stacklaunch.africa
 
 collections:
   # ---------------------------------------------------------------------
