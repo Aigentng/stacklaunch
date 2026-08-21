@@ -6,18 +6,18 @@ static site, with [Sveltia CMS](https://github.com/sveltia/sveltia-cms) at
 
 ## Structure
 
-- `src/pages/` — routes: `/`, `/services`, `/about`, `/why-stacklaunch`,
+- `src/pages/`: routes: `/`, `/services`, `/about`, `/why-stacklaunch`,
   `/contact`, `/insights` (blog/case-study listing), `/insights/[slug]`
-- `src/components/` — shared `SiteNav`, `SiteFooter`
-- `src/layouts/` — `BaseLayout` (head, meta, fonts)
-- `src/content/` — editable content: `pages/*.yaml` (one file per page),
+- `src/components/`: shared `SiteNav`, `SiteFooter`
+- `src/layouts/`: `BaseLayout` (head, meta, fonts)
+- `src/content/`: editable content: `pages/*.yaml` (one file per page),
   `testimonials/*.yaml`, `posts/*.mdx`
-- `src/content.config.ts` — the schema every content file is validated
+- `src/content.config.ts`: the schema every content file is validated
   against
-- `src/styles/` — self-hosted fonts and global CSS (keyframes, responsive
+- `src/styles/`: self-hosted fonts and global CSS (keyframes, responsive
   rules)
-- `public/admin/` — the Sveltia CMS editor (`config.yml`, `index.html`)
-- `worker/` — a Cloudflare Worker (`sveltia-cms-auth`) that handles GitHub
+- `public/admin/`: the Sveltia CMS editor (`config.yml`, `index.html`)
+- `worker/`: a Cloudflare Worker (`sveltia-cms-auth`) that handles GitHub
   sign-in for the CMS; deployed separately from the site, see
   `worker/README.md`
 
