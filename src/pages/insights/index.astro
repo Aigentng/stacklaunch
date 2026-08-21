@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteNav from '../../components/SiteNav.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('posts', ({ data }) => !data.draft);
+const posts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const CATEGORY_LABEL: Record<string, string> = { blog: 'Blog', 'case-study': 'Case study' };
+
+function formatDate(d: Date) {
+  return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+---
+
+<BaseLayout title="Insights — StackLaunch" description="Notes on infrastructure, reliability and shipping mobile backends, plus case studies from teams we have worked with.">
+  <div style="position:relative;background:#060810;overflow-x:clip">
+    <div style="position:sticky;top:0;z-index:60">
+      <SiteNav active="home" />
+    </div>
+
+    <section style="position:relative;padding:104px clamp(20px,4vw,56px) 84px;background-image:radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px);background-size:24px 24px">
+      <div style="position:absolute;top:0;left:0;right:0;height:460px;pointer-events:none;background:radial-gradient(110% 100% at 20% 6%, rgba(37,99,235,.2), rgba(6,8,16,0) 60%)"></div>
+      <svg viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.9" aria-hidden="true">
+        <defs>
+          <linearGradient id="inFanA" x1="1" y1="0" x2="0" y2="0">
+            <stop offset="0" stop-color="#3B82F6" stop-opacity=".5" /><stop offset="1" stop-color="#3B82F6" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="inFanB" x1="1" y1="0" x2="0" y2="0">
+            <stop offset="0" stop-color="#34D399" stop-opacity=".42" /><stop offset="1" stop-color="#34D399" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+        <g fill="none" stroke-width="1" stroke-dasharray="1800" stroke-dashoffset="1800" style="animation:drawin 1.8s cubic-bezier(.2,.8,.25,1) both">
+          <g stroke="url(#inFanA)">
+            <line x1="1540" y1="280" x2="700" y2="-40" /><line x1="1540" y1="280" x2="700" y2="90" /><line x1="1540" y1="280" x2="680" y2="240" />
+          </g>
+          <g stroke="url(#inFanB)">
+            <line x1="1540" y1="280" x2="680" y2="420" /><line x1="1540" y1="280" x2="720" y2="580" /><line x1="1540" y1="280" x2="780" y2="720" />
+          </g>
+        </g>
+        <g stroke-width="1.6" fill="none" stroke-linecap="round" stroke-dasharray="90 1600">
+          <line x1="1540" y1="280" x2="700" y2="90" stroke="#3B82F6" style="animation:travel 7.5s linear infinite" />
+          <line x1="1540" y1="280" x2="680" y2="420" stroke="#34D399" style="animation:travel 9.5s linear infinite;animation-delay:-3.6s" />
+        </g>
+        <circle cx="1540" cy="280" r="3.5" fill="#3B82F6" style="animation:softPulse 3.2s ease-in-out infinite" />
+      </svg>
+      <div style="position:relative;max-width:1320px;margin:0 auto">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(233,238,246,.68)">Insights</span>
+        <h1 style="margin:26px 0 0;max-width:900px;font-family:'Space Grotesk',sans-serif;font-weight:300;font-size:clamp(38px,6vw,90px);line-height:0.99;letter-spacing:-0.035em;color:#F2F5FA">Notes from <span style="color:#34D399">running production.</span></h1>
+        <p style="margin:34px 0 0;max-width:560px;font-size:17px;line-height:1.66">Infrastructure, reliability and shipping mobile backends, plus case studies from teams we have worked with.</p>
+      </div>
+    </section>
+
+    <section style="position:relative;overflow:hidden;padding:40px clamp(20px,4vw,56px) 120px;border-top:1px solid rgba(255,255,255,.09)">
+      <div style="position:relative;max-width:1320px;margin:0 auto">
+        {posts.length === 0 ? (
+          <div style="padding:56px 0;border-top:1px solid rgba(255,255,255,.09)">
+            <p style="margin:0;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(233,238,246,.5)">No posts yet</p>
+            <p style="margin:16px 0 0;max-width:480px;font-size:16.5px;line-height:1.66;color:rgba(233,238,246,.66)">New writing and case studies will appear here as soon as they are published.</p>
+          </div>
+        ) : (
+          <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px" data-stack>
+            {posts.map((post) => (
+              <a href={`/insights/${post.id}`} class="post-card" style="display:flex;flex-direction:column;border-radius:18px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012));overflow:hidden;text-decoration:none;transition:border-color 240ms ease">
+                <img src={post.data.coverImage} alt="" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block" />
+                <div style="padding:22px;display:flex;flex-direction:column;gap:12px;flex:1">
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#34D399">{CATEGORY_LABEL[post.data.category]} · {formatDate(post.data.date)}</span>
+                  <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:400;font-size:20px;line-height:1.25;letter-spacing:-0.02em;color:#F2F5FA">{post.data.title}</h2>
+                  <p style="margin:auto 0 0;padding-top:12px;font-size:14.5px;line-height:1.55;color:rgba(233,238,246,.66)">{post.data.excerpt}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+
+    <SiteFooter />
+  </div>
+</BaseLayout>
+
+<style>
+  .post-card:hover { border-color: rgba(59, 130, 246, .5); }
+</style>
