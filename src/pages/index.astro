@@ -2,10 +2,11 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SiteNav from '../components/SiteNav.astro';
 import SiteFooter from '../components/SiteFooter.astro';
-import { getEntry } from 'astro:content';
+import { getEntry, getCollection } from 'astro:content';
 import { splitAccent, splitDualAccent, lucideIcon } from '../lib/text';
 
 const home = (await getEntry('homePage', 'home'))!.data;
+const testimonials = await getCollection('testimonials');
 
 const problemHeading = splitDualAccent(home.problem.heading, home.problem.accentPhraseA, home.problem.accentPhraseB);
 const helpHeading = splitAccent(home.howWeHelp.heading, home.howWeHelp.accentPhrase);
@@ -344,6 +345,29 @@ const CALENDLY_URL = 'https://calendly.com/michuk-dev/30min';
         </div>
       </div>
     </section>
+
+    {testimonials.length > 0 && (
+      <section style="position:relative;overflow:hidden;padding:100px clamp(20px,4vw,56px);border-top:1px solid rgba(255,255,255,.09)">
+        <div style="position:relative;max-width:1320px;margin:0 auto">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(233,238,246,.66)">06 · What clients say</span>
+          <h2 style="margin:24px 0 48px;max-width:700px;font-family:'Space Grotesk',sans-serif;font-weight:300;font-size:clamp(30px,3.6vw,50px);line-height:1.04;letter-spacing:-0.03em;color:#F2F5FA">Teams who <span style="color:#34D399">handed it to us</span></h2>
+          <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch" data-stack>
+            {testimonials.map((t) => (
+              <article style="position:relative;padding:26px;border-radius:18px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012));display:flex;flex-direction:column;gap:18px">
+                <p style="margin:0;flex:1;font-size:16.5px;line-height:1.6;color:#F2F5FA">&ldquo;{t.data.quote}&rdquo;</p>
+                <div style="display:flex;align-items:center;gap:12px;padding-top:18px;border-top:1px solid rgba(255,255,255,.09)">
+                  {t.data.logo && <img src={t.data.logo} alt={t.data.company} style="height:28px;width:auto;display:block" />}
+                  <div>
+                    <p style="margin:0;font-size:14px;color:#F2F5FA">{t.data.name}</p>
+                    <p style="margin:2px 0 0;font-size:13px;color:rgba(233,238,246,.6)">{t.data.role}, {t.data.company}</p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
 
     <section style="position:relative;padding:120px clamp(20px,4vw,56px) 130px;border-top:1px solid rgba(255,255,255,.09);overflow:hidden;background-image:radial-gradient(rgba(255,255,255,.055) 1px, transparent 1px);background-size:24px 24px">
       <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(90% 120% at 50% 110%, rgba(37,99,235,.22), rgba(6,8,16,0) 60%)"></div>
