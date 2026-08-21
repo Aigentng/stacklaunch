@@ -1,0 +1,416 @@
+# Sveltia CMS configuration — https://github.com/sveltia/sveltia-cms
+#
+# IMPORTANT: base_url below is a placeholder. It must be replaced with the
+# real Cloudflare Worker URL from deploying sveltia-cms-auth (see worker/
+# and CLIENT-EDITING-GUIDE.md / the human setup steps) before login will work.
+
+backend:
+  name: github
+  repo: Aigentng/stacklaunch
+  branch: main
+  base_url: https://REPLACE-WITH-YOUR-WORKER-URL.workers.dev
+
+media_folder: public/uploads
+public_folder: /uploads
+
+site_url: https://stacklaunch.co.uk
+display_url: https://stacklaunch.co.uk
+
+collections:
+  # ---------------------------------------------------------------------
+  # PAGES — one file per page. Layout, animations and SVG art are fixed in
+  # code; only the text fields below are editable.
+  # ---------------------------------------------------------------------
+  - name: pages
+    label: Pages
+    files:
+      - name: home
+        label: Home page
+        file: src/content/pages/home.yaml
+        fields:
+          - name: hero
+            label: Hero
+            widget: object
+            fields:
+              - { label: Eyebrow label, name: eyebrow, widget: string }
+              - { label: "Headline — line 1", name: headlineLine1, widget: string }
+              - { label: "Headline — lead-in to line 2", name: headlineLead, widget: string, hint: 'e.g. "We make it "' }
+              - { label: "Headline — accent word (colour A)", name: headlineAccentA, widget: string }
+              - { label: "Headline — accent word (colour B)", name: headlineAccentB, widget: string }
+              - { label: Body copy, name: body, widget: text }
+              - { label: Primary button label, name: primaryCtaLabel, widget: string }
+              - { label: Secondary button label, name: secondaryCtaLabel, widget: string }
+              - { label: "Trust strip — left", name: trustLeft, widget: string }
+              - { label: "Trust strip — right", name: trustRight, widget: string }
+          - name: problem
+            label: Problem section
+            widget: object
+            fields:
+              - { label: Eyebrow label, name: eyebrow, widget: string }
+              - { label: Heading, name: heading, widget: string }
+              - { label: "Accent phrase A (must match exact words in heading)", name: accentPhraseA, widget: string }
+              - { label: "Accent phrase B (must match exact words in heading)", name: accentPhraseB, widget: string }
+              - { label: Intro copy, name: intro, widget: text }
+              - name: items
+                label: Problem items
+                widget: list
+                fields:
+                  - { label: Number, name: n, widget: string }
+                  - { label: "Problem (headline)", name: a, widget: string }
+                  - { label: Question, name: b, widget: string }
+              - { label: Closing copy, name: closing, widget: text }
+          - name: howWeHelp
+            label: How we help section
+            widget: object
+            fields:
+              - { label: Eyebrow label, name: eyebrow, widget: string }
+              - { label: Heading, name: heading, widget: string }
+              - { label: "Accent phrase (must match exact words in heading)", name: accentPhrase, widget: string }
+              - { label: Panels status label, name: panelsLabel, widget: string }
+              - { label: "Panel 1 (Reliability) — title", name: reliabilityTitle, widget: string }
+              - { label: "Panel 1 (Reliability) — body", name: reliabilityBody, widget: text }
+              - { label: "Panel 2 (Reach) — title", name: reachTitle, widget: string }
+              - { label: "Panel 2 (Reach) — body", name: reachBody, widget: text }
+              - { label: "Panel 3 (Automation) — title", name: automationTitle, widget: string }
+              - { label: "Panel 3 (Automation) — body", name: automationBody, widget: text }
+          - name: marquee
+            label: Marquee band
+            widget: object
+            fields:
+              - { label: "Repeating plain words (include trailing space)", name: plainWords, widget: string }
+              - { label: Accent word, name: accentWord, widget: string }
+          - name: howItWorks
+            label: How it works section
+            widget: object
+            fields:
+              - { label: Eyebrow label, name: eyebrow, widget: string }
+              - { label: Heading, name: heading, widget: string }
+              - { label: "Accent phrase (must match exact words in heading)", name: accentPhrase, widget: string }
+              - name: steps
+                label: Steps
+                widget: list
+                fields:
+                  - { label: "Step label (e.g. step 01)", name: n, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Body, name: body, widget: text }
+          - name: architecture
+            label: Architecture section
+            widget: object
+            fields:
+              - { label: Eyebrow label, name: eyebrow, widget: string }
+              - { label: Heading, name: heading, widget: string }
+              - { label: "Accent phrase (must match exact words in heading)", name: accentPhrase, widget: string }
+              - name: cards
+                label: "Cards (exactly 6 — colours alternate by position in the layout)"
+                widget: list
+                fields:
+                  - { label: "Label (e.g. 01 · Clients)", name: n, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Body, name: body, widget: text }
+          - name: industries
+            label: Industries section
+            widget: object
+            fields:
+              - { label: Eyebrow label, name: eyebrow, widget: string }
+              - { label: Heading, name: heading, widget: string }
+              - { label: "Accent phrase (must match exact words in heading)", name: accentPhrase, widget: string }
+              - name: items
+                label: Industries
+                widget: list
+                fields:
+                  - { label: Number, name: n, widget: string }
+                  - { label: Label, name: label, widget: string }
+                  - label: Icon
+                    name: icon
+                    widget: select
+                    hint: "Lucide icon name — ask a developer to add more options if you need one not listed"
+                    options: [rocket, smartphone, cloud, credit-card, heart-pulse, truck, shopping-bag, monitor, database, server, globe, shield, activity, briefcase]
+          - name: closingCta
+            label: Closing CTA
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: "Accent phrase (must match exact words in heading)", name: accentPhrase, widget: string }
+              - { label: Body copy, name: body, widget: text }
+              - { label: Button label, name: ctaLabel, widget: string }
+
+      - name: services
+        label: Services page
+        file: src/content/pages/services.yaml
+        fields:
+          - name: hero
+            label: Hero
+            widget: object
+            fields:
+              - { label: Eyebrow label, name: eyebrow, widget: string }
+              - { label: Heading, name: heading, widget: string }
+              - { label: "Accent phrase (must match exact words in heading)", name: accentPhrase, widget: string }
+              - { label: Body copy, name: body, widget: text }
+              - { label: Primary button label, name: primaryCtaLabel, widget: string }
+              - { label: Secondary button label, name: secondaryCtaLabel, widget: string }
+          - name: services
+            label: "Services (exactly 9 — card widths follow the 3-2-3-1 layout by position)"
+            widget: list
+            fields:
+              - { label: Number, name: n, widget: string }
+              - { label: Icon, name: icon, widget: string, hint: "Lucide icon name, e.g. cloud, server, database" }
+              - { label: Title, name: title, widget: string }
+              - { label: Promise line, name: promise, widget: string }
+              - { label: Body, name: body, widget: text }
+              - label: Card width
+                name: span
+                widget: select
+                hint: "Controls how wide the card is in the grid — leave as-is unless a developer asks you to change the layout"
+                options: ["span 2", "span 3", "span 6"]
+          - name: marquee
+            label: Marquee band
+            widget: object
+            fields:
+              - { label: "Text before the accent word (include surrounding spaces/dots)", name: beforeAccent, widget: string }
+              - { label: Accent word, name: accentWord, widget: string }
+              - { label: "Text after the accent word (include surrounding spaces/dots)", name: afterAccent, widget: string }
+          - name: stack
+            label: Tools we build on section
+            widget: object
+            fields:
+              - { label: Eyebrow label, name: eyebrow, widget: string }
+              - { label: Heading, name: heading, widget: string }
+              - { label: "Accent phrase (must match exact words in heading)", name: accentPhrase, widget: string }
+              - { label: Body copy, name: body, widget: text }
+              - name: groups
+                label: Tool groups
+                widget: list
+                fields:
+                  - { label: Group label, name: label, widget: string }
+                  - name: items
+                    label: Tools
+                    widget: list
+                    field: { label: Tool, name: item, widget: string }
+          - name: closingCta
+            label: Closing CTA
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: "Accent phrase (must match exact words in heading)", name: accentPhrase, widget: string }
+              - { label: Body copy, name: body, widget: text }
+              - { label: Button label, name: ctaLabel, widget: string }
+
+      - name: about
+        label: About page
+        file: src/content/pages/about.yaml
+        fields:
+          - name: hero
+            label: Hero
+            widget: object
+            fields:
+              - { label: Eyebrow label, name: eyebrow, widget: string }
+              - { label: Heading, name: heading, widget: string }
+              - { label: "Accent phrase (must match exact words in heading)", name: accentPhrase, widget: string }
+              - { label: Status label, name: statusLabel, widget: string }
+              - { label: Teams label, name: teamsLabel, widget: string }
+          - name: story
+            label: Story
+            widget: object
+            fields:
+              - { label: Lead paragraph, name: lead, widget: text }
+              - { label: "Quote — plain lead-in", name: quotePlain, widget: string }
+              - { label: "Quote — accent-coloured ending", name: quoteAccent, widget: string }
+              - name: paragraphs
+                label: Body paragraphs
+                widget: list
+                field: { label: Paragraph, name: paragraph, widget: text }
+          - name: marquee
+            label: Marquee band
+            widget: object
+            fields:
+              - { label: "Repeating plain words (include trailing space)", name: plainWords, widget: string }
+              - { label: Accent word, name: accentWord, widget: string }
+          - name: howWeThink
+            label: How we think section
+            widget: object
+            fields:
+              - { label: Eyebrow label, name: eyebrow, widget: string }
+              - { label: Heading, name: heading, widget: string }
+              - { label: "Accent phrase (must match exact words in heading)", name: accentPhrase, widget: string }
+              - name: principles
+                label: "Principles (exactly 4)"
+                widget: list
+                fields:
+                  - { label: Number, name: n, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Body, name: body, widget: text }
+          - name: founderNote
+            label: Founder note
+            widget: object
+            fields:
+              - { label: Eyebrow label, name: eyebrow, widget: string }
+              - { label: Heading, name: heading, widget: string }
+              - { label: "Accent phrase (must match exact words in heading)", name: accentPhrase, widget: string }
+              - name: paragraphs
+                label: Note paragraphs
+                widget: list
+                field: { label: Paragraph, name: paragraph, widget: text }
+              - { label: Name, name: name, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: LinkedIn URL, name: linkedinUrl, widget: string }
+              - { label: Photo, name: photo, widget: image }
+          - name: closingCta
+            label: Closing CTA
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: "Accent phrase (must match exact words in heading)", name: accentPhrase, widget: string }
+              - { label: Body copy, name: body, widget: text }
+              - { label: Button label, name: ctaLabel, widget: string }
+
+      - name: why-stacklaunch
+        label: Why StackLaunch page
+        file: src/content/pages/why-stacklaunch.yaml
+        fields:
+          - name: hero
+            label: Hero
+            widget: object
+            fields:
+              - { label: Eyebrow label, name: eyebrow, widget: string }
+              - { label: Heading, name: heading, widget: string }
+              - { label: "Accent phrase (must match exact words in heading)", name: accentPhrase, widget: string }
+              - { label: Body copy, name: body, widget: text }
+          - name: comparison
+            label: "Comparison cards (exactly 3)"
+            widget: object
+            fields:
+              - name: options
+                label: Options
+                widget: list
+                fields:
+                  - { label: "Label (e.g. option 01)", name: n, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Summary, name: summary, widget: text }
+                  - { label: 'Highlighted (the "where we fit" card)', name: highlighted, widget: boolean, default: false }
+                  - { label: "Badge label (only used when highlighted)", name: badgeLabel, widget: string, required: false }
+                  - name: rows
+                    label: "Rows (exactly 5)"
+                    widget: list
+                    fields:
+                      - { label: Key, name: k, widget: string }
+                      - { label: Value, name: v, widget: string }
+          - name: reasons
+            label: Ten reasons section
+            widget: object
+            fields:
+              - { label: Eyebrow label, name: eyebrow, widget: string }
+              - { label: Heading, name: heading, widget: string }
+              - { label: "Accent phrase (must match exact words in heading)", name: accentPhrase, widget: string }
+              - { label: Count label, name: countLabel, widget: string }
+              - name: items
+                label: Reasons
+                widget: list
+                fields:
+                  - { label: Number, name: n, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Body, name: body, widget: string }
+          - name: closingCta
+            label: Closing CTA
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: "Accent phrase (must match exact words in heading)", name: accentPhrase, widget: string }
+              - { label: Body copy, name: body, widget: text }
+              - { label: Button label, name: ctaLabel, widget: string }
+
+      - name: contact
+        label: Contact page
+        file: src/content/pages/contact.yaml
+        fields:
+          - name: hero
+            label: Hero
+            widget: object
+            fields:
+              - { label: Eyebrow label, name: eyebrow, widget: string }
+              - { label: Heading, name: heading, widget: string }
+              - { label: "Accent phrase (must match exact words in heading)", name: accentPhrase, widget: string }
+              - { label: Body copy, name: body, widget: text }
+          - name: expect
+            label: "What to expect (exactly 3 steps)"
+            widget: list
+            fields:
+              - { label: "Label (e.g. step 01)", name: n, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Body, name: body, widget: text }
+          - name: form
+            label: Form
+            widget: object
+            fields:
+              - { label: Name field placeholder, name: namePlaceholder, widget: string }
+              - { label: Email field placeholder, name: emailPlaceholder, widget: string }
+              - { label: Company field placeholder, name: companyPlaceholder, widget: string }
+              - { label: Detail field placeholder, name: detailPlaceholder, widget: text }
+              - { label: Submit button label, name: submitLabel, widget: string }
+              - { label: Confirmation message, name: confirmationLabel, widget: string }
+              - { label: Footnote, name: footnote, widget: string }
+          - name: info
+            label: Contact info
+            widget: object
+            fields:
+              - { label: Email address, name: email, widget: string }
+              - name: offices
+                label: Offices
+                widget: list
+                fields:
+                  - { label: "Office label (e.g. Lagos Office)", name: label, widget: string }
+                  - name: addressLines
+                    label: Address lines
+                    widget: list
+                    field: { label: Line, name: line, widget: string }
+                  - { label: "Phone (display format)", name: phone, widget: string }
+                  - { label: "Phone link (tel: plus digits only, e.g. tel:+2347083420253)", name: phoneHref, widget: string }
+              - { label: Availability label, name: availabilityLabel, widget: string }
+
+  # ---------------------------------------------------------------------
+  # TESTIMONIALS — hidden from the homepage automatically until at least
+  # one entry exists.
+  # ---------------------------------------------------------------------
+  - name: testimonials
+    label: Testimonials
+    folder: src/content/testimonials
+    create: true
+    slug: "{{fields.company}}"
+    extension: yaml
+    format: yaml
+    fields:
+      - { label: Name, name: name, widget: string }
+      - { label: Role, name: role, widget: string }
+      - { label: Company, name: company, widget: string }
+      - { label: Quote, name: quote, widget: text }
+      - { label: "Company logo (optional)", name: logo, widget: image, required: false }
+
+  # ---------------------------------------------------------------------
+  # POSTS — blog articles and case studies, shown together on /insights.
+  # ---------------------------------------------------------------------
+  - name: posts
+    label: Blog & Case Studies
+    folder: src/content/posts
+    create: true
+    slug: "{{slug}}"
+    extension: mdx
+    format: frontmatter
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime }
+      - label: Category
+        name: category
+        widget: select
+        options:
+          - { label: Blog, value: blog }
+          - { label: "Case study", value: case-study }
+      - { label: Cover image, name: coverImage, widget: image }
+      - { label: "Excerpt (shown on the listing page)", name: excerpt, widget: text }
+      - name: tags
+        label: Tags
+        widget: list
+        field: { label: Tag, name: tag, widget: string }
+        required: false
+      - { label: "SEO title (optional — falls back to Title)", name: seoTitle, widget: string, required: false }
+      - { label: "SEO description (optional — falls back to Excerpt)", name: seoDescription, widget: text, required: false }
+      - { label: "Draft (hide from the live site)", name: draft, widget: boolean, default: false }
+      - { label: Body, name: body, widget: markdown }
