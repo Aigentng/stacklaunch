@@ -1,0 +1,36 @@
+/* Consolidated from the per-page <style> blocks on the original .dc.html pages.
+   Union of every keyframe and responsive rule used anywhere on the site —
+   each is gated by its own selector, so pages that don't use a given
+   keyframe/attribute are unaffected. */
+
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #060810; color: rgba(233, 238, 246, .62); font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; text-wrap: pretty; }
+::selection { background: rgba(59, 130, 246, .35); color: #F2F5FA; }
+a { color: #93B4FC; }
+a:hover { color: #6EE7B7; }
+
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes travel { from { stroke-dashoffset: 1500; } to { stroke-dashoffset: -260; } }
+@keyframes drawin { from { stroke-dashoffset: 1800; } to { stroke-dashoffset: 0; } }
+@keyframes dash600 { from { stroke-dashoffset: 600; } to { stroke-dashoffset: 0; } }
+@keyframes runDash { from { stroke-dashoffset: 640; } to { stroke-dashoffset: -120; } }
+@keyframes blipIn { 0% { opacity: 0; transform: scale(.4); } 60% { opacity: 1; transform: scale(1.25); } 100% { opacity: 1; transform: scale(1); } }
+@keyframes relay { 0%, 18% { opacity: .25; r: 2; } 34% { opacity: 1; } 60%, 100% { opacity: .3; } }
+@keyframes softPulse { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
+@keyframes spinSlow { to { transform: rotate(360deg); } }
+
+@media (max-width: 900px) {
+  [data-stack] { grid-template-columns: 1fr !important; }
+  [data-cols-2] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  [data-hide-mobile] { display: none !important; }
+  [data-blocks] { grid-template-columns: 1fr !important; }
+  [data-blocks] > article { grid-column: auto !important; }
+  [data-mobile-first] { order: -1 !important; }
+  [data-cmp] { grid-template-rows: none !important; }
+  [data-cmp] > article { display: block !important; grid-row: auto !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

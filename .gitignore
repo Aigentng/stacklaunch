@@ -1,3 +1,9 @@
 node_modules/
 .env
+.env.*
 .DS_Store
+dist/
+.astro/
+worker/node_modules/
+worker/.wrangler/
+worker/.dev.vars

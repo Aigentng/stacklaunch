@@ -1,0 +1,41 @@
+---
+export type ActivePage = 'home' | 'services' | 'about' | 'why' | 'contact';
+
+interface Props {
+  active: ActivePage;
+}
+
+const { active } = Astro.props;
+
+const links: { label: string; href: string; key: ActivePage }[] = [
+  { label: 'Home', href: '/', key: 'home' },
+  { label: 'Services', href: '/services', key: 'services' },
+  { label: 'About', href: '/about', key: 'about' },
+  { label: 'Why StackLaunch', href: '/why-stacklaunch', key: 'why' },
+  { label: 'Contact', href: '/contact', key: 'contact' },
+];
+
+const CALENDLY_URL = 'https://calendly.com/michuk-dev/30min';
+---
+
+<header style="--nav-basis:260px;background:rgba(6,8,16,.72);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.09);font-family:'Inter',sans-serif">
+  <div data-navrow style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,56px);box-sizing:border-box;min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:clamp(10px,1.6vw,24px);flex-wrap:wrap;padding-top:12px;padding-bottom:12px">
+    <a href="/" style="order:1;display:flex;align-items:center;gap:11px;text-decoration:none;flex-shrink:0">
+      <img src="/ds/assets/logo-mark-dark.png" alt="" style="height:24px;width:auto;display:block" />
+      <img src="/ds/assets/logo-wordmark-dark.png" alt="StackLaunch" style="height:17px;width:auto;display:block" />
+    </a>
+    <nav style="order:2;flex:1 1 var(--nav-basis,260px);display:flex;align-items:center;gap:0;flex-wrap:nowrap;justify-content:center;min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch">
+      {links.map((link) => (
+        <a class="nav-link" href={link.href} style="padding:8px clamp(6px,1vw,14px);border-radius:999px;font-family:'JetBrains Mono',monospace;font-size:clamp(9.5px,0.82vw,11px);letter-spacing:clamp(0.05em,0.6vw,0.14em);text-transform:uppercase;color:rgba(233,238,246,.66);text-decoration:none;white-space:nowrap;transition:all 220ms cubic-bezier(.2,.8,.25,1)">
+          {link.key === active ? <span style="color:#F2F5FA">{link.label}</span> : link.label}
+        </a>
+      ))}
+    </nav>
+    <a class="nav-cta" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:9px;padding:10px clamp(11px,2.2vw,18px);border-radius:999px;background:#F2F5FA;color:#060810;font-size:clamp(11.5px,1.15vw,13px);font-weight:500;text-decoration:none;white-space:nowrap;flex-shrink:0;order:3;margin-left:auto;transition:all 220ms cubic-bezier(.2,.8,.25,1)">Book a free review<span style="font-family:'JetBrains Mono',monospace;font-size:12px">&rsaquo;</span></a>
+  </div>
+</header>
+
+<style>
+  .nav-link:hover { color: #F2F5FA; background: rgba(255, 255, 255, .05); }
+  .nav-cta:hover { background: #3B82F6; color: #fff; }
+</style>

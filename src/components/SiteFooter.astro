@@ -1,0 +1,61 @@
+---
+const CALENDLY_URL = 'https://calendly.com/michuk-dev/30min';
+
+const serviceLinks = [
+  'Cloud infrastructure',
+  'Kubernetes and platform eng',
+  'CI/CD automation',
+  'Monitoring and observability',
+  'Managed operations',
+];
+
+const companyLinks = [
+  { label: 'About', href: '/about' },
+  { label: 'Why StackLaunch', href: '/why-stacklaunch' },
+  { label: 'The stack we build on', href: '/services' },
+];
+---
+
+<footer style="border-top:1px solid rgba(255,255,255,.09);background:#060810;font-family:'Inter',sans-serif">
+  <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,56px);overflow:hidden">
+    <p style="margin:0;padding-top:42px;font-family:'Space Grotesk',sans-serif;font-weight:300;font-size:clamp(40px,8vw,116px);line-height:1;letter-spacing:-0.04em;color:rgba(242,245,250,.08);white-space:nowrap">StackLaunch</p>
+  </div>
+  <div style="max-width:1320px;margin:0 auto;padding:48px clamp(20px,4vw,56px) 30px;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:44px" data-cols-2>
+    <div>
+      <div style="display:flex;align-items:center;gap:9px;margin-bottom:18px">
+        <img src="/ds/assets/logo-mark-dark.png" alt="" style="height:22px;width:auto;display:block" />
+        <img src="/ds/assets/logo-wordmark-dark.png" alt="StackLaunch" style="height:16px;width:auto;display:block" />
+      </div>
+      <p style="margin:0;max-width:280px;font-size:15px;line-height:1.6;color:rgba(233,238,246,.62)">You build the app. We make it production-ready.</p>
+      <div style="margin-top:22px;display:flex;align-items:center;gap:9px">
+        <span style="display:block;width:6px;height:6px;border-radius:50%;background:#34D399"></span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(233,238,246,.66)">Status: operational</span>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:11px">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(233,238,246,.64);margin-bottom:6px">Services</span>
+      {serviceLinks.map((label) => (
+        <a class="footer-link" href="/services" style="font-size:14px;color:rgba(233,238,246,.7);text-decoration:none">{label}</a>
+      ))}
+    </div>
+    <div style="display:flex;flex-direction:column;gap:11px">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(233,238,246,.64);margin-bottom:6px">Company</span>
+      {companyLinks.map((link) => (
+        <a class="footer-link" href={link.href} style="font-size:14px;color:rgba(233,238,246,.7);text-decoration:none">{link.label}</a>
+      ))}
+    </div>
+    <div style="display:flex;flex-direction:column;gap:11px">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(233,238,246,.64);margin-bottom:6px">Get in touch</span>
+      <a class="footer-email" href="mailto:hello@stacklaunch.co.uk" style="font-size:14px;color:#93B4FC;text-decoration:none">hello@stacklaunch.co.uk</a>
+      <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#F2F5FA;text-decoration:none">Book a free review<span style="font-size:12px">&rsaquo;</span></a>
+    </div>
+  </div>
+  <div style="max-width:1320px;margin:0 auto;padding:20px clamp(20px,4vw,56px) 34px;border-top:1px solid rgba(255,255,255,.09);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.12em;color:rgba(233,238,246,.64)">© 2026 StackLaunch. Built to run everywhere.</span>
+  </div>
+</footer>
+
+<style>
+  .footer-link:hover { color: #F2F5FA; }
+  .footer-email:hover { color: #6EE7B7; }
+</style>

@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+---
+
+<BaseLayout title="StackLaunch — You build the app. We make it production-ready." description="StackLaunch runs the secure, scalable cloud backend behind your app. AWS, Kubernetes, CI/CD, monitoring and backups, without a DevOps hire.">
+  <div style="position:sticky;top:0;z-index:60">
+    <SiteNav active="home" />
+  </div>
+  <p style="color:#F2F5FA;padding:80px;font-family:'Space Grotesk',sans-serif">Scaffold smoke test — full Home page migration coming next.</p>
+  <SiteFooter />
+</BaseLayout>
