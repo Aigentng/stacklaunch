@@ -6,8 +6,7 @@ separate document your developer will hand you).
 
 ## Logging in
 
-1. Go to `https://stacklaunch.co.uk/admin` (replace with your real domain if
-   different).
+1. Go to `https://stacklunch.africa/admin`.
 2. Click **Log in with GitHub**.
 3. A GitHub sign-in window will open. Sign in with the GitHub account your
    developer added you to the project with.

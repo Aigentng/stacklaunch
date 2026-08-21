@@ -13,8 +13,8 @@ backend:
 media_folder: public/uploads
 public_folder: /uploads
 
-site_url: https://stacklaunch.co.uk
-display_url: https://stacklaunch.co.uk
+site_url: https://stacklunch.africa
+display_url: https://stacklunch.africa
 
 collections:
   # ---------------------------------------------------------------------
