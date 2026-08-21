@@ -1,10 +1,10 @@
 hero:
-  eyebrow: Mobile backend infrastructuren specialist
+  eyebrow: Mobile backend infrastructure specialist
   headlineLine1: You build the app.
   headlineLead: We make it
   headlineAccentA: production
   headlineAccentB: -ready.
-  body: StackLaunch runs the secure, scalable cloud backend behind your app. From AWS to Kubernetes to monitoring, we handle it, so you can focus on growing your product instead of firefighting your servers.
+  body: Your app is built. We make sure it stays fast, secure and reliable as your users grow. StackLaunch takes care of the infrastructure behind the scenes, so your team can focus on building the product.
   primaryCtaLabel: Book a free infrastructure review
   secondaryCtaLabel: See what we handle
   trustLeft: Runs on AWS · Kubernetes · Terraform
@@ -59,7 +59,7 @@ howItWorks:
       body: 'You ship features. We handle the backend: secure, scaled and optimised.'
 architecture:
   eyebrow: 04 · Architecture
-  heading: Building expertise across the full stack
+  heading: Everything behind your app
   accentPhrase: across the full stack
   cards:
     - n: 01 · Clients
