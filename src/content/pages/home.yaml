@@ -81,36 +81,36 @@ architecture:
       title: Monitoring & Scaling
       body: Logs, alerts, autoscaling and incident visibility
 industries:
-  eyebrow: 05 · Industries
+  eyebrow: 05 · Who we help
   heading: Built for teams that cannot afford to go down
   accentPhrase: cannot afford to go down
   items:
     - n: '01'
-      label: Startups
+      label: Mobile app startups
       icon: rocket
     - n: '02'
-      label: Mobile app companies
+      label: Growing SaaS platforms
       icon: smartphone
     - n: '03'
-      label: SaaS
+      label: Digital product teams
       icon: cloud
     - n: '04'
-      label: Fintech
+      label: Development agencies
       icon: credit-card
     - n: '05'
-      label: HealthTech
+      label: Early-stage startups
       icon: heart-pulse
     - n: '06'
-      label: Logistics
+      label: Scaling tech companies
       icon: truck
     - n: '07'
-      label: E-commerce
+      label: API-driven products
       icon: shopping-bag
     - n: '08'
-      label: Digital agencies
+      label: Teams launching an MVP
       icon: monitor
 closingCta:
   heading: Ready to make your backend production-ready?
   accentPhrase: production-ready?
-  body: Start with a free infrastructure review. We will show you exactly where you stand, with no obligation and no jargon.
+  body: Start with a free infrastructure review. We’ll identify what’s working, what’s at risk, and what needs fixing before you scale.
   ctaLabel: Book your free review
