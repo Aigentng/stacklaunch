@@ -1,7 +1,7 @@
 hero:
-  eyebrow: Mobile backend infrastructure
+  eyebrow: Mobile backend infrastructurew
   headlineLine1: You build the app.
-  headlineLead: "We make it "
+  headlineLead: We make it
   headlineAccentA: production
   headlineAccentB: -ready.
   body: StackLaunch runs the secure, scalable cloud backend behind your app. From AWS to Kubernetes to monitoring, we handle it, so you can focus on growing your product instead of firefighting your servers.
@@ -9,7 +9,6 @@ hero:
   secondaryCtaLabel: See what we handle
   trustLeft: Runs on AWS · Kubernetes · Terraform
   trustRight: All client platforms healthy
-
 problem:
   eyebrow: 01 · The problem
   heading: The gap between it works and it goes live
@@ -17,20 +16,19 @@ problem:
   accentPhraseB: it goes live
   intro: You built the app and it runs well in the demo. Then real users come on board, and the hard questions begin.
   items:
-    - n: "01"
+    - n: '01'
       a: Traffic triples overnight.
       b: Will it scale, or fall over?
-    - n: "02"
+    - n: '02'
       a: The database locks at 3am.
       b: Who gets the alert? Anyone?
-    - n: "03"
+    - n: '03'
       a: Something important gets deleted.
       b: Is there a backup to restore?
-    - n: "04"
+    - n: '04'
       a: A breach makes the news.
       b: Is your setup actually safe?
   closing: Hiring a full platform team costs months you do not have and a salary most startups are not ready for. Closing that gap is exactly what we do for you.
-
 howWeHelp:
   eyebrow: 02 · How we help
   heading: The layer between your app and a bad week
@@ -41,12 +39,10 @@ howWeHelp:
   reachTitle: Close to your users, with somewhere to fail over to
   reachBody: Traffic is served from the region nearest each user, and the failover region is tested every month, not assumed.
   automationTitle: Any release can be put back in one command
-  automationBody: "Build, migrate and roll out run as one pipeline. When a release misbehaves, the last good version goes back in minutes."
-
+  automationBody: Build, migrate and roll out run as one pipeline. When a release misbehaves, the last good version goes back in minutes.
 marquee:
-  plainWords: "Secure · Scalable · Monitored · "
+  plainWords: Secure · Scalable · Monitored ·
   accentWord: Production-ready
-
 howItWorks:
   eyebrow: 03 · How it works
   heading: Three steps, no mystery
@@ -60,8 +56,7 @@ howItWorks:
       body: A clear scope. What we will fix, what it costs, and what changes for you.
     - n: step 03
       title: We handle it
-      body: "You ship features. We handle the backend: secure, scaled and optimised."
-
+      body: 'You ship features. We handle the backend: secure, scaled and optimised.'
 architecture:
   eyebrow: 04 · Architecture
   heading: Building expertise across the full stack
@@ -85,37 +80,35 @@ architecture:
     - n: 06 · Data
       title: Databases & Cache
       body: PostgreSQL, Redis, backup and replication
-
 industries:
   eyebrow: 05 · Industries
   heading: Built for teams that cannot afford to go down
   accentPhrase: cannot afford to go down
   items:
-    - n: "01"
+    - n: '01'
       label: Startups
       icon: rocket
-    - n: "02"
+    - n: '02'
       label: Mobile app companies
       icon: smartphone
-    - n: "03"
+    - n: '03'
       label: SaaS
       icon: cloud
-    - n: "04"
+    - n: '04'
       label: Fintech
       icon: credit-card
-    - n: "05"
+    - n: '05'
       label: HealthTech
       icon: heart-pulse
-    - n: "06"
+    - n: '06'
       label: Logistics
       icon: truck
-    - n: "07"
+    - n: '07'
       label: E-commerce
       icon: shopping-bag
-    - n: "08"
+    - n: '08'
       label: Digital agencies
       icon: monitor
-
 closingCta:
   heading: Ready to make your backend production-ready?
   accentPhrase: production-ready?
