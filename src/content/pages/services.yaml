@@ -3,7 +3,7 @@ hero:
   heading: Everything behind your app, handled.
   accentPhrase: handled.
   body: |-
-    Your developers continue building the product. StackLaunch takes ownership of the production infrastructure around it — deployments, scaling, monitoring, databases, 
+    Your developers continue building the product. StackLaunch takes ownership of the production infrastructure around it: deployments, scaling, monitoring, databases,
     background processing, push notification pipelines, caching, security, backups and incident recovery.
   primaryCtaLabel: Book a free infrastructure review
   secondaryCtaLabel: See the stack

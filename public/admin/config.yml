@@ -343,6 +343,7 @@ collections:
               - { label: Detail field placeholder, name: detailPlaceholder, widget: text }
               - { label: Submit button label, name: submitLabel, widget: string }
               - { label: Confirmation message, name: confirmationLabel, widget: string }
+              - { label: Error message (shown if a submission fails to send), name: errorLabel, widget: string }
               - { label: Footnote, name: footnote, widget: string }
           - name: info
             label: Contact info

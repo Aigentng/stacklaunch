@@ -22,6 +22,7 @@ form:
   detailPlaceholder: A logistics app on a single EC2 box. Traffic is growing and we have no backups.
   submitLabel: Book my free review
   confirmationLabel: Received · reply within one business day
+  errorLabel: Something went wrong. Please email us directly instead.
   footnote: We reply within one business day. Your details stay between us.
 
 info:

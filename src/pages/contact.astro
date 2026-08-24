@@ -10,7 +10,7 @@ const contact = (await getEntry('contactPage', 'contact'))!.data;
 const heroHeading = splitAccent(contact.hero.heading, contact.hero.accentPhrase);
 ---
 
-<BaseLayout title="Contact — book a free infrastructure review" description="Start with a free infrastructure review. We will tell you plainly what is solid and what is a risk.">
+<BaseLayout title="Contact: book a free infrastructure review" description="Start with a free infrastructure review. We will tell you plainly what is solid and what is a risk.">
   <div style="position:relative;background:#060810;overflow-x:clip">
     <div style="position:sticky;top:0;z-index:60">
       <SiteNav active="contact" />
@@ -92,8 +92,9 @@ const heroHeading = splitAccent(contact.hero.heading, contact.hero.accentPhrase)
             <textarea name="detail" rows="5" placeholder={contact.form.detailPlaceholder} style="padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:rgba(6,8,16,.6);color:#F2F5FA;font-size:15px;line-height:1.55;resize:vertical;transition:border-color 200ms ease"></textarea>
           </label>
           <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
-            <button type="submit" class="btn-primary" style="display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;border:none;background:#F2F5FA;color:#060810;font-family:'Inter',sans-serif;font-size:15px;font-weight:500;cursor:pointer;transition:all 220ms cubic-bezier(.2,.8,.25,1)">{contact.form.submitLabel}<span style="font-family:'JetBrains Mono',monospace;font-size:13px">&rsaquo;</span></button>
+            <button type="submit" id="contact-submit" class="btn-primary" style="display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;border:none;background:#F2F5FA;color:#060810;font-family:'Inter',sans-serif;font-size:15px;font-weight:500;cursor:pointer;transition:all 220ms cubic-bezier(.2,.8,.25,1)">{contact.form.submitLabel}<span style="font-family:'JetBrains Mono',monospace;font-size:13px">&rsaquo;</span></button>
             <span id="contact-confirmation" style="display:none;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:#34D399"><span style="display:block;width:6px;height:6px;border-radius:50%;background:#34D399"></span>{contact.form.confirmationLabel}</span>
+            <span id="contact-error" style="display:none;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:#F87171"><span style="display:block;width:6px;height:6px;border-radius:50%;background:#F87171"></span>{contact.form.errorLabel}</span>
           </div>
           <p style="margin:0;font-size:14.5px;line-height:1.55;color:rgba(233,238,246,.68)">{contact.form.footnote}</p>
         </form>
@@ -136,10 +137,49 @@ const heroHeading = splitAccent(contact.hero.heading, contact.hero.accentPhrase)
 </style>
 
 <script>
-  const form = document.getElementById('contact-form');
+  // Replace with the Web App URL from deploying the Apps Script in
+  // GOOGLE-SHEETS-SETUP.md. Left blank, submissions still show the
+  // confirmation but are not saved anywhere.
+  const SHEET_ENDPOINT = '';
+
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const submitButton = document.getElementById('contact-submit') as HTMLButtonElement | null;
   const confirmation = document.getElementById('contact-confirmation');
-  form?.addEventListener('submit', (e) => {
+  const errorMessage = document.getElementById('contact-error');
+
+  form?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    if (confirmation) confirmation.style.display = 'inline-flex';
+    if (confirmation) confirmation.style.display = 'none';
+    if (errorMessage) errorMessage.style.display = 'none';
+
+    if (!SHEET_ENDPOINT) {
+      if (confirmation) confirmation.style.display = 'inline-flex';
+      return;
+    }
+
+    const data = new FormData(form);
+    if (submitButton) submitButton.disabled = true;
+
+    try {
+      await fetch(SHEET_ENDPOINT, {
+        method: 'POST',
+        mode: 'no-cors',
+        // text/plain avoids a CORS preflight the Apps Script endpoint
+        // does not handle; the script parses the body as JSON itself.
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({
+          name: data.get('name'),
+          email: data.get('email'),
+          company: data.get('company'),
+          detail: data.get('detail'),
+        }),
+      });
+      if (confirmation) confirmation.style.display = 'inline-flex';
+      form.reset();
+    } catch {
+      if (errorMessage) errorMessage.style.display = 'inline-flex';
+    } finally {
+      if (submitButton) submitButton.disabled = false;
+    }
   });
 </script>

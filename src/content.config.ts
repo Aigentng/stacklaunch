@@ -213,6 +213,7 @@ const contactPage = defineCollection({
       detailPlaceholder: z.string(),
       submitLabel: z.string(),
       confirmationLabel: z.string(),
+      errorLabel: z.string(),
       footnote: z.string(),
     }),
     info: z.object({
