@@ -1,12 +1,12 @@
 tagline: You build the app. We make it production-ready.
-statusLabel: "Status: operational"
-servicesLabel: Services
+statusLabel: 'Status: operational'
+servicesLabel: WHAT WE MANAGE
 services:
-  - Cloud infrastructure
-  - Kubernetes and platform eng
-  - CI/CD automation
-  - Monitoring and observability
-  - Managed operations
+  - Production infrastructure
+  - Deployments & CI/CD
+  - Databases & caching
+  - Background processing
+  - Monitoring & reliability
 companyLabel: Company
 companyLinks:
   - label: About
