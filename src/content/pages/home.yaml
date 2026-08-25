@@ -4,7 +4,7 @@ hero:
   headlineLead: We make it
   headlineAccentA: production
   headlineAccentB: -ready.
-  body: Your app is built. We make sure it stays fast, secure and reliable as your users grow. StackLaunch takes care of the infrastructure behind the scenes, so your team can focus on building the product.
+  body: Your app is built. We make sure it stays fast, secure and reliable as your users grow. StackLaunch takes care of the infrastructure behind the scenes, so your team can focus on building the products.
   primaryCtaLabel: Book a free infrastructure review
   secondaryCtaLabel: See what we handle
   trustLeft: Runs on AWS · Kubernetes · Terraform
