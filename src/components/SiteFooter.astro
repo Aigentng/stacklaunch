@@ -1,19 +1,8 @@
 ---
-const CALENDLY_URL = 'https://calendly.com/michuk-dev/30min';
+import { getEntry } from 'astro:content';
 
-const serviceLinks = [
-  'Cloud infrastructure',
-  'Kubernetes and platform eng',
-  'CI/CD automation',
-  'Monitoring and observability',
-  'Managed operations',
-];
-
-const companyLinks = [
-  { label: 'About', href: '/about' },
-  { label: 'Why StackLaunch', href: '/why-stacklaunch' },
-  { label: 'The stack we build on', href: '/services' },
-];
+const footer = (await getEntry('siteFooter', 'footer'))!.data;
+const year = new Date().getFullYear();
 ---
 
 <footer style="border-top:1px solid rgba(255,255,255,.09);background:#060810;font-family:'Inter',sans-serif">
@@ -26,32 +15,32 @@ const companyLinks = [
         <img src="/ds/assets/logo-mark-dark.png" alt="" style="height:22px;width:auto;display:block" />
         <img src="/ds/assets/logo-wordmark-dark.png" alt="StackLaunch" style="height:16px;width:auto;display:block" />
       </div>
-      <p style="margin:0;max-width:280px;font-size:15px;line-height:1.6;color:rgba(233,238,246,.62)">You build the app. We make it production-ready.</p>
+      <p style="margin:0;max-width:280px;font-size:15px;line-height:1.6;color:rgba(233,238,246,.62)">{footer.tagline}</p>
       <div style="margin-top:22px;display:flex;align-items:center;gap:9px">
         <span style="display:block;width:6px;height:6px;border-radius:50%;background:#34D399"></span>
-        <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(233,238,246,.66)">Status: operational</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(233,238,246,.66)">{footer.statusLabel}</span>
       </div>
     </div>
     <div style="display:flex;flex-direction:column;gap:11px">
-      <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(233,238,246,.64);margin-bottom:6px">Services</span>
-      {serviceLinks.map((label) => (
+      <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(233,238,246,.64);margin-bottom:6px">{footer.servicesLabel}</span>
+      {footer.services.map((label) => (
         <a class="footer-link" href="/services" style="font-size:14px;color:rgba(233,238,246,.7);text-decoration:none">{label}</a>
       ))}
     </div>
     <div style="display:flex;flex-direction:column;gap:11px">
-      <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(233,238,246,.64);margin-bottom:6px">Company</span>
-      {companyLinks.map((link) => (
+      <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(233,238,246,.64);margin-bottom:6px">{footer.companyLabel}</span>
+      {footer.companyLinks.map((link) => (
         <a class="footer-link" href={link.href} style="font-size:14px;color:rgba(233,238,246,.7);text-decoration:none">{link.label}</a>
       ))}
     </div>
     <div style="display:flex;flex-direction:column;gap:11px">
-      <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(233,238,246,.64);margin-bottom:6px">Get in touch</span>
-      <a class="footer-email" href="mailto:hello@stacklaunch.africa" style="font-size:14px;color:#93B4FC;text-decoration:none">hello@stacklaunch.africa</a>
-      <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#F2F5FA;text-decoration:none">Book a free review<span style="font-size:12px">&rsaquo;</span></a>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(233,238,246,.64);margin-bottom:6px">{footer.contactLabel}</span>
+      <a class="footer-email" href={`mailto:${footer.email}`} style="font-size:14px;color:#93B4FC;text-decoration:none">{footer.email}</a>
+      <a href={footer.calendlyUrl} target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#F2F5FA;text-decoration:none">{footer.bookingLabel}<span style="font-size:12px">&rsaquo;</span></a>
     </div>
   </div>
   <div style="max-width:1320px;margin:0 auto;padding:20px clamp(20px,4vw,56px) 34px;border-top:1px solid rgba(255,255,255,.09);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
-    <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.12em;color:rgba(233,238,246,.64)">© 2026 StackLaunch. Built to run everywhere.</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.12em;color:rgba(233,238,246,.64)">© {year} StackLaunch. {footer.copyrightTagline}</span>
   </div>
 </footer>
 

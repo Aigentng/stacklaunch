@@ -1,0 +1,22 @@
+tagline: You build the app. We make it production-ready.
+statusLabel: "Status: operational"
+servicesLabel: Services
+services:
+  - Cloud infrastructure
+  - Kubernetes and platform eng
+  - CI/CD automation
+  - Monitoring and observability
+  - Managed operations
+companyLabel: Company
+companyLinks:
+  - label: About
+    href: /about
+  - label: Why StackLaunch
+    href: /why-stacklaunch
+  - label: The stack we build on
+    href: /services
+contactLabel: Get in touch
+email: hello@stacklaunch.co.uk
+calendlyUrl: https://calendly.com/michuk-dev/30min
+bookingLabel: Book a free review
+copyrightTagline: Built to run everywhere.

@@ -257,6 +257,23 @@ const posts = defineCollection({
   }),
 });
 
+const siteFooter = defineCollection({
+  loader: glob({ pattern: 'footer.yaml', base: './src/content/site' }),
+  schema: z.object({
+    tagline: z.string(),
+    statusLabel: z.string(),
+    servicesLabel: z.string(),
+    services: z.array(z.string()),
+    companyLabel: z.string(),
+    companyLinks: z.array(z.object({ label: z.string(), href: z.string() })),
+    contactLabel: z.string(),
+    email: z.string().email(),
+    calendlyUrl: z.string().url(),
+    bookingLabel: z.string(),
+    copyrightTagline: z.string(),
+  }),
+});
+
 export const collections = {
   homePage,
   servicesPage,
@@ -265,4 +282,5 @@ export const collections = {
   contactPage,
   testimonials,
   posts,
+  siteFooter,
 };

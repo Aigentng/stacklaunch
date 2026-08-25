@@ -364,6 +364,37 @@ collections:
               - { label: Availability label, name: availabilityLabel, widget: string }
 
   # ---------------------------------------------------------------------
+  # SITE-WIDE: shown on every page (the footer). Layout is fixed in code;
+  # only the text and links below are editable.
+  # ---------------------------------------------------------------------
+  - name: site
+    label: Site-wide
+    files:
+      - name: footer
+        label: Footer
+        file: src/content/site/footer.yaml
+        fields:
+          - { label: Tagline (under the logo), name: tagline, widget: string }
+          - { label: "Status line (e.g. \"Status: operational\")", name: statusLabel, widget: string }
+          - { label: "\"Services\" column heading", name: servicesLabel, widget: string }
+          - name: services
+            label: "Services list (all link to the Services page)"
+            widget: list
+            field: { label: Service, name: service, widget: string }
+          - { label: "\"Company\" column heading", name: companyLabel, widget: string }
+          - name: companyLinks
+            label: Company links
+            widget: list
+            fields:
+              - { label: Link text, name: label, widget: string }
+              - { label: "Link address (e.g. /about)", name: href, widget: string }
+          - { label: "\"Get in touch\" column heading", name: contactLabel, widget: string }
+          - { label: Email address, name: email, widget: string, type: email }
+          - { label: Calendly booking link, name: calendlyUrl, widget: string, type: url }
+          - { label: Booking button label, name: bookingLabel, widget: string }
+          - { label: "Copyright line (after \"© [year] StackLaunch. \")", name: copyrightTagline, widget: string }
+
+  # ---------------------------------------------------------------------
   # TESTIMONIALS: hidden from the homepage automatically until at least
   # one entry exists.
   # ---------------------------------------------------------------------
