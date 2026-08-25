@@ -23,7 +23,7 @@ form:
   errorLabel: failed to submit
   footnote: We reply within one business day. Your details stay between us.
 info:
-  email: hello.stacklaunch.co.uk
+  email: hello.stacklaunch.co
   offices:
     - label: Lagos Office
       addressLines:
