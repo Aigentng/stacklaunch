@@ -7,7 +7,7 @@ hero:
 story:
   lead: Great apps rarely fail because the idea was wrong. They fail because the part underneath, the infrastructure nobody sees, was not ready when it mattered.
   quotePlain: StackLaunch exists so that
-  quoteAccent: '&nbspnever becomes your story.'
+  quoteAccent: '&nbsp;never becomes your story.'
   paragraphs:
     - 'We are a mobile backend infrastructure and platform engineering consultancy working with startups and growing product teams. We take the app you have already built and give it the production backend it needs: secure, scalable, monitored and cost-controlled, without you hiring a full-time DevOps team.'
     - Our job is to stay in the background. When we have done it well, you rarely think about your infrastructure at all. It simply works, through the traffic spike, the late-night deploy and the growth you have been working towards.
