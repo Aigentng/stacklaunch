@@ -137,10 +137,9 @@ const heroHeading = splitAccent(contact.hero.heading, contact.hero.accentPhrase)
 </style>
 
 <script>
-  // Replace with the Web App URL from deploying the Apps Script in
-  // GOOGLE-SHEETS-SETUP.md. Left blank, submissions still show the
-  // confirmation but are not saved anywhere.
-  const SHEET_ENDPOINT = '';
+  // Apps Script Web App from GOOGLE-SHEETS-SETUP.md. Left blank,
+  // submissions still show the confirmation but are not saved anywhere.
+  const SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwb4yFTmoIzlT6tgSoVOaA7RqeYx4rISBrnNSLZ3p82qdgE-1n8usiAWoNWd9gpmCddAg/exec';
 
   const form = document.getElementById('contact-form') as HTMLFormElement | null;
   const submitButton = document.getElementById('contact-submit') as HTMLButtonElement | null;
