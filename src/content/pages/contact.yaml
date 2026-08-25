@@ -25,15 +25,14 @@ form:
 info:
   email: hello@stacklaunch.co.uk
   offices:
-    - label: Lagos Office
+    - label: Manchester Office
       addressLines:
-        - StackLaunch
-      phone: +234 708 342 0253
+        - StackLaunch Manchester
+      phone: +44 7769 667581
       phoneHref: tel:+2347083420253
     - label: London Office
       addressLines:
-        - Bournville Road
-        - SE6 4RN, London, United Kingdom
+        - StackLaunch London
       phone: +44 7769 667581
       phoneHref: tel:+447769667581
   availabilityLabel: Review slots open this week
